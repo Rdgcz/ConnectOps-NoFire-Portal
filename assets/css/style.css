@@ -756,3 +756,15 @@ a{
   font-size: 0.85rem;
   color: #b8bcc6;
 }
+
+.caderp-icon{
+  max-width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-caderp {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
