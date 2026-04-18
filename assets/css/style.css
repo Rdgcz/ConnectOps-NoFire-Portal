@@ -380,6 +380,13 @@ a{
   font-size:.98rem;
 }
 
+.update-info {
+  margin-top:12px;
+  color:var(--gray);
+  font-size:.85rem;
+  font-style:italic;
+}
+
 /* FOOTER */
 .site-footer{
   position:relative;
@@ -729,4 +736,23 @@ a{
   .module-block{
     padding: 22px;
   }
+}
+
+.module-image{
+  margin-top: 16px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.module-image img{
+  width: 100%;
+  display: block;
+}
+
+.module-caption{
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #b8bcc6;
 }

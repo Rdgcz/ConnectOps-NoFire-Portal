@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aula 05 | Itens no Orçamento | No Fire</title>
+  <meta name="description" content="Aula 05 - Itens no Orçamento - Portal de Treinamentos No Fire - CAD ERP">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../assets/img/favicon/favicon.ico" type="image/png">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="https://www.nofire.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da No Fire">
+        <img src="../../assets/img/nofire-logo.png" alt="No Fire">
+      </a>
+    </div>
+
+    <div class="nav-center">
+      <a href="../../index.html">Início</a> |
+      <a href="./a04-clientes.html">Aula 04</a> |
+      <a href="#">Aula 06 - EM BREVE!</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da CAD Sistemas">
+        <img src="../../assets/img/cad-logo.png" alt="CAD">
+      </a>
+    </div>
+  </nav>
+</header>
+
+<section class="internal-hero">
+  <div class="internal-hero-content">
+    <span class="internal-kicker">Aula 05 · Itens no Orçamento</span>
+    <h1>Como localizar, compreender e utilizar corretamente os itens no<br>
+        CAD ERP</h1>
+    <p>
+      O item é uma das bases do orçamento. Esta aula apresenta a lógica do catálogo da No Fire,
+      a leitura dos códigos, a diferença entre categorias, a forma correta de localizar itens no sistema
+      e os cuidados obrigatórios para que o vendedor utilize o item certo, no contexto certo, sem improviso.
+    </p>
+  </div>
+</section>
+
+<main class="module-content">
+  <div class="module-shell">
+
+    <section class="module-block">
+      <h2>Objetivo da aula</h2>
+      <p>
+        Orientar o usuário comercial quanto à lógica dos itens no CAD ERP, com foco em leitura do catálogo,
+        compreensão dos códigos, reconhecimento das categorias, localização correta dos itens existentes
+        e uso consistente desses itens na montagem do orçamento.
+      </p>
+      <p class="module-highlight">
+        Esta aula não existe para ensinar o vendedor a cadastrar itens. Ela existe para garantir
+        que o vendedor saiba utilizar corretamente o catálogo já estruturado.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Por que os itens são críticos na operação</h2>
+      <p>
+        O item não é apenas “uma linha” dentro do orçamento. Ele é a unidade estrutural da proposta comercial.
+        Sempre que um item é lançado, o sistema utiliza seu cadastro para compor descrição, comportamento comercial,
+        organização documental e apresentação final do orçamento.
+      </p>
+      <p>
+        Isso significa que um item selecionado incorretamente compromete o orçamento como um todo,
+        ainda que o restante da operação esteja correto.
+      </p>
+      <ul>
+        <li>Impacta a descrição apresentada ao cliente</li>
+        <li>Impacta a coerência técnica e comercial do documento</li>
+        <li>Impacta a organização por grupos de impressão</li>
+        <li>Impacta o preço e a leitura do orçamento</li>
+        <li>Impacta a rastreabilidade da operação</li>
+      </ul>
+      <p class="module-highlight">
+        Cliente mal cadastrado bagunça a base. Item mal utilizado bagunça o orçamento.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>O papel do vendedor em relação aos itens</h2>
+      <p>
+        O vendedor deve compreender os itens, localizar os itens corretos e utilizar os itens com critério.
+        Ele não deve criar solução estrutural por conta própria dentro do sistema.
+      </p>
+      <p>
+        A governança do catálogo de itens deve permanecer concentrada em 
+        <span style="font-style: italic"> key users </span> autorizados.
+        Isso é necessário para preservar coerência, evitar duplicidade, impedir códigos conflitantes
+        e manter o catálogo utilizável ao longo do tempo.
+      </p>
+      <ul>
+        <li>O vendedor usa o catálogo</li>
+        <li>O vendedor valida o item antes de lançar</li>
+        <li>O vendedor identifica inconsistências</li>
+        <li>O vendedor escala dúvidas estruturais</li>
+        <li>O vendedor não improvisa cadastro</li>
+      </ul>
+      <p class="module-highlight">
+        O catálogo deve ser controlado por poucos. O uso do catálogo deve ser dominado por todos.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>O que é um item no CAD ERP</h2>
+      <p>
+        No CAD ERP, item é qualquer elemento que pode compor um orçamento. Isso inclui produtos,
+        serviços, componentes, acessórios, materiais, equipamentos, peças e demais elementos
+        comercializáveis ou utilizáveis pela No Fire em sua operação.
+      </p>
+      <p>
+        Em termos práticos, o item é a menor unidade de composição do orçamento.
+        É por meio dele que o sistema organiza o conteúdo comercial do documento.
+      </p>
+      <ul>
+        <li>Sem item, não existe composição comercial</li>
+        <li>Sem item correto, não existe orçamento consistente</li>
+        <li>Sem catálogo estruturado, não existe padronização sustentável</li>
+      </ul>
+      <p class="module-highlight">
+        O orçamento é construído por itens. Se o item estiver errado, o orçamento também estará.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Produto e serviço: diferença operacional obrigatória</h2>
+
+      <h3>Produto</h3>
+      <p>
+        É todo item físico utilizado, vendido, substituído, fornecido ou incorporado ao processo.
+        Exemplos: extintores, mangueiras, conexões, acessórios, peças, sinalização, luminárias,
+        componentes elétricos, ferramentas e materiais.
+      </p>
+
+      <h3>Serviço</h3>
+      <p>
+        É toda atividade executada pela No Fire, como manutenção, instalação, inspeção,
+        teste, adequação, laudo, documentação, visita técnica e demais rotinas operacionais e comerciais.
+      </p>
+
+      <p>
+        No orçamento, essa diferença importa. Produto e serviço têm natureza diferente,
+        leitura diferente e impacto diferente na composição comercial.
+      </p>
+
+      <p class="module-highlight">
+        Um dos erros clássicos de operação é tratar serviço como produto ou produto como serviço.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Como a lógica dos códigos ajuda o vendedor</h2>
+      <p>
+        O vendedor não precisa dominar a engenharia completa do cadastro, mas precisa entender
+        a lógica dos códigos. Isso reduz erro, acelera localização, melhora leitura do catálogo
+        e ajuda na identificação de incoerências.
+      </p>
+      <p>
+        O código funciona como referência operacional. Quando o usuário se acostuma com a lógica,
+        ele passa a reconhecer mais rapidamente o tipo de item que está utilizando.
+      </p>
+      <ul>
+        <li>Ajuda a localizar itens com mais precisão</li>
+        <li>Ajuda a distinguir categorias parecidas</li>
+        <li>Ajuda a reduzir escolha por aproximação</li>
+        <li>Ajuda a identificar cadastro incoerente</li>
+        <li>Ajuda a construir repertório operacional</li>
+      </ul>
+      <p class="module-highlight">
+        O código não é enfeite de cadastro. Ele é instrumento de organização e leitura operacional.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Lógica geral dos códigos de item</h2>
+      <p>
+        O catálogo foi estruturado com códigos curtos, padronizados e lógicos, para permitir
+        identificação rápida das categorias no sistema. Para o vendedor, o mais importante
+        é compreender o início da lógica e associar o item à família correta.
+      </p>
+
+      <p>
+        Em termos práticos, o código ajuda o usuário a perceber se está lidando com:
+      </p>
+
+      <ul>
+        <li>produto ou serviço</li>
+        <li>categoria técnica correta</li>
+        <li>item coerente com o cenário do orçamento</li>
+        <li>item compatível com o contexto comercial em montagem</li>
+      </ul>
+
+      <p class="module-highlight">
+        O vendedor não precisa decorar tudo no primeiro dia. Mas precisa entender a lógica e se acostumar com ela.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Categorias de item e seus códigos de referência</h2>
+      <p>
+        Abaixo está a lógica operacional das principais categorias do catálogo. Essa referência deve ser utilizada
+        pelo vendedor como apoio de leitura, busca e validação do item correto no orçamento.
+      </p>
+
+      <h3>Extintores e itens relacionados</h3>
+      <ul>
+        <li>EXT — Extintores — código de referência: PE</li>
+        <li>EXS — Serviços em Extintores — código de referência: SE</li>
+        <li>EXC — Componentes de Extintores — categoria de referência: PEC</li>
+        <li>EXA — Acessórios de Extintores — código de referência: PEA</li>
+      </ul>
+
+      <h3>Sistemas hidráulicos e combate a incêndio</h3>
+      <ul>
+        <li>HID — Hidrantes — código de referência: PH</li>
+        <li>BOM — Bombas de Incêndio — código de referência: PB</li>
+        <li>SPK — Sistema de Sprinklers — código de referência: PS</li>
+        <li>CON — Conexões Hidráulicas — código de referência: PX</li>
+        <li>TUB — Tubulações — código de referência: PT</li>
+      </ul>
+
+      <h3>Sistemas e equipamentos complementares</h3>
+      <ul>
+        <li>ALA — Alarme de Incêndio — código de referência: PA</li>
+        <li>SIN — Sinalização de Emergência — código de referência: PS</li>
+        <li>VEN — Ventilação — código de referência: PV</li>
+        <li>ILU — Iluminação — código de referência: PI</li>
+        <li>PCF — Porta Corta Fogo — código de referência: PP</li>
+      </ul>
+
+      <h3>Apoio, materiais e infraestrutura</h3>
+      <ul>
+        <li>FIX — Fixação — código de referência: PF</li>
+        <li>ELE — Elétrica — código de referência: PL</li>
+        <li>QUI — Químicos — código de referência: PQ</li>
+        <li>FER — Ferramentas — código de referência: PR</li>
+        <li>MAT — Materiais de Construção — código de referência: PM</li>
+        <li>MAQ — Maquinário — código de referência: PN</li>
+        <li>EPI — Equipamentos de Proteção Individual — código de referência: PY</li>
+      </ul>
+
+      <h3>Serviços e documentação</h3>
+      <ul>
+        <li>DOC — Documentações e Laudos — código de referência: D</li>
+        <li>SER — Serviços No Fire — código de referência: S</li>
+      </ul>
+
+      <p class="module-highlight">
+        Para o vendedor, categoria serve para reconhecer, localizar e validar. A governança estrutural continua concentrada.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Como ler um item na prática</h2>
+      <p>
+        O item não deve ser lido apenas pelo nome. O vendedor deve observar o conjunto mínimo
+        de informações que dá segurança para o uso daquele item no orçamento.
+      </p>
+
+      <h3>Código</h3>
+      <p>
+        Ajuda a identificar a família do item e a distinguir itens parecidos.
+      </p>
+
+      <h3>Descrição</h3>
+      <p>
+        Deve corresponder exatamente ao que será utilizado ou vendido.
+        Descrição genérica, ambígua ou “parecida” não é base segura para orçamento.
+      </p>
+
+      <h3>Categoria</h3>
+      <p>
+        Indica a família operacional à qual o item pertence.
+        Ajuda a validar se o item faz sentido naquele contexto.
+      </p>
+
+      <h3>Natureza do item</h3>
+      <p>
+        O usuário deve perceber se está lidando com produto, serviço, acessório, componente ou documentação.
+      </p>
+
+      <h3>Comportamento no orçamento</h3>
+      <p>
+        O item leva consigo preço, lógica comercial e organização documental.
+      </p>
+
+      <p class="module-highlight">
+        Escolher item por “parecer certo” é erro. Item deve ser escolhido por coerência.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Como localizar o item corretamente</h2>
+      <p>
+        A localização do item deve ser feita com critério. O vendedor não pode atuar por aproximação,
+        porque itens parecidos podem ter aplicações, naturezas ou comportamentos diferentes.
+      </p>
+
+      <h3>Boas práticas de busca</h3>
+      <ul>
+        <li>Buscar primeiro pelo item já existente no catálogo</li>
+        <li>Observar a lógica do código quando houver familiaridade suficiente</li>
+        <li>Conferir se a categoria faz sentido para o contexto</li>
+        <li>Comparar itens parecidos antes de lançar</li>
+      </ul>
+
+      <h3>O que não fazer</h3>
+      <ul>
+        <li>Escolher apenas pelo primeiro nome parecido que aparecer</li>
+        <li>Assumir equivalência entre itens sem validar</li>
+        <li>Ignorar código e categoria</li>
+        <li>Lançar item “só para seguir” e corrigir depois</li>
+      </ul>
+
+      <p class="module-highlight">
+        Item parecido não é item correto.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Validação mínima antes de lançar um item</h2>
+      <p>
+        Antes de inserir o item no orçamento, o vendedor deve fazer uma conferência mínima.
+        Essa validação não é burocracia. É proteção contra erro acumulado.
+      </p>
+
+      <ul>
+        <li>A descrição corresponde exatamente ao que deve compor o orçamento?</li>
+        <li>A categoria do item faz sentido para o caso?</li>
+        <li>O item é produto ou serviço?</li>
+        <li>O item parece coerente com o cenário comercial em montagem?</li>
+        <li>Há outro item semelhante que deva ser comparado antes da escolha?</li>
+      </ul>
+
+      <p class="module-highlight">
+        Lançar item sem validar é o mesmo tipo de erro que cadastrar cliente sem pesquisar.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Como o item impacta o orçamento e o documento final</h2>
+      <p>
+        Quando um item entra no orçamento, ele não leva apenas uma descrição.
+        Ele leva o comportamento cadastral que já está associado a ele no sistema.
+      </p>
+
+      <ul>
+        <li>Descrição do item no documento</li>
+        <li>Preço conforme a lógica comercial aplicada</li>
+        <li>Enquadramento dentro da organização do orçamento</li>
+        <li>Posicionamento por grupo de impressão</li>
+        <li>Reflexo nos totais e na leitura do orçamento</li>
+      </ul>
+
+      <p>
+        Por isso, o item errado não gera somente erro de conteúdo. Pode gerar erro documental,
+        erro comercial, erro de leitura e retrabalho.
+      </p>
+
+      <p class="module-highlight">
+        O item é uma chave estrutural do orçamento. Não pode ser tratado como detalhe.
+      </p>
+    </section>
+
+<section class="module-block">
+  <h2>Grupo de impressão: atenção obrigatória</h2>
+  <p>
+    O grupo de impressão determina como o item será organizado no documento final.
+    Ele influencia diretamente a leitura da proposta, a coerência da apresentação comercial
+    e a forma como as informações serão agrupadas no orçamento emitido.
+  </p>
+
+  <p>
+    No entanto, é importante compreender que nem todas as categorias de itens já possuem
+    grupo de impressão previamente definido no cadastro.
+  </p>
+
+  <h3>Categorias com grupo de impressão previamente vinculado</h3>
+  <ul>
+    <li>EXS — Serviços em Extintores</li>
+    <li>EXC — Componentes de Extintores</li>
+    <li>HID — Hidrantes</li>
+  </ul>
+
+  <p>
+    Nessas categorias, o grupo de impressão já faz parte da lógica cadastral do item
+    e influencia diretamente a forma como ele será apresentado no documento final.
+  </p>
+
+  <h3>Itens sem grupo de impressão previamente definido</h3>
+  <p>
+    Para as demais categorias, o grupo de impressão não estará necessariamente pré-vinculado no cadastro.
+    Nesses casos, a vinculação será feita no momento da emissão do orçamento,
+    de acordo com o cenário específico daquela venda.
+  </p>
+
+  <p>
+    Isso significa que o mesmo item pode exigir enquadramento documental diferente,
+    dependendo do contexto comercial em que estiver sendo utilizado.
+  </p>
+
+  <ul>
+    <li>O item pode estar correto, mas ainda exigir definição documental no orçamento</li>
+    <li>O contexto da venda influencia a forma como o item será apresentado</li>
+    <li>A organização final do documento depende da aplicação correta dessa lógica</li>
+  </ul>
+
+  <p class="module-highlight">
+    Item correto em grupo errado continua sendo erro. E item sem definição documental adequada
+    no orçamento também compromete o resultado final.
+  </p>
+
+  <p>
+    Este tema será aprofundado nas próximas aulas, quando forem tratados com mais detalhe
+    os cenários de orçamento, a composição documental e a lógica prática de emissão das propostas.
+  </p>
+</section>
+
+    <section class="module-block">
+      <h2>Quando o vendedor deve escalar para <span style="font-style: italic;">key user</span></h2>
+      <p>
+        Sempre que houver dúvida estrutural, a conduta correta é escalar. O vendedor não deve improvisar
+        solução cadastral dentro do sistema.
+      </p>
+
+      <h3>Exemplos de escalonamento obrigatório</h3>
+      <ul>
+        <li>Item necessário não foi encontrado no catálogo</li>
+        <li>Existem dois ou mais itens muito parecidos e não está claro qual é o correto</li>
+        <li>A descrição do item parece ruim, ambígua ou insuficiente</li>
+        <li>A categoria parece incoerente com o item</li>
+        <li>O comportamento documental do item parece inadequado</li>
+        <li>O item parece mal posicionado ou mal estruturado dentro do catálogo</li>
+      </ul>
+
+      <p class="module-highlight">
+        Dúvida estrutural não se resolve no improviso. Se resolve por escalonamento.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Erros mais comuns ligados aos itens</h2>
+      <ul>
+        <li>Escolher item apenas pelo nome</li>
+        <li>Usar item parecido em vez do item correto</li>
+        <li>Ignorar a lógica dos códigos</li>
+        <li>Não perceber a diferença entre produto e serviço</li>
+        <li>Desconsiderar categoria e contexto</li>
+        <li>Assumir que o sistema “organiza sozinho” o resultado</li>
+        <li>Tentar resolver ausência de item de forma improvisada</li>
+      </ul>
+
+      <p>
+        Esses erros muitas vezes passam despercebidos no momento da digitação,
+        mas aparecem depois no orçamento, na proposta, no entendimento do cliente
+        e na perda de controle da operação.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Boas práticas operacionais para uso dos itens</h2>
+      <ul>
+        <li>Buscar o item com atenção e critério</li>
+        <li>Observar a lógica do código sempre que possível</li>
+        <li>Conferir a descrição antes de lançar</li>
+        <li>Associar categoria ao contexto comercial</li>
+        <li>Distinguir corretamente produto e serviço</li>
+        <li>Escalar inconsistências em vez de improvisar solução</li>
+      </ul>
+
+      <p class="module-highlight">
+        O bom operador não é o que “dá um jeito”. É o que mantém a operação íntegra.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Resultado esperado desta aula</h2>
+      <p>
+        Ao final desta aula, o usuário deve ser capaz de:
+      </p>
+      <ul>
+        <li>compreender o papel estrutural do item dentro do orçamento;</li>
+        <li>distinguir produto e serviço em termos operacionais;</li>
+        <li>reconhecer a lógica geral das categorias do catálogo;</li>
+        <li>utilizar os códigos como apoio de leitura e busca;</li>
+        <li>localizar o item correto com mais precisão;</li>
+        <li>identificar quando deve escalar uma dúvida estrutural ao key user.</li>
+      </ul>
+    </section>
+
+    <section class="module-block">
+      <h2>Próximo passo</h2>
+      <p>
+        Compreendida a lógica dos itens, o próximo passo é aplicar essa base na montagem do orçamento:
+        cliente, tabela, itens, estrutura documental e conferência da proposta antes da emissão.
+      </p>
+
+      <div class="module-nav">
+        <a class="module-link" href="./a04-clientes.html">Voltar para Aula 04</a>
+        <a class="module-link" href="#">Avançar para Aula 06 - EM BREVE!</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-left"><span id="footer-year"></span> © ConnectOps | V.1.0</div>
+
+  <div class="footer-center">
+    <a href="https://www.connectops.com.br" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da ConnectOps">
+      <img src="../../assets/img/connectops-logo.png" alt="Logomarca ConnectOps">
+    </a>
+  </div>
+
+  <div class="footer-right">
+    Dúvidas e suporte:
+    <a href="mailto:nofire@connectops.com.br">nofire@connectops.com.br</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
