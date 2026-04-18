@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aula 03 | Estrutura Comercial no ERP | No Fire</title>
+  <meta name="description" content="Aula 03 - Estrutura Comercial no ERP - Portal de Treinamentos No Fire - CAD ERP">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../assets/img/favicon/favicon.ico" type="image/png">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="https://www.nofire.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da No Fire">
+        <img src="../../assets/img/nofire-logo.png" alt="No Fire">
+      </a>
+    </div>
+
+    <div class="nav-center">
+      <a href="../../index.html">Início</a> |
+      <a href="./a02-fundamentos.html">Aula 02</a> |
+      <a href="./a04-clientes.html">Aula 04</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da CAD Sistemas">
+        <img src="../../assets/img/cad-logo.png" alt="CAD">
+      </a>
+    </div>
+  </nav>
+</header>
+
+<section class="internal-hero">
+  <div class="internal-hero-content">
+    <span class="internal-kicker">Aula 03 · Estrutura Comercial no ERP</span>
+    <h1>Como a lógica comercial da No Fire se organiza dentro do CAD ERP</h1>
+    <p>
+      Antes de cadastrar clientes, selecionar itens ou emitir propostas, o usuário precisa compreender
+      a estrutura comercial do sistema. Esta aula apresenta os elementos que compõem a operação comercial
+      no CAD ERP e como eles se relacionam entre si no contexto da No Fire.
+    </p>
+  </div>
+</section>
+
+<main class="module-content">
+  <div class="module-shell">
+
+    <section class="module-block">
+      <h2>Objetivo da aula</h2>
+
+      <p>
+        Apresentar a estrutura comercial utilizada no CAD ERP dentro da operação da No Fire,
+        explicando como os elementos do sistema se organizam para formar um orçamento e gerar
+        um documento comercial consistente.
+      </p>
+
+      <p class="module-highlight">
+        Esta aula define como o sistema deve ser utilizado na prática. Sem esse entendimento,
+        a operação se torna inconsistente.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Visão geral da estrutura comercial</h2>
+
+      <p>
+        A operação comercial dentro do sistema é construída a partir de uma estrutura definida.
+        Cada orçamento segue uma lógica composta por elementos que se relacionam entre si.
+      </p>
+
+      <ul>
+        <li>Orçamento (base do documento)</li>
+        <li>Tipo de proposta (define o cenário comercial)</li>
+        <li>Tabela de preço (define a modalidade)</li>
+        <li>Itens (conteúdo do orçamento)</li>
+        <li>Grupos de impressão (organização documental)</li>
+      </ul>
+
+      <p class="module-highlight">
+        Esses elementos, juntos, definem o resultado final do documento emitido.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>O que é um orçamento</h2>
+
+      <p>
+        O orçamento é o documento base da operação comercial dentro do sistema.
+        É nele que todas as informações são estruturadas antes da geração da proposta.
+      </p>
+
+      <p>
+        Dentro do orçamento são definidos:
+      </p>
+
+      <ul>
+        <li>o cliente</li>
+        <li>o tipo de proposta</li>
+        <li>a tabela de preço</li>
+        <li>os itens</li>
+        <li>a organização documental</li>
+      </ul>
+
+      <p class="module-highlight">
+        O orçamento não é apenas uma lista de itens. Ele é a estrutura completa da proposta.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Tipo de proposta (cenário comercial)</h2>
+
+      <p>
+        O tipo de proposta define o cenário comercial do orçamento.
+        Ele indica qual é o contexto da operação que está sendo realizada.
+      </p>
+
+      <p>
+        A operação da No Fire considera os seguintes cenários:
+      </p>
+
+      <ul>
+        <li>Equipamentos novos</li>
+        <li>Manutenção T100</li>
+        <li>Manutenção T200</li>
+        <li>Base de troca</li>
+        <li>Engenharia</li>
+        <li>Fax-peça</li>
+      </ul>
+
+      <p>
+        Cada cenário representa uma situação real de operação e influencia
+        diretamente a forma como o orçamento deve ser montado.
+      </p>
+
+      <p class="module-highlight">
+        O tipo de proposta não é apenas informativo. Ele define o contexto comercial do documento.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Tabela de preço (modalidade comercial)</h2>
+
+      <p>
+        A tabela de preço define a modalidade comercial aplicada ao orçamento.
+      </p>
+
+      <p>
+        No contexto da No Fire, existem duas modalidades principais:
+      </p>
+
+      <h3>T100 — modalidade completa</h3>
+      <p>
+        Inclui serviços, componentes e substituições dentro do valor inicial.
+        Não há cobrança adicional ao cliente durante a execução.
+      </p>
+
+      <h3>T200 — modalidade complementar</h3>
+      <p>
+        Parte de um valor inicial menor e permite a inclusão de cobranças adicionais
+        conforme necessidades identificadas durante o processo.
+      </p>
+
+      <p class="module-highlight">
+        Regra obrigatória: todos os itens do orçamento devem respeitar a mesma tabela definida no cabeçalho.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Itens (conteúdo do orçamento)</h2>
+
+      <p>
+        Os itens representam os produtos, serviços ou componentes que compõem o orçamento.
+      </p>
+
+      <p>
+        Todos os itens pertencem a um catálogo estruturado e padronizado.
+        Isso significa que a escolha correta do item é parte da qualidade da operação.
+      </p>
+
+      <ul>
+        <li>Item correto → orçamento consistente</li>
+        <li>Item incorreto → documento comprometido</li>
+        <li>Item improvisado → quebra de padrão</li>
+      </ul>
+    </section>
+
+    <section class="module-block">
+      <h2>Grupos de impressão (estrutura documental)</h2>
+
+      <p>
+        Os grupos de impressão organizam a forma como os itens aparecem no documento final.
+      </p>
+
+      <p>
+        Eles são responsáveis por separar e estruturar as informações conforme a lógica operacional,
+        agrupando conteúdos como serviços, peças, adequações e observações técnicas.
+      </p>
+
+      <p>
+        Os grupos já possuem textos definidos e fazem parte da padronização documental da empresa.
+      </p>
+
+      <p class="module-highlight">
+        Mesmo com itens corretos, um grupo de impressão incorreto gera um documento incoerente.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Proposta e fax-peça</h2>
+
+      <h3>Proposta</h3>
+      <p>
+        É o documento principal da operação comercial.
+        Representa a oferta inicial ao cliente, contendo os serviços e/ou equipamentos definidos no orçamento.
+      </p>
+
+      <h3>Fax-peça</h3>
+      <p>
+        É o documento complementar, utilizado quando surgem necessidades adicionais
+        após a execução inicial ou durante o processo operacional.
+      </p>
+
+      <p>
+        O fax-peça está vinculado a uma proposta anterior e complementa o que foi previamente apresentado.
+      </p>
+
+      <p class="module-highlight">
+        Proposta inicia a relação comercial. Fax-peça complementa o que foi identificado posteriormente.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Como tudo se conecta</h2>
+
+      <p>
+        A estrutura comercial funciona como uma sequência lógica:
+      </p>
+
+      <ul>
+        <li>o tipo de proposta define o cenário</li>
+        <li>a tabela define a modalidade</li>
+        <li>os itens constroem o conteúdo</li>
+        <li>os grupos organizam a apresentação</li>
+        <li>o sistema gera o documento final</li>
+      </ul>
+
+      <p class="module-highlight">
+        Alterar qualquer um desses elementos sem critério compromete o resultado do orçamento.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Erros que começam aqui</h2>
+
+      <ul>
+        <li>Escolher tipo de proposta sem entender o cenário</li>
+        <li>Utilizar tabela incorreta</li>
+        <li>Selecionar item por aproximação</li>
+        <li>Ignorar grupo de impressão</li>
+        <li>Confundir proposta com fax-peça</li>
+      </ul>
+
+      <p>
+        Esses erros não aparecem imediatamente. Eles aparecem no documento final,
+        na análise comercial e na perda de controle operacional.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Resultado esperado desta aula</h2>
+
+      <p>
+        Ao final desta aula, o usuário deve compreender como a estrutura comercial do sistema funciona
+        e como cada elemento influencia o orçamento e o documento gerado.
+      </p>
+
+      <p class="module-highlight">
+        A partir deste ponto, a operação deixa de ser tentativa e passa a ser execução consciente.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Próximo passo</h2>
+
+      <p>
+        Com a estrutura comercial compreendida, o próximo passo é trabalhar a base de dados da operação:
+        o cadastro de clientes.
+      </p>
+
+      <div class="module-nav">
+        <a class="module-link" href="./a02-fundamentos.html">Voltar para Aula 02</a>
+        <a class="module-link" href="./a04-clientes.html">Avançar para Aula 04</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-left"><span id="footer-year"></span> © ConnectOps | V.1.0</div>
+
+  <div class="footer-center">
+    <a href="https://www.connectops.com.br" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da ConnectOps">
+      <img src="../../assets/img/connectops-logo.png" alt="Logomarca ConnectOps">
+    </a>
+  </div>
+
+  <div class="footer-right">
+    Dúvidas e suporte:
+    <a href="mailto:nofire@connectops.com.br">nofire@connectops.com.br</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

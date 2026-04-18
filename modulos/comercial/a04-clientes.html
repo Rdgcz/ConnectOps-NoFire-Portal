@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aula 04 | Cadastro de Clientes | No Fire</title>
+  <meta name="description" content="Aula 04 - Cadastro de Clientes - Portal de Treinamentos No Fire - CAD ERP">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../assets/img/favicon/favicon.ico" type="image/png">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="https://www.nofire.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da No Fire">
+        <img src="../../assets/img/nofire-logo.png" alt="No Fire">
+      </a>
+    </div>
+
+    <div class="nav-center">
+      <a href="../../index.html">Início</a> |
+      <a href="./a03-estrutura-comercial.html">Aula 03</a> |
+      <a href="./a05-itens.html">Aula 05</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da CAD Sistemas">
+        <img src="../../assets/img/cad-logo.png" alt="CAD">
+      </a>
+    </div>
+  </nav>
+</header>
+
+<section class="internal-hero">
+  <div class="internal-hero-content">
+    <span class="internal-kicker">Aula 04 · Cadastro de Clientes</span>
+    <h1>Como cadastrar clientes corretamente e proteger a integridade da base</h1>
+    <p>
+      O cadastro de clientes é uma das fundações da operação no CAD ERP. Esta aula apresenta o fluxo de acesso,
+      os cuidados obrigatórios antes de incluir um novo cliente, o padrão mínimo de preenchimento e os riscos
+      operacionais de um cadastro mal feito.
+    </p>
+  </div>
+</section>
+
+<main class="module-content">
+  <div class="module-shell">
+
+    <section class="module-block">
+      <h2>Objetivo da aula</h2>
+      <p>
+        Orientar o usuário quanto ao acesso, à consulta, à inclusão e à atualização de clientes no CAD ERP,
+        estabelecendo um padrão operacional mínimo para proteger a consistência da base cadastral da No Fire.
+      </p>
+      <p class="module-highlight">
+        Cadastro de cliente não é tarefa administrativa simples. É base estrutural da operação.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Por que o cadastro de clientes é crítico</h2>
+      <p>
+        O cadastro do cliente não serve apenas para “abrir um orçamento”. Ele influencia toda a cadeia operacional
+        da empresa. Um cadastro incorreto, incompleto ou duplicado compromete a confiabilidade das informações
+        e gera problemas que se espalham para outras etapas do processo.
+      </p>
+      <p>
+        A base de clientes será utilizada, de forma direta ou indireta, por múltiplos setores da empresa.
+        Por isso, o padrão de preenchimento não é opcional.
+      </p>
+      <ul>
+        <li>Impacta a emissão e organização de orçamentos</li>
+        <li>Impacta a rastreabilidade do histórico comercial</li>
+        <li>Impacta processos financeiros, fiscais e operacionais</li>
+        <li>Impacta futuras consultas, filtros e relatórios</li>
+      </ul>
+      <p class="module-highlight">
+        Um cliente mal cadastrado não gera um erro localizado. Gera desorganização sistêmica.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Acesso ao cadastro de clientes</h2>
+      <p>
+        O acesso ao cadastro de clientes é feito a partir do ambiente principal do sistema, utilizando os botões
+        de cadastro disponíveis no menu superior.
+      </p>
+
+      <h3>Menu principal do sistema</h3>
+      <div class="module-image">
+        <img src="../../assets/img/aulas/comercial/a04/menu-caderp.webp" alt="Menu principal do CAD ERP">
+      </div>
+      <p class="module-caption">
+        Ambiente principal do sistema CAD ERP, com destaque para a área de acesso aos cadastros.
+      </p>
+
+      <p>
+        A partir do menu principal, o usuário acessa o filtro de clientes, que funciona como ponto de entrada
+        para pesquisa, inclusão e alteração cadastral.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Filtro de clientes: o ponto de partida obrigatório</h2>
+      <p>
+        O filtro de clientes é a primeira tela que deve ser utilizada antes de qualquer inclusão.
+        Ele existe para permitir a localização de clientes já cadastrados e evitar duplicidade de registros.
+      </p>
+
+      <h3>Tela de filtro de clientes</h3>
+      <div class="module-image">
+        <img src="../../assets/img/aulas/comercial/a04/filtro-clientes-caderp.webp" alt="Filtro de clientes do CAD ERP">
+      </div>
+      <p class="module-caption">
+        Tela de filtro de clientes, com campos de busca e botões de inclusão, alteração, impressão e saída.
+      </p>
+
+      <p>
+        Nessa tela, o usuário pode:
+      </p>
+      <ul>
+        <li>Pesquisar clientes já existentes</li>
+        <li>Filtrar por código, razão social, nome fantasia, CNPJ, cidade, vendedor e outros critérios</li>
+        <li>Abrir um cadastro existente para conferência ou alteração</li>
+        <li>Iniciar a inclusão de um novo cliente</li>
+      </ul>
+
+      <p class="module-highlight">
+        Regra obrigatória: nunca iniciar um novo cadastro sem antes pesquisar o cliente no filtro.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Regra crítica: não pode haver cadastro duplicado</h2>
+      <p>
+        O sistema permite cadastro duplicado. Mesmo quando já existe um CNPJ vinculado a outro cliente,
+        o sistema pode apenas alertar e ainda assim permitir a continuidade da inclusão.
+      </p>
+
+      <p>
+        Isso significa que o controle de duplicidade não será garantido automaticamente pelo sistema.
+        Ele depende do comportamento do usuário.
+      </p>
+
+      <p class="module-highlight">
+        Regra operacional da No Fire: é proibido cadastrar clientes duplicados.
+      </p>
+
+      <h3>Procedimento obrigatório antes de incluir</h3>
+      <ul>
+        <li>Pesquisar por CNPJ ou CPF</li>
+        <li>Pesquisar por razão social</li>
+        <li>Pesquisar por nome fantasia, quando aplicável</li>
+        <li>Em caso de dúvida, validar antes de criar um novo registro</li>
+      </ul>
+
+      <h3>Por que isso importa</h3>
+      <ul>
+        <li>Evita histórico comercial fragmentado</li>
+        <li>Evita orçamentos espalhados em registros diferentes</li>
+        <li>Evita problemas financeiros e fiscais futuros</li>
+        <li>Evita confusão operacional na consulta do cliente</li>
+      </ul>
+    </section>
+
+    <section class="module-block">
+      <h2>Inclusão e alteração de cadastro</h2>
+      <p>
+        A partir da tela de filtro, o usuário poderá optar por incluir um novo cliente ou alterar um cadastro já existente.
+        Essas duas ações exigem o mesmo nível de cuidado, porque ambas impactam diretamente a integridade da base.
+      </p>
+
+      <p>
+        Incluir um novo cliente sem pesquisar antes é erro. Alterar o cliente errado também é erro.
+        Em ambos os casos, o problema não aparece apenas na tela: ele contamina a operação.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Tela de cadastro — visão geral</h2>
+      <p>
+        A tela de cadastro reúne os dados principais do cliente em blocos distintos. O usuário deve entender
+        que nem todo campo tem o mesmo peso operacional, mas alguns são críticos na prática e precisam de atenção obrigatória.
+      </p>
+
+      <h3>Cadastro de clientes — bloco principal</h3>
+      <div class="module-image">
+        <img src="../../assets/img/aulas/comercial/a04/cadastro-clientes-1-caderp.webp" alt="Tela de cadastro de clientes - parte 1">
+      </div>
+      <p class="module-caption">
+        Primeira parte da tela de cadastro, com dados principais, localização, contatos e classificação básica.
+      </p>
+
+      <h3>Cadastro de clientes — bloco complementar</h3>
+      <div class="module-image">
+        <img src="../../assets/img/aulas/comercial/a04/cadastro-clientes-2-caderp.webp" alt="Tela de cadastro de clientes - parte 2">
+      </div>
+      <p class="module-caption">
+        Segunda parte da tela de cadastro, com condições comerciais, observações, bloqueios e informações adicionais.
+      </p>
+
+      <h3>Cadastro de clientes — visão adicional</h3>
+      <div class="module-image">
+        <img src="../../assets/img/aulas/comercial/a04/cadastro-clientes-3-caderp.webp" alt="Tela de cadastro de clientes - parte 3">
+      </div>
+      <p class="module-caption">
+        Visão complementar do cadastro, incluindo áreas de observação, bloqueio e rastreabilidade de criação/alteração.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Campos principais: o que merece atenção obrigatória</h2>
+
+      <h3>Razão Social</h3>
+      <p>
+        Deve ser preenchida com o nome completo do cliente, sem improvisos, sem apelidos e sem abreviações desnecessárias.
+        É um campo de referência principal da base.
+      </p>
+
+      <h3>Nome Fantasia</h3>
+      <p>
+        Deve ser preenchido quando houver aplicação prática. Ajuda na localização do cliente e evita confusões
+        em empresas conhecidas comercialmente por nome diferente da razão social.
+      </p>
+
+      <h3>CNPJ / CPF</h3>
+      <p>
+        É campo crítico. O sistema valida a estrutura da informação, mas isso não elimina o risco de preenchimento
+        coerente na forma e incorreto no conteúdo. O usuário deve conferir antes de salvar.
+      </p>
+
+      <h3>Endereço, Cidade e UF</h3>
+      <p>
+        Devem ser preenchidos com atenção. São informações estruturais de localização e não devem ser tratadas
+        como secundárias.
+      </p>
+
+      <h3>Contatos</h3>
+      <p>
+        Telefones, celular, e-mail e contato responsável devem ser preenchidos sempre que disponíveis.
+        Cadastro sem contato enfraquece a utilidade operacional do registro.
+      </p>
+
+      <p class="module-highlight">
+        Na prática, um cadastro não é considerado bom apenas porque “foi salvo”. Ele precisa estar utilizável.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Validação do CNPJ/CPF: cuidado com falsa segurança</h2>
+      <p>
+        O sistema possui validação estrutural para CNPJ/CPF e não permite determinadas entradas incorretas.
+        Isso é positivo, mas não pode gerar falsa sensação de segurança.
+      </p>
+      <p>
+        Se a informação seguir uma lógica formal aceitável, mesmo que não represente um dado real confiável,
+        o sistema pode aceitar o registro. Além disso, a duplicidade continua possível.
+      </p>
+      <p class="module-highlight">
+        O sistema ajuda, mas não substitui a conferência humana.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Padrão mínimo de preenchimento</h2>
+      <p>
+        Como base inicial de operação, adota-se o seguinte padrão mínimo para cadastro de clientes:
+      </p>
+      <ul>
+        <li>Utilizar caixa alta, seguindo o padrão visual do sistema</li>
+        <li>Não usar abreviações sem necessidade</li>
+        <li>Não preencher campos com “lixo operacional” ou observações aleatórias</li>
+        <li>Manter coerência entre razão social, nome fantasia e documento</li>
+        <li>Preencher contatos sempre que a informação estiver disponível</li>
+        <li>Não deixar campos críticos em branco por pressa</li>
+      </ul>
+
+      <p class="module-highlight">
+        Padrão não existe para “deixar bonito”. Existe para permitir consulta, leitura, conferência e continuidade operacional.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Observações e campos adicionais</h2>
+      <p>
+        A tela possui campos adicionais de observação, contato, bloqueio e dados complementares.
+        Esses campos não devem ser usados como “depósito de informação solta”.
+      </p>
+      <p>
+        O preenchimento de observações deve obedecer critério, objetividade e utilidade operacional.
+        Informação vaga, redundante ou mal posicionada atrapalha o uso futuro do cadastro.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Erro operacional clássico: pressa</h2>
+      <p>
+        A maior ameaça ao cadastro de clientes não é complexidade técnica. É a pressa.
+      </p>
+      <p>
+        Cadastrar sem pesquisar, preencher sem conferir, salvar sem validar ou alterar sem ter certeza
+        são comportamentos típicos de ambiente sem padrão. Este treinamento existe justamente para bloquear isso.
+      </p>
+      <ul>
+        <li>Pressa gera duplicidade</li>
+        <li>Pressa gera cadastro incompleto</li>
+        <li>Pressa gera alteração indevida</li>
+        <li>Pressa gera retrabalho futuro</li>
+      </ul>
+    </section>
+
+    <section class="module-block">
+      <h2>O que não deve acontecer</h2>
+      <ul>
+        <li>Incluir cliente sem pesquisa prévia</li>
+        <li>Ignorar alerta de possível duplicidade</li>
+        <li>Salvar cadastro com campos críticos incompletos</li>
+        <li>Preencher nomes de forma abreviada ou inconsistente</li>
+        <li>Alterar cadastro existente sem certeza de que é o registro correto</li>
+        <li>Assumir que o sistema “resolve sozinho” a consistência da base</li>
+      </ul>
+    </section>
+
+    <section class="module-block">
+      <h2>Resultado esperado desta aula</h2>
+      <p>
+        Ao final desta aula, o usuário deve ser capaz de:
+      </p>
+      <ul>
+        <li>acessar corretamente o filtro de clientes;</li>
+        <li>realizar a pesquisa antes de incluir;</li>
+        <li>compreender que duplicidade é proibida, mesmo que o sistema permita;</li>
+        <li>identificar os campos mais críticos do cadastro;</li>
+        <li>preencher o cliente com padrão mínimo e responsabilidade operacional.</li>
+      </ul>
+    </section>
+
+    <section class="module-block">
+      <h2>Próximo passo</h2>
+      <p>
+        Compreendido o cadastro de clientes, o próximo passo é avançar para a lógica de itens:
+        como localizar, reconhecer e utilizar corretamente o item certo dentro do sistema.
+      </p>
+
+      <div class="module-nav">
+        <a class="module-link" href="./a03-estrutura-comercial.html">Voltar para Aula 03</a>
+        <a class="module-link" href="./a05-itens.html">Avançar para Aula 05</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-left"><span id="footer-year"></span> © ConnectOps | V.1.0</div>
+
+  <div class="footer-center">
+    <a href="https://www.connectops.com.br" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da ConnectOps">
+      <img src="../../assets/img/connectops-logo.png" alt="Logomarca ConnectOps">
+    </a>
+  </div>
+
+  <div class="footer-right">
+    Dúvidas e suporte:
+    <a href="mailto:nofire@connectops.com.br">nofire@connectops.com.br</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
