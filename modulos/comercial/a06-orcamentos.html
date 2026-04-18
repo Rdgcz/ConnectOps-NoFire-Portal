@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aula 06 | Orçamentos (Visão Conceitual) | No Fire</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-left">
+      <img src="../../assets/img/nofire-logo.png" alt="No Fire">
+    </div>
+
+    <div class="nav-center">
+      <a href="../../index.html">Início</a> |
+      <a href="./a05-itens.html">Aula 05</a> |
+      <a href="./a07-grupos.html">Aula 07</a>
+    </div>
+
+    <div class="nav-right">
+      <img src="../../assets/img/cad-logo.png" alt="CAD">
+    </div>
+  </nav>
+</header>
+
+<section class="internal-hero">
+  <div class="internal-hero-content">
+    <span class="internal-kicker">Aula 06 · CONCEITUAL (Aguardando implementação no sistema)</span>
+    <h1>Orçamento no CAD ERP: lógica operacional antes da execução</h1>
+    <p>
+      Esta aula apresenta a lógica estrutural do orçamento na operação da No Fire.
+      O foco não é o sistema, mas sim o entendimento correto do que está sendo construído
+      antes de qualquer ação dentro da ferramenta.
+    </p>
+  </div>
+</section>
+
+<main class="module-content">
+  <div class="module-shell">
+
+    <section class="module-block">
+      <h2>O que é um orçamento na prática</h2>
+      <p>
+        O orçamento não é um documento. Ele é uma estrutura lógica que representa
+        uma decisão comercial.
+      </p>
+
+      <p>
+        Quando um orçamento é criado, o sistema passa a registrar:
+      </p>
+
+      <ul>
+        <li>Quem é o cliente</li>
+        <li>Qual é o contexto comercial</li>
+        <li>Quais itens estão sendo considerados</li>
+        <li>Qual a lógica de preço aplicada</li>
+        <li>Qual o tipo de proposta</li>
+      </ul>
+
+      <p class="module-highlight">
+        O documento é consequência. O orçamento é a estrutura.
+      </p>
+    </section>
+
+    <section class="module-block">
+  <h2>Como o orçamento deve ser entendido</h2>
+
+  <p>
+    O orçamento não deve ser tratado como um simples preenchimento de dados para geração de documento.
+  </p>
+
+  <p>
+    Ele representa a estrutura completa de uma operação comercial, organizando de forma coerente:
+  </p>
+
+  <ul>
+    <li>Quem é o cliente</li>
+    <li>Qual o contexto da venda</li>
+    <li>Quais itens estão sendo considerados</li>
+    <li>Como esses itens se relacionam</li>
+    <li>Como a informação será apresentada</li>
+  </ul>
+
+  <p>
+    O documento gerado é apenas a consequência dessa estrutura.
+  </p>
+
+  <p class="module-highlight">
+    O orçamento não é o PDF. O orçamento é a base que gera o PDF.
+  </p>
+</section>
+
+    <section class="module-block">
+      <h2>As 4 camadas do orçamento (modelo mental correto)</h2>
+
+      <p>
+        Para entender o orçamento corretamente, é necessário separar suas camadas:
+      </p>
+
+      <h3>1 — Estrutura Comercial</h3>
+      <ul>
+        <li>Cliente</li>
+        <li>Vendedor</li>
+        <li>Contexto da venda</li>
+      </ul>
+
+      <h3>2 — Classificação da proposta</h3>
+      <ul>
+        <li>Equipamento novo</li>
+        <li>Manutenção (T100 / T200)</li>
+        <li>Base de troca</li>
+        <li>Engenharia</li>
+        <li>Fax-peça</li>
+      </ul>
+
+      <h3>3 — Conteúdo (itens)</h3>
+      <ul>
+        <li>Produtos</li>
+        <li>Serviços</li>
+        <li>Componentes</li>
+      </ul>
+
+      <h3>4 — Estrutura documental</h3>
+      <ul>
+        <li>Grupos de impressão</li>
+        <li>Organização do documento</li>
+      </ul>
+
+      <p class="module-highlight">
+        O sistema não resolve isso sozinho. O usuário constrói essas camadas.
+      </p>
+    </section>
+
+    <section class="module-block">
+  <h2>Como o sistema deve ser utilizado</h2>
+
+  <p>
+    A construção correta do orçamento depende dos dados inseridos:
+  </p>
+
+  <ul>
+    <li>Tipo de proposta</li>
+    <li>Tabela de preço</li>
+    <li>Itens utilizados</li>
+    <li>Organização por grupos de impressão</li>
+  </ul>
+
+  <p>
+    Quando essas informações estão corretas, o documento final se organiza de forma coerente.
+  </p>
+
+  <p class="module-highlight">
+    O modelo de impressão apenas apresenta a informação. Ele não corrige erros do orçamento.
+  </p>
+</section>
+
+    <section class="module-block">
+      <h2>Os cenários reais da No Fire</h2>
+
+      <p>
+        A operação trabalha com cenários comerciais distintos.
+        O sistema deve refletir essa realidade.
+      </p>
+
+      <ul>
+        <li>Equipamentos novos</li>
+        <li>Manutenção T100</li>
+        <li>Manutenção T200</li>
+        <li>Base de troca</li>
+        <li>Engenharia</li>
+        <li>Fax-peça</li>
+      </ul>
+
+      <p class="module-highlight">
+        Esses cenários não são “opções do sistema”.
+        Eles são a realidade da operação.
+      </p>
+    </section>
+
+<section class="module-block">
+  <h2>Atenção crítica na emissão de propostas</h2>
+
+  <p>
+    O sistema permite a emissão de propostas sem que o orçamento esteja salvo.
+  </p>
+
+  <p>
+    Isso pode gerar uma situação onde:
+  </p>
+
+  <ul>
+    <li>O documento é enviado ao cliente</li>
+    <li>Mas não existe registro no sistema</li>
+  </ul>
+
+<p class="module-highlight">
+  Após a inserção dos itens, o orçamento deve ser salvo imediatamente.
+  O sistema permite alterações posteriores, portanto o salvamento não limita ajustes.
+  A emissão de documento sem orçamento salvo é permitida pelo sistema, mas é considerada falha operacional grave.
+</p>
+
+</section>
+
+    <section class="module-block">
+      <h2>Regra operacional obrigatória</h2>
+
+      <p>
+        Independente do sistema permitir ou não, a regra da operação é:
+      </p>
+
+      <ul>
+        <li>O orçamento deve existir no sistema</li>
+        <li>O orçamento deve estar salvo</li>
+        <li>O orçamento deve estar coerente</li>
+        <li>Só então o documento pode ser emitido</li>
+      </ul>
+
+      <p class="module-highlight">
+        Documento sem base no sistema não existe para a operação.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>O que define um orçamento bem feito</h2>
+
+      <ul>
+        <li>Cliente correto</li>
+        <li>Tipo de proposta correto</li>
+        <li>Itens coerentes</li>
+        <li>Classificação adequada</li>
+        <li>Organização documental consistente</li>
+      </ul>
+
+      <p>
+        Não é somente velocidade. É coerência.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>O que esta aula NÃO cobre</h2>
+
+      <p>
+        Esta aula não ensina:
+      </p>
+
+      <ul>
+        <li>onde clicar</li>
+        <li>qual botão usar</li>
+        <li>como emitir PDF</li>
+      </ul>
+
+      <p class="module-highlight">
+        Isso será apresentado após a implementação das melhorias no sistema.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Próximo passo</h2>
+
+      <p>
+        Com a lógica do orçamento compreendida, o próximo passo é entender
+        como os itens são organizados no documento por meio dos grupos de impressão.
+      </p>
+
+      <div class="module-nav">
+        <a class="module-link" href="./a05-itens.html">Voltar para Aula 05</a>
+        <a class="module-link" href="./a07-grupos.html">Avançar para Aula 07</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-left">© ConnectOps</div>
+  <div class="footer-center">
+    <img src="../../assets/img/connectops-logo.png" alt="ConnectOps">
+  </div>
+  <div class="footer-right">nofire@connectops.com.br</div>
+</footer>
+
+</body>
+</html>
