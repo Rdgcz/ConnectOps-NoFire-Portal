@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aula 11 | Boas Práticas Operacionais | No Fire</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../assets/img/favicon/favicon.ico" type="image/png">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-left">
+      <img src="../../assets/img/nofire-logo.png" alt="No Fire">
+    </div>
+
+    <div class="nav-center">
+      <a href="../../index.html">Início</a> |
+      <a href="./a10-revisao.html">Aula 10</a> |
+      <a href="./a12-limites.html">Aula 12</a>
+    </div>
+
+    <div class="nav-right">
+      <img src="../../assets/img/cad-logo.png" alt="CAD">
+    </div>
+  </nav>
+</header>
+
+<section class="internal-hero">
+  <div class="internal-hero-content">
+    <span class="internal-kicker">Aula 11 · OPERACIONAL</span>
+    <h1>Boas práticas operacionais: padrão obrigatório de utilização do sistema</h1>
+    <p>
+      O sistema permite erros. Esta aula define como o operador deve atuar para garantir
+      consistência, rastreabilidade e coerência comercial em qualquer cenário da operação.
+    </p>
+  </div>
+</section>
+
+<main class="module-content">
+  <div class="module-shell">
+
+    <section class="module-block">
+      <h2>Princípio operacional</h2>
+
+      <p>
+        O sistema não impede erros operacionais.
+      </p>
+
+      <p>
+        Ele permite inconsistências, decisões incoerentes e registros incompletos.
+      </p>
+
+      <p class="module-highlight">
+        A operação é controlada pelo operador. O sistema apenas registra.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Regra 1 — O orçamento sempre vem primeiro</h2>
+
+      <ul>
+        <li>Nenhum documento deve existir sem orçamento</li>
+        <li>O orçamento deve estar salvo antes de qualquer emissão</li>
+        <li>O orçamento é a base de toda a operação comercial</li>
+      </ul>
+
+      <p class="module-highlight">
+        Documento sem orçamento salvo não existe para a operação.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Regra 2 — Definir o cenário comercial antes de qualquer ação</h2>
+
+      <p>
+        Antes de inserir itens, o operador deve identificar o cenário da proposta:
+      </p>
+
+      <ul>
+        <li>Equipamento novo</li>
+        <li>Manutenção T100</li>
+        <li>Manutenção T200</li>
+        <li>Base de troca</li>
+        <li>Engenharia</li>
+        <li>Fax-peça</li>
+      </ul>
+
+      <p class="module-highlight">
+        Cada cenário possui lógica própria e não deve ser tratado de forma genérica.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Regra 3 — Modalidade define a lógica do orçamento</h2>
+
+      <ul>
+        <li>T100 → solução completa, sem cobrança adicional</li>
+        <li>T200 → solução com possibilidade de complementação</li>
+      </ul>
+
+      <p>
+        A modalidade deve ser definida antes da inserção dos itens.
+      </p>
+
+      <p class="module-highlight">
+        Modalidade não é ajuste posterior. É definição inicial.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Regra 4 — Utilizar uma única tabela por orçamento</h2>
+
+      <ul>
+        <li>Todos os itens devem seguir a mesma tabela</li>
+        <li>A tabela do cabeçalho define o documento</li>
+        <li>Não é permitido misturar T100 e T200</li>
+      </ul>
+
+      <p class="module-highlight">
+        Misturar tabelas compromete a lógica comercial e invalida o orçamento.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Regra 5 — Inserir itens com coerência comercial</h2>
+
+      <ul>
+        <li>Itens devem refletir exatamente o que foi negociado</li>
+        <li>Descrições devem ser claras e consistentes</li>
+        <li>Valores devem estar corretos</li>
+      </ul>
+
+      <p class="module-highlight">
+        O sistema aceita qualquer item. O operador deve garantir coerência.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Regra 6 — Organizar corretamente o documento</h2>
+
+      <ul>
+        <li>Respeitar os grupos de impressão quando aplicável</li>
+        <li>Manter separação lógica entre itens</li>
+        <li>Garantir leitura clara da proposta</li>
+      </ul>
+
+      <p class="module-highlight">
+        Documento desorganizado compromete a percepção do cliente.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Regra 7 — Não utilizar a proposta como validação</h2>
+
+      <ul>
+        <li>Não emitir proposta para verificar estrutura</li>
+        <li>Não utilizar o documento como teste</li>
+        <li>Validar tudo antes da emissão</li>
+      </ul>
+
+      <p class="module-highlight">
+        Proposta é entrega final. Não é ferramenta de conferência.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Regra 8 — Corrigir erro na origem</h2>
+
+      <ul>
+        <li>Erro deve ser corrigido no orçamento</li>
+        <li>Não ajustar diretamente no documento</li>
+        <li>Manter consistência entre sistema e proposta</li>
+      </ul>
+
+      <p class="module-highlight">
+        O sistema é a fonte da verdade. O documento é consequência.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Regra 9 — Utilizar corretamente cada tipo de ação</h2>
+
+      <ul>
+        <li>Erro → revisão da proposta</li>
+        <li>Nova condição → novo orçamento</li>
+        <li>Complementação (T200) → fax-peça</li>
+      </ul>
+
+      <p class="module-highlight">
+        Cada situação tem um fluxo correto. Misturar gera retrabalho e perda de controle.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Regra 10 — Revisar antes de emitir</h2>
+
+      <ul>
+        <li>Conferir cliente</li>
+        <li>Conferir cenário</li>
+        <li>Conferir modalidade</li>
+        <li>Conferir itens</li>
+        <li>Conferir valores</li>
+        <li>Conferir organização</li>
+      </ul>
+
+      <p class="module-highlight">
+        Proposta se emite após validação. Nunca para validar.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Síntese operacional</h2>
+
+      <ul>
+        <li>O operador define o cenário</li>
+        <li>A modalidade define a lógica</li>
+        <li>Os itens definem o conteúdo</li>
+        <li>Os grupos definem a apresentação</li>
+        <li>A proposta apenas apresenta</li>
+      </ul>
+
+      <p class="module-highlight">
+        O sistema permite erro. O operador não.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Próximo passo</h2>
+
+      <p>
+        Mesmo seguindo todas as boas práticas, é necessário entender os limites do sistema
+        e até onde ele pode apoiar — ou não — a operação.
+      </p>
+
+      <div class="module-nav">
+        <a class="module-link" href="./a10-revisao.html">Voltar para Aula 10</a>
+        <a class="module-link" href="./a12-limites.html">Avançar para Aula 12</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-left"><span id="footer-year"></span> © ConnectOps | V.1.0</div>
+
+  <div class="footer-center">
+    <a href="https://www.connectops.com.br" target="_blank" rel="noopener noreferrer">
+      <img src="../../assets/img/connectops-logo.png" alt="ConnectOps">
+    </a>
+  </div>
+
+  <div class="footer-right">
+    Dúvidas e suporte:
+    <a href="mailto:nofire@connectops.com.br">nofire@connectops.com.br</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
