@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aula 03 | Cadastro de Funcionários e Usuários | No Fire</title>
+  <meta name="description" content="Aula 03 - Cadastro de Funcionários e Usuários - Portal de Treinamentos No Fire - CAD ERP">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" href="../../assets/img/favicon/favicon.ico" type="image/png">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="https://www.nofire.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da No Fire">
+        <img src="../../assets/img/nofire-logo.png" alt="No Fire">
+      </a>
+    </div>
+
+    <div class="nav-center">
+      <a href="../../index.html">Início</a> |
+      <a href="./a02-fundamentos.html">Aula 02</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da CAD Sistemas">
+        <img src="../../assets/img/cad-logo.png" alt="CAD">
+      </a>
+    </div>
+  </nav>
+</header>
+
+<section class="internal-hero">
+  <div class="internal-hero-content">
+    <span class="internal-kicker">Aula 03 · Cadastro de Funcionários e Usuários</span>
+    <h1>Como cadastrar funcionários, criar usuários e inativar acessos com segurança operacional</h1>
+    <p>
+      Esta aula orienta o RH no cadastro inicial de funcionários e usuários no CAD ERP, com foco em execução
+      operacional, proteção de dados pessoais, padronização de informações e comunicação correta para posterior
+      definição de acessos e permissões.
+    </p>
+  </div>
+</section>
+
+<main class="module-content">
+  <div class="module-shell">
+
+    <section class="module-block">
+      <h2>Objetivo da aula</h2>
+      <p>
+        Orientar o RH quanto ao cadastro, alteração e inativação de funcionários e usuários no CAD ERP,
+        estabelecendo um procedimento claro para que a empresa consiga executar esta rotina internamente,
+        sem necessidade de circular dados pessoais fora da área responsável.
+      </p>
+      <p>
+        Esta aula trata apenas da parte cadastral. A definição de perfis, permissões, liberações de menus
+        e níveis de acesso será tratada separadamente, em etapa própria de governança do sistema.
+      </p>
+      <p class="module-highlight">
+        O RH executa o cadastro. A definição de acesso não faz parte desta aula.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Por que esta rotina é importante</h2>
+      <p>
+        O cadastro de funcionários e usuários é uma etapa sensível porque envolve informações pessoais,
+        identificação individual no sistema e controle sobre quem pode ou não acessar o CAD ERP.
+      </p>
+      <p>
+        Mesmo quando o cadastro parece simples, ele afeta diretamente a rastreabilidade da operação.
+        Cada usuário deve representar uma pessoa real, com dados próprios e status corretamente atualizado.
+      </p>
+      <ul>
+        <li>Permite identificar quem está cadastrado no sistema</li>
+        <li>Evita uso de usuários genéricos ou reaproveitados</li>
+        <li>Facilita inativação em caso de desligamento</li>
+        <li>Preserva a rastreabilidade das ações realizadas no sistema</li>
+        <li>Reduz circulação desnecessária de dados pessoais fora do RH</li>
+      </ul>
+      <p class="module-highlight">
+        Usuário de sistema não deve ser tratado como simples cadastro. Ele representa uma pessoa e uma responsabilidade.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Escopo desta aula</h2>
+      <p>
+        Esta aula cobre duas etapas cadastrais distintas:
+      </p>
+      <ul>
+        <li><strong>Cadastro de Funcionário</strong> — PBCA056</li>
+        <li><strong>Cadastro de Usuário</strong> — PBCA035C</li>
+      </ul>
+      <p>
+        A primeira etapa registra a pessoa como funcionário/base interna. A segunda etapa cria ou mantém o usuário
+        relacionado ao acesso ao sistema.
+      </p>
+      <p class="module-highlight">
+        Cadastro de funcionário e cadastro de usuário são telas diferentes. Uma não substitui a outra.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Limite obrigatório da atividade</h2>
+      <p>
+        O RH poderá executar a parte cadastral, mas não deverá definir permissões, perfis ou níveis de acesso.
+        Essa separação é necessária para evitar inconsistências e preservar a segurança operacional.
+      </p>
+      <p>
+        Nesta aula, o RH não deve alterar:
+      </p>
+      <ul>
+        <li>Perfil do usuário</li>
+        <li>Tipo de usuário</li>
+        <li>Permissões financeiras</li>
+        <li>Permissões comerciais</li>
+        <li>Permissões fiscais</li>
+        <li>Configurações de acesso</li>
+        <li>Checkboxes de autorização que não façam parte do cadastro básico orientado</li>
+      </ul>
+      <p class="module-highlight">
+        Em caso de dúvida sobre acesso, perfil, permissão ou liberação, o procedimento correto é parar e solicitar validação.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Fluxo geral do procedimento</h2>
+      <p>
+        O fluxo recomendado para criação, alteração ou inativação é:
+      </p>
+      <ol>
+        <li>Verificar se o funcionário já existe no cadastro de funcionários</li>
+        <li>Cadastrar ou atualizar o funcionário na tela PBCA056</li>
+        <li>Acessar o cadastro de usuários na tela PBCA035C</li>
+        <li>Cadastrar, alterar ou inativar o usuário, preenchendo apenas os campos autorizados</li>
+        <li>Salvar as alterações</li>
+        <li>Comunicar a implantação informando cadastrados, alterados e inativados</li>
+        <li>Confirmar cargo e função para posterior definição de permissões</li>
+      </ol>
+      <p class="module-highlight">
+        A comunicação após o cadastro é parte obrigatória do processo.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Parte 1 — Acesso ao Cadastro de Funcionários</h2>
+      <p>
+        O Cadastro de Funcionários é acessado pelo menu:
+      </p>
+      <p class="module-highlight">
+        Cadastros &gt; Funcionário
+      </p>
+
+      <h3>Menu de acesso ao Cadastro de Funcionários</h3>
+      <div class="module-image">
+        <img src="../../assets/img/aulas/rh/a03/menu-cadastro-funcionarios.webp" alt="Menu Cadastros - Funcionário no CAD ERP">
+      </div>
+      <p class="module-caption">
+        Menu Cadastros com acesso à opção Funcionário.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Tela PBCA056 — Cadastro de Funcionários</h2>
+      <p>
+        Ao acessar a opção Funcionário, o sistema abre a tela PBCA056 — Cadastro de Funcionário.
+        Esta tela apresenta uma grade com os funcionários cadastrados e permite adicionar novas linhas diretamente.
+      </p>
+
+      <h3>Cadastro de Funcionários — visão inicial</h3>
+      <div class="module-image">
+        <img src="../../assets/img/aulas/rh/a03/cadastro-funcionario-pbca056.webp" alt="Tela PBCA056 - Cadastro de Funcionários">
+      </div>
+      <p class="module-caption">
+        Tela PBCA056 com lista de funcionários ativos, botão Adicionar e botão Salvar.
+      </p>
+
+      <p>
+        Para incluir um funcionário, deve-se clicar no botão <strong>Adicionar</strong>. O sistema cria uma nova linha
+        no final da tabela, e o preenchimento é feito diretamente nessa linha.
+      </p>
+      <p class="module-highlight">
+        O cadastro só é gravado após clicar em Salvar.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Campos do Cadastro de Funcionários</h2>
+      <p>
+        A tela PBCA056 possui rolagem horizontal. Isso significa que nem todas as colunas aparecem ao mesmo tempo.
+        O usuário deve utilizar a barra de rolagem inferior para visualizar os demais campos antes de concluir o cadastro.
+      </p>
+
+      <h3>Cadastro de Funcionários — colunas complementares</h3>
+      <div class="module-image">
+        <img src="../../assets/img/aulas/rh/a03/cadastro-funcionario-pbca056-2.webp" alt="Tela PBCA056 - Cadastro de Funcionários com rolagem horizontal">
+      </div>
+      <p class="module-caption">
+        Visão complementar da tela PBCA056, exibindo colunas adicionais como e-mail, WhatsApp, senha para requerimento e status.
+      </p>
+
+      <p>
+        Campos identificados na tela:
+      </p>
+      <ul>
+        <li><strong>Nome Funcionário</strong></li>
+        <li><strong>Setor</strong></li>
+        <li><strong>Cargo</strong></li>
+        <li><strong>E-mail</strong></li>
+        <li><strong>WhatsApp</strong> - Não preencher</li>
+        <li><strong>Usa E-mail/Whats na Equip. Interna</strong> - Não preencher</li>
+        <li><strong>Senha para Requerimento</strong> - Não preencher</li>
+        <li><strong>Status</strong> — Ativo ou Inativo</li>
+      </ul>
+    </section>
+
+    <section class="module-block">
+      <h2>Como cadastrar um funcionário</h2>
+      <p>
+        Para cadastrar um funcionário:
+      </p>
+      <ol>
+        <li>Acessar <strong>Cadastros &gt; Funcionário</strong></li>
+        <li>Clicar em <strong>Adicionar</strong></li>
+        <li>Preencher a nova linha criada no final da tabela</li>
+        <li>Usar a barra de rolagem horizontal para verificar todos os campos</li>
+        <li>Definir o <strong>Status</strong> correto</li>
+        <li>Clicar em <strong>Salvar</strong></li>
+      </ol>
+      <p>
+        Caso o funcionário já exista, não deve ser criado novo cadastro. O cadastro existente deve ser localizado
+        e atualizado, quando necessário.
+      </p>
+      <p class="module-highlight">
+        Não criar funcionário duplicado. Primeiro localizar, depois decidir se deve cadastrar ou alterar.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Inativação no Cadastro de Funcionários</h2>
+      <p>
+        Não foi localizada opção de exclusão de cadastro de funcionário. O procedimento correto para retirar um
+        funcionário da base ativa é alterar o campo <strong>Status</strong> para <strong>Inativo</strong>.
+      </p>
+      <ol>
+        <li>Localizar o funcionário na tela PBCA056</li>
+        <li>Usar a rolagem horizontal até o campo <strong>Status</strong></li>
+        <li>Alterar de <strong>Ativo</strong> para <strong>Inativo</strong></li>
+        <li>Clicar em <strong>Salvar</strong></li>
+      </ol>
+      <p class="module-highlight">
+        Funcionário desligado ou sem necessidade de uso deve ser inativado, não reaproveitado para outra pessoa.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Parte 2 — Acesso ao Cadastro de Usuários</h2>
+      <p>
+        O Cadastro de Usuários é uma tela diferente do Cadastro de Funcionários. O acesso é feito pelo menu:
+      </p>
+      <p class="module-highlight">
+        Utilitários &gt; Cadastro de Usuários
+      </p>
+
+      <h3>Menu Utilitários — Cadastro de Usuários</h3>
+      <div class="module-image">
+        <img src="../../assets/img/aulas/rh/a03/menu-cadastro-usuarios.webp" alt="Menu Utilitários - Cadastro de Usuários no CAD ERP">
+      </div>
+      <p class="module-caption">
+        Menu Utilitários com acesso à opção Cadastro de Usuários.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Tela PBCA035C — Cadastro de Usuários</h2>
+      <p>
+        Ao acessar a opção Cadastro de Usuários, o sistema abre a tela PBCA035C.
+        Esta tela possui campos básicos de cadastro e também diversas opções sensíveis relacionadas a acesso e permissões.
+      </p>
+
+      <h3>Cadastro de Usuários — visão geral</h3>
+      <div class="module-image">
+        <img src="../../assets/img/aulas/rh/a03/cadastro-usuarios-pbca035c.webp" alt="Tela PBCA035C - Cadastro de Usuários">
+      </div>
+      <p class="module-caption">
+        Tela PBCA035C — Cadastro de Usuários, contendo campos cadastrais, status, perfil, tipo e blocos de permissões.
+      </p>
+
+      <p class="module-highlight">
+        Atenção: nesta tela, o RH deve preencher apenas os campos cadastrais autorizados neste treinamento.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Campos autorizados para preenchimento pelo RH</h2>
+      <p>
+        Na tela PBCA035C, o RH deverá preencher ou alterar somente os seguintes campos:
+      </p>
+      <ul>
+        <li><strong>Nome Completo</strong></li>
+        <li><strong>CPF</strong></li>
+        <li><strong>Nome para E-mail</strong></li>
+        <li><strong>E-mail</strong></li>
+        <li><strong>Situação</strong> — apenas quando for necessário ativar ou inativar o usuário, conforme orientação recebida</li>
+      </ul>
+      <p>
+        O campo <strong>Código</strong> é automático e não deve ser alterado.
+      </p>
+      <p class="module-highlight">
+        Código automático não deve ser digitado, apagado ou modificado.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Campos que não devem ser alterados pelo RH</h2>
+      <p>
+        A tela PBCA035C possui campos e checkboxes sensíveis que impactam diretamente o acesso, a operação e a segurança
+        do sistema. Esses campos não fazem parte da atividade de cadastro executada pelo RH.
+      </p>
+      <p>
+        O RH não deve alterar:
+      </p>
+      <ul>
+        <li><strong>Tipo</strong></li>
+        <li><strong>Perfil</strong></li>
+        <li><strong>Layout Sistema</strong></li>
+        <li><strong>Módulo Gestor</strong></li>
+        <li><strong>Config. Acesso</strong></li>
+        <li><strong>Assinatura Digital</strong></li>
+        <li>Checkboxes do bloco Financeiro</li>
+        <li>Checkboxes do bloco Compras</li>
+        <li>Checkboxes do bloco Gestão de Vendas</li>
+        <li>Checkboxes do bloco Cliente</li>
+        <li>Checkboxes do bloco CRM</li>
+        <li>Checkboxes do bloco CADEX</li>
+        <li>Checkboxes do bloco WhatsApp</li>
+        <li>Checkboxes do bloco Nota Fiscal</li>
+        <li>Configurações de SMTP, porta, senha de e-mail e assinatura, salvo orientação específica futura</li>
+      </ul>
+      <p class="module-highlight">
+        Esses campos serão tratados em outro processo, relacionado a perfis, permissões e governança de acesso.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Como cadastrar um usuário na PBCA035C</h2>
+      <p>
+        Para iniciar o cadastro de um novo usuário:
+      </p>
+      <ol>
+        <li>Acessar <strong>Utilitários &gt; Cadastro de Usuários</strong></li>
+        <li>Clicar em <strong>Adicionar</strong></li>
+        <li>Não alterar o campo <strong>Código</strong></li>
+        <li>Preencher somente os campos autorizados</li>
+        <li>Conferir os dados preenchidos</li>
+        <li>Clicar em <strong>Salvar</strong></li>
+        <li>Comunicar a implantação para definição posterior de permissões</li>
+      </ol>
+      <p>
+        Caso alguma informação obrigatória não esteja disponível, o cadastro não deve ser improvisado.
+        A informação deve ser confirmada antes da conclusão.
+      </p>
+      <p class="module-highlight">
+        Não preencher dados pessoais por suposição.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Inativação de usuários na PBCA035C</h2>
+      <p>
+        A inativação de usuários também faz parte da rotina do RH.
+        Quando um usuário não deve mais permanecer ativo, o procedimento correto é alterar o campo
+        <strong>Situação</strong> para <strong>Inativo</strong> e salvar.
+      </p>
+      <ol>
+        <li>Acessar <strong>Utilitários &gt; Cadastro de Usuários</strong></li>
+        <li>Localizar o usuário correto na lista inferior</li>
+        <li>Selecionar o usuário</li>
+        <li>Alterar o campo <strong>Situação</strong> para <strong>Inativo</strong></li>
+        <li>Clicar em <strong>Salvar</strong></li>
+        <li>Informar a implantação que o usuário foi inativado</li>
+      </ol>
+      <p class="module-highlight">
+        Usuário desligado não deve permanecer ativo no sistema.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Alteração de usuários existentes</h2>
+      <p>
+        Quando for necessário corrigir dados cadastrais de um usuário existente, o RH deve localizar o usuário
+        correto e alterar apenas os campos permitidos:
+      </p>
+      <ul>
+        <li>Nome Completo</li>
+        <li>CPF</li>
+        <li>Nome para E-mail</li>
+        <li>E-mail</li>
+        <li>Situação, quando houver necessidade de ativação ou inativação</li>
+      </ul>
+      <p>
+        Antes de salvar, conferir se o usuário selecionado é realmente a pessoa correta.
+      </p>
+      <p class="module-highlight">
+        Alterar o usuário errado compromete a rastreabilidade e pode gerar falha operacional.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Comunicação obrigatória após cadastro, alteração ou inativação</h2>
+      <p>
+        Após executar qualquer manutenção em funcionários ou usuários, o RH deve comunicar a implantação.
+        Essa comunicação é necessária porque a definição de permissões será feita posteriormente, com base no cargo,
+        função e necessidade real de acesso.
+      </p>
+      <p>
+        A comunicação deve informar:
+      </p>
+      <ul>
+        <li>Usuários cadastrados</li>
+        <li>Usuários alterados</li>
+        <li>Usuários inativados</li>
+        <li>Cargo de cada usuário</li>
+        <li>Função exercida na operação</li>
+        <li>Observações relevantes, se houver</li>
+      </ul>
+      <p class="module-highlight">
+        Sem confirmação de cargo e função, não deve haver definição de permissão.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Modelo simples de comunicação</h2>
+      <p>
+        O RH poderá utilizar uma mensagem simples, conforme modelo abaixo:
+      </p>
+      <p class="module-highlight">
+        Foram realizados os seguintes ajustes no CADERP:<br><br>
+        Cadastrados:<br>
+        - Nome / Cargo / Função<br><br>
+        Alterados:<br>
+        - Nome / Campo alterado / Motivo<br><br>
+        Inativados:<br>
+        - Nome / Motivo<br><br>
+        Pendências ou dúvidas:<br>
+        - Informar se houver.
+      </p>
+      <p>
+        Essa comunicação pode ser feita por e-mail, mantendo os responsáveis copiados conforme orientação do projeto.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Regras obrigatórias de segurança operacional</h2>
+      <ul>
+        <li>Não criar usuários genéricos</li>
+        <li>Não reaproveitar usuário antigo para outra pessoa</li>
+        <li>Não compartilhar login ou senha</li>
+        <li>Não alterar perfil ou tipo de usuário</li>
+        <li>Não marcar permissões sem orientação formal</li>
+        <li>Não manter usuário ativo após desligamento</li>
+        <li>Não cadastrar dados pessoais sem confirmação</li>
+        <li>Não improvisar informações ausentes</li>
+      </ul>
+      <p class="module-highlight">
+        Se a informação não estiver clara, o procedimento correto é parar e perguntar.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>Erros comuns que devem ser evitados</h2>
+      <ul>
+        <li>Cadastrar funcionário, mas esquecer de cadastrar usuário</li>
+        <li>Cadastrar usuário, mas não comunicar a implantação</li>
+        <li>Preencher CPF ou e-mail incorretamente</li>
+        <li>Alterar o usuário errado</li>
+        <li>Deixar usuário desligado como ativo</li>
+        <li>Mexer em perfil, tipo ou permissões sem orientação</li>
+        <li>Reaproveitar login de outra pessoa</li>
+        <li>Não salvar após a alteração</li>
+      </ul>
+    </section>
+
+    <section class="module-block">
+      <h2>Resultado esperado desta aula</h2>
+      <p>
+        Ao final desta aula, o RH deve ser capaz de:
+      </p>
+      <ul>
+        <li>acessar o Cadastro de Funcionários pelo menu correto;</li>
+        <li>cadastrar ou atualizar funcionários na PBCA056;</li>
+        <li>inativar funcionários quando necessário;</li>
+        <li>acessar o Cadastro de Usuários pelo menu correto;</li>
+        <li>preencher apenas os campos autorizados na PBCA035C;</li>
+        <li>inativar usuários corretamente;</li>
+        <li>comunicar cadastrados, alterados e inativados;</li>
+        <li>confirmar cargo e função para definição posterior de permissões;</li>
+        <li>identificar quando deve parar e solicitar orientação.</li>
+      </ul>
+    </section>
+
+    <section class="module-block">
+      <h2>Próximo passo</h2>
+      <p>
+        Após o cadastro de funcionários e usuários, a definição de perfis, permissões e acessos será tratada
+        separadamente dentro da governança de implantação do CADERP.
+      </p>
+      <p>
+        Essa próxima etapa não deve ser executada como continuidade automática do cadastro, pois envolve análise
+        de função, responsabilidade, risco e permissões por perfil.
+      </p>
+
+      <div class="module-nav">
+        <a class="module-link" href="./a02-fundamentos.html">Voltar para Aula 02</a>
+        <a class="module-link" href="../../index.html">Voltar ao Portal</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-left"><span id="footer-year"></span> © ConnectOps | V.1.0</div>
+
+  <div class="footer-center">
+    <a href="https://www.connectops.com.br" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da ConnectOps">
+      <img src="../../assets/img/connectops-logo.png" alt="Logomarca ConnectOps">
+    </a>
+  </div>
+
+  <div class="footer-right">
+    Dúvidas e suporte:
+    <a href="mailto:nofire@connectops.com.br">nofire@connectops.com.br</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
