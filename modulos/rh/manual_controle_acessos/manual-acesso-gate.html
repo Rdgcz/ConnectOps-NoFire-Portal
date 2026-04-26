@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>No Fire | Acesso Restrito</title>
+
+<link rel="icon" href="../../../assets/img/favicon/favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+
+<body>
+
+<section class="section" style="min-height:100vh; display:flex; align-items:center; justify-content:center;">
+  <div class="module-shell">
+
+    <div class="module-block login-caderp" id="gateCard" style="text-align:center;">
+
+      <div class="caderp-icon">
+        <svg viewBox="0 0 24 24">
+          <path fill="#ffffff" d="M18 10h-1V7A5 5 0 0 0 7 7v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-6 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-7H9V7a3 3 0 0 1 6 0v3z"/>
+        </svg>
+      </div>
+
+      <h2>Acesso Restrito</h2>
+      <p class="section-lead">
+        Este conteúdo é de uso interno.<br>
+        Informe a senha para continuar.
+      </p>
+
+      <label class="section-kicker" for="pwdInput">Senha</label>
+
+      <input
+        id="pwdInput"
+        type="password"
+        placeholder="••••••••"
+        autocomplete="current-password"
+        maxlength="64"
+        style="
+          width:100%;
+          padding:12px;
+          border-radius:12px;
+          border:1px solid var(--line);
+          background:rgba(255,255,255,0.04);
+          color:#fff;
+          text-align:center;
+          letter-spacing:0.2em;
+          margin-top:10px;
+        "
+      >
+
+      <div id="gateError" style="margin-top:12px; color:#ff3a3a; display:none;">
+        Senha incorreta
+      </div>
+
+      <button
+        id="gateBtn"
+        onclick="checkPassword()"
+        class="module-link"
+        style="margin-top:20px; justify-content:center;"
+      >
+        Acessar
+      </button>
+
+      <div class="module-nav" style="justify-content:center;">
+        <a href="../../index.html" class="module-link">
+          ← Voltar ao portal
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+
+const HASH_CORRETO = "abc86b0b774061986ccf59ba08a41e5fb34c5ac4f4c5047ec08adcb2e3807d34";
+const DESTINO = "./manual-acessos-bloco-01.html";
+const SESSION_MINUTES = 120;
+
+async function hashPass(str) {
+  const buf = await crypto.subtle.digest(
+    "SHA-256",
+    new TextEncoder().encode(str)
+  );
+  return Array.from(new Uint8Array(buf))
+    .map(b => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+function showError(msg) {
+  const el = document.getElementById("gateError");
+  el.textContent = msg;
+  el.style.display = "block";
+}
+
+function hideError() {
+  document.getElementById("gateError").style.display = "none";
+}
+
+function shakeCard() {
+  const card = document.getElementById("gateCard");
+  card.style.transform = "translateX(-6px)";
+  setTimeout(() => card.style.transform = "translateX(6px)", 80);
+  setTimeout(() => card.style.transform = "translateX(0)", 160);
+}
+
+function checkSession() {
+  const saved = sessionStorage.getItem("nf_manual_auth");
+  if (!saved) return false;
+  if (SESSION_MINUTES === 0) return saved === "ok";
+  const ts = parseInt(sessionStorage.getItem("nf_manual_ts") || "0", 10);
+  return saved === "ok" && (Date.now() - ts) < SESSION_MINUTES * 60 * 1000;
+}
+
+async function checkPassword() {
+  hideError();
+
+  const input = document.getElementById("pwdInput").value.trim();
+  if (!input) {
+    showError("Digite a senha.");
+    return;
+  }
+
+  const btn = document.getElementById("gateBtn");
+  btn.textContent = "Verificando...";
+  btn.style.pointerEvents = "none";
+
+  const hash = await hashPass(input);
+
+  if (hash === HASH_CORRETO) {
+    sessionStorage.setItem("nf_manual_auth", "ok");
+    sessionStorage.setItem("nf_manual_ts", String(Date.now()));
+    window.location.href = DESTINO;
+  } else {
+    shakeCard();
+    showError("Senha incorreta.");
+    document.getElementById("pwdInput").value = "";
+    btn.textContent = "Acessar";
+    btn.style.pointerEvents = "auto";
+  }
+}
+
+document.getElementById("pwdInput").addEventListener("keydown", e => {
+  if (e.key === "Enter") checkPassword();
+});
+
+if (checkSession()) {
+  window.location.href = DESTINO;
+}
+
+</script>
+
+</body>
+</html>

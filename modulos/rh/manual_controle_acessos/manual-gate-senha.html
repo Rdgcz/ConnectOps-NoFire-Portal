@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual – Gate de Senha | No Fire Portal</title>
+<link rel="icon" href="../../../assets/img/favicon/favicon.ico" type="image/png">
+<link rel="stylesheet" href="../../../assets/css/style.css">
+<style>
+  .badge-inline {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    vertical-align: middle;
+  }
+  .badge-yellow { background: rgba(245,200,66,.13); border: 1px solid #f5c842; color: #f5c842; }
+
+  .step-list { list-style: none; margin: 14px 0 0; counter-reset: steps; }
+  .step-list li {
+    counter-increment: steps;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    color: #f1f2f5;
+    font-size: 1.2rem;
+    line-height: 1.65;
+  }
+  .step-list li::before {
+    content: counter(steps);
+    flex-shrink: 0;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: rgba(225,6,19,.18);
+    border: 1px solid var(--red-soft);
+    color: #fff;
+    font-size: .82rem;
+    font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .code-block {
+    position: relative;
+    margin: 14px 0 4px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    background: rgba(0,0,0,.55);
+    border: 1px solid rgba(255,255,255,.09);
+    font-family: 'Courier New', monospace;
+    font-size: .9rem;
+    color: #7ee787;
+    white-space: pre-wrap;
+    word-break: break-all;
+    line-height: 1.6;
+  }
+  .code-label {
+    position: absolute;
+    top: 10px; right: 14px;
+    font-size: .68rem;
+    font-family: monospace;
+    color: rgba(255,255,255,.25);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  .info-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px 18px;
+    border-radius: 12px;
+    margin-top: 16px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  .info-row.tip    { background: rgba(45,189,110,.08);  border: 1px solid rgba(45,189,110,.22);  color: #c6f6da; }
+  .info-row.warn   { background: rgba(245,200,66,.08);  border: 1px solid rgba(245,200,66,.22);  color: #fef3c7; }
+  .info-row.danger { background: rgba(225,6,19,.09);    border: 1px solid rgba(225,6,19,.24);    color: #fecaca; }
+  .info-row-icon   { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+
+  .toc { list-style: none; }
+  .toc li { margin-bottom: 10px; }
+  .toc a  { color: #e8eaf0; font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,.1); padding-bottom: 2px; transition: color .2s, border-color .2s; }
+  .toc a:hover { color: var(--red-soft); border-color: var(--red-soft); }
+  .toc .toc-sub { margin-left: 20px; margin-top: 6px; }
+  .toc .toc-sub li { margin-bottom: 6px; }
+  .toc .toc-sub a  { font-size: .98rem; color: var(--gray); }
+
+  .divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin: 10px 0 20px; }
+
+  .hash-display {
+    font-family: 'Courier New', monospace;
+    font-size: .82rem;
+    color: #7ee787;
+    word-break: break-all;
+    background: rgba(0,0,0,.4);
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,.08);
+    margin-top: 10px;
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+
+  .check-list { list-style: none; }
+  .check-list li {
+    display: flex; gap: 10px;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="https://www.nofire.com.br/" target="_blank" rel="noopener noreferrer">
+        <img src="../../../assets/img/nofire-logo.png" alt="No Fire">
+      </a>
+    </div>
+    <div class="nav-center">
+      <a href="../../index.html">← Portal</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer">
+        <img src="../../../assets/img/cad-logo.png" alt="CAD">
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO INTERNO -->
+<section class="internal-hero">
+  <div class="internal-hero-content">
+    <span class="internal-kicker">Documentação Técnica – ConnectOps</span>
+    <h1>Manual do Gate de Senha</h1>
+    <p>Como funciona, como trocar a senha e como administrar o acesso ao manual de controle de acessos do CAD ERP.</p>
+  </div>
+</section>
+
+<!-- CONTEÚDO -->
+<div class="module-content">
+  <div class="module-shell">
+
+    <!-- ÍNDICE -->
+    <div class="module-block" id="toc">
+      <h2>Índice</h2>
+      <hr class="divider">
+      <ul class="toc">
+        <li><a href="#o-que-e">1. O que é o gate de senha</a></li>
+        <li><a href="#como-funciona">2. Como funciona tecnicamente</a>
+          <ul class="toc-sub toc">
+            <li><a href="#hash">2.1 O que é um hash SHA-256</a></li>
+            <li><a href="#sessao">2.2 Controle de sessão</a></li>
+          </ul>
+        </li>
+        <li><a href="#trocar-senha">3. Como trocar a senha</a>
+          <ul class="toc-sub toc">
+            <li><a href="#gerar-hash-terminal">3.1 Via terminal (recomendado)</a></li>
+            <li><a href="#gerar-hash-browser">3.2 Via console do navegador</a></li>
+            <li><a href="#substituir-hash">3.3 Substituir o hash no arquivo</a></li>
+          </ul>
+        </li>
+        <li><a href="#sessao-config">4. Configurar tempo de sessão</a></li>
+        <li><a href="#destino">5. Alterar o destino após login</a></li>
+        <li><a href="#limites">6. Limites desta proteção</a></li>
+        <li><a href="#referencia">7. Referência rápida</a></li>
+      </ul>
+    </div>
+
+    <!-- 1 -->
+    <div class="module-block" id="o-que-e">
+      <h2>1. O que é o gate de senha</h2>
+      <hr class="divider">
+      <p>
+        O gate de senha é uma página intermediária (<code>manual-acesso-gate.html</code>) posicionada
+        entre o portal e o conteúdo do manual de controle de acessos.
+        Quando o usuário clica no card do manual na seção de RH, é levado para essa página,
+        onde precisa digitar a senha correta antes de visualizar o conteúdo.
+      </p>
+      <p style="margin-top:12px;">O fluxo completo é:</p>
+      <ul class="step-list">
+        <li>Usuário clica em <strong>"Manual de Controle de Acessos"</strong> na seção de RH do portal.</li>
+        <li>O navegador abre <code>manual-acesso-gate.html</code>.</li>
+        <li>O usuário digita a senha e clica em <strong>Acessar</strong>.</li>
+        <li>Se a senha estiver correta, é redirecionado automaticamente para o primeiro bloco do manual.</li>
+        <li>A sessão fica ativa pelo tempo configurado — sem precisar digitar a senha novamente nesse período.</li>
+      </ul>
+      <div class="info-row tip">
+        <span class="info-row-icon">✅</span>
+        <span>Esta proteção é adequada para conteúdo interno não crítico em portais estáticos. O objetivo é evitar acesso casual, não substituir autenticação de sistema.</span>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="module-block" id="como-funciona">
+      <h2>2. Como funciona tecnicamente</h2>
+      <hr class="divider">
+
+      <h3 id="hash">2.1 O que é um hash SHA-256</h3>
+      <p>
+        A senha <strong>nunca é armazenada como texto</strong> no arquivo.
+        O que fica gravado é o <strong>hash SHA-256</strong> — uma sequência de 64 caracteres
+        gerada matematicamente a partir da senha. Esse processo é de mão única:
+        não é possível descobrir a senha original a partir do hash.
+      </p>
+      <p style="margin-top:12px;">Exemplo: a senha <code>nofire2026</code> produz este hash:</p>
+      <div class="hash-display">abc86b0b774061986ccf59ba08a41e5fb34c5ac4f4c5047ec08adcb2e3807d34</div>
+      <p style="margin-top:14px;">
+        Quando o usuário digita a senha no campo, o navegador calcula o hash do que foi digitado
+        e compara com o hash gravado no arquivo. Se coincidirem, o acesso é liberado.
+        A senha em si nunca trafega nem é armazenada em nenhum lugar.
+      </p>
+      <div class="info-row warn">
+        <span class="info-row-icon">⚠️</span>
+        <span>Quem inspecionar o código-fonte do arquivo verá o hash — mas <strong>não consegue reverter o hash para descobrir a senha</strong>. Isso é seguro para o nível de proteção que o gate oferece.</span>
+      </div>
+
+      <hr class="divider" style="margin-top:24px;">
+      <h3 id="sessao">2.2 Controle de sessão</h3>
+      <p>
+        Após autenticar com sucesso, o gate salva uma marca na <strong>sessionStorage</strong> do navegador.
+        Enquanto essa marca estiver válida (dentro do tempo configurado), o usuário não precisa
+        digitar a senha novamente — ao acessar o gate, é redirecionado direto para o manual.
+      </p>
+      <p style="margin-top:12px;">
+        A sessionStorage é <strong>apagada automaticamente quando a aba ou janela é fechada</strong>.
+        Acessar o portal em outra aba ou navegador exige nova autenticação.
+      </p>
+      <div class="two-col" style="margin-top:14px;">
+        <div class="info-row tip" style="margin:0;">
+          <span class="info-row-icon">🔒</span>
+          <span>Fechar a aba apaga a sessão. Novo acesso exige a senha novamente.</span>
+        </div>
+        <div class="info-row warn" style="margin:0;">
+          <span class="info-row-icon">⚠️</span>
+          <span>Manter a aba aberta preserva a sessão até o tempo configurado expirar.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="module-block" id="trocar-senha">
+      <h2>3. Como trocar a senha</h2>
+      <hr class="divider">
+      <p>
+        Trocar a senha envolve dois passos: <strong>gerar o novo hash</strong> e
+        <strong>substituir o hash antigo no arquivo</strong>.
+      </p>
+
+      <h3 id="gerar-hash-terminal" style="margin-top:20px;">3.1 Via terminal — recomendado</h3>
+      <p>Funciona no Terminal do Mac, Linux ou no Git Bash / WSL no Windows.</p>
+      <ul class="step-list">
+        <li>Abra o terminal.</li>
+        <li>
+          Digite o comando abaixo, substituindo <code>NOVA_SENHA</code> pela senha desejada.
+          Não adicione espaços antes ou depois das aspas.
+          <div class="code-block"><span class="code-label">terminal</span>echo -n "NOVA_SENHA" | sha256sum</div>
+          <p style="margin-top:8px; font-size:1rem; color:var(--gray);">
+            Exemplo: <code>echo -n "nofire2026" | sha256sum</code><br>
+            Saída: <code style="color:#7ee787;">abc86b0b774061986ccf59ba08a41e5fb34c5ac4f4c5047ec08adcb2e3807d34  -</code>
+          </p>
+        </li>
+        <li>Copie os 64 caracteres antes do espaço e do traço (<code> -</code>) no final. Esse é o hash.</li>
+        <li>Siga para o <a href="#substituir-hash" style="color:var(--red-soft);">passo 3.3</a>.</li>
+      </ul>
+      <div class="info-row danger">
+        <span class="info-row-icon">🚫</span>
+        <span>No Mac, use sempre <code>echo -n</code> (com o <code>-n</code>). Sem ele, o echo adiciona uma quebra de linha invisível e o hash gerado fica errado — a senha nunca vai coincidir.</span>
+      </div>
+
+      <hr class="divider" style="margin-top:24px;">
+      <h3 id="gerar-hash-browser">3.2 Via console do navegador</h3>
+      <p>Alternativa caso não tenha acesso a um terminal. Funciona em qualquer navegador moderno.</p>
+      <ul class="step-list">
+        <li>Abra qualquer página do portal no navegador.</li>
+        <li>Pressione <kbd style="background:rgba(255,255,255,.1);padding:2px 8px;border-radius:5px;font-family:monospace;">F12</kbd> para abrir as ferramentas do desenvolvedor.</li>
+        <li>Clique na aba <strong>Console</strong>.</li>
+        <li>
+          Cole o código abaixo, substituindo <code>NOVA_SENHA</code>, e pressione Enter:
+          <div class="code-block"><span class="code-label">console do navegador</span>(async () => {
+  const buf = await crypto.subtle.digest(
+    "SHA-256",
+    new TextEncoder().encode("NOVA_SENHA")
+  );
+  const hash = [...new Uint8Array(buf)]
+    .map(b => b.toString(16).padStart(2, "0"))
+    .join("");
+  console.log("%c" + hash, "color:#7ee787;font-size:14px;");
+})();</div>
+        </li>
+        <li>O hash aparece em verde no console. Copie-o e siga para o passo 3.3.</li>
+      </ul>
+
+      <hr class="divider" style="margin-top:24px;">
+      <h3 id="substituir-hash">3.3 Substituir o hash no arquivo</h3>
+      <ul class="step-list">
+        <li>Abra o arquivo <code>modulos/rh/manual-acesso-gate.html</code> no editor (VS Code, Notepad++, etc.).</li>
+        <li>
+          Use <kbd style="background:rgba(255,255,255,.1);padding:2px 8px;border-radius:5px;font-family:monospace;">Ctrl+F</kbd> para localizar:
+          <div class="code-block"><span class="code-label">gate.html</span>const HASH_CORRETO =</div>
+        </li>
+        <li>
+          Substitua apenas os 64 caracteres entre aspas pelo novo hash. Mantenha as aspas e o ponto-e-vírgula.
+          <div class="code-block"><span class="code-label">resultado esperado</span>const HASH_CORRETO = "SEU_NOVO_HASH_COM_64_CARACTERES";</div>
+        </li>
+        <li>Salve o arquivo e faça o deploy/push para o servidor normalmente.</li>
+        <li>Teste abrindo o gate no navegador e digitando a nova senha.</li>
+      </ul>
+      <div class="info-row tip">
+        <span class="info-row-icon">✅</span>
+        <span>O hash tem sempre <strong>exatamente 64 caracteres</strong> hexadecimais (0–9 e a–f). Se o seu tiver mais ou menos, algo deu errado na geração — refaça o processo.</span>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="module-block" id="sessao-config">
+      <h2>4. Configurar o tempo de sessão</h2>
+      <hr class="divider">
+      <p>
+        Define por quantos minutos o usuário permanece autenticado sem precisar
+        digitar a senha novamente. Localize no arquivo:
+      </p>
+      <div class="code-block"><span class="code-label">gate.html</span>const SESSION_MINUTES = 120;</div>
+      <p style="margin-top:14px;">Exemplos de configuração:</p>
+      <div class="two-col" style="margin-top:8px;">
+        <div>
+          <div class="code-block"><span class="code-label">sem expiração por tempo</span>const SESSION_MINUTES = 0;</div>
+          <p style="font-size:1rem; color:var(--gray); margin-top:6px;">A sessão dura até fechar a aba. Sem limite de tempo.</p>
+        </div>
+        <div>
+          <div class="code-block"><span class="code-label">30 minutos</span>const SESSION_MINUTES = 30;</div>
+          <p style="font-size:1rem; color:var(--gray); margin-top:6px;">Após 30 min, o gate pede a senha novamente.</p>
+        </div>
+      </div>
+      <div class="info-row warn" style="margin-top:16px;">
+        <span class="info-row-icon">⚠️</span>
+        <span>Fechar a aba sempre encerra a sessão, independentemente do tempo configurado. A sessionStorage não persiste entre abas ou sessões do navegador.</span>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="module-block" id="destino">
+      <h2>5. Alterar o destino após login</h2>
+      <hr class="divider">
+      <p>
+        Após autenticação correta, o gate redireciona para a página definida
+        na variável <code>DESTINO</code>. Por padrão:
+      </p>
+      <div class="code-block"><span class="code-label">gate.html</span>const DESTINO = "./manual_controle_acessos/manual-acessos-bloco-01.html";</div>
+      <p style="margin-top:14px;">
+        Para apontar para outro arquivo, substitua pelo caminho relativo correto
+        a partir da localização do gate.
+      </p>
+      <div class="info-row tip">
+        <span class="info-row-icon">✅</span>
+        <span>O caminho é sempre <strong>relativo ao arquivo gate</strong>, não à raiz do projeto. Use <code>./</code> para a mesma pasta e <code>../</code> para subir um nível.</span>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="module-block" id="limites">
+      <h2>6. Limites desta proteção</h2>
+      <hr class="divider">
+
+      <h3>O que o gate protege</h3>
+      <ul class="check-list module-block" style="padding:18px 24px; margin-top:12px; border-color:rgba(45,189,110,.3);">
+        <li style="color:#c6f6da;"><span>✅</span> Acesso casual: quem chega pelo portal e não sabe a URL direta precisará digitar a senha.</li>
+        <li style="color:#c6f6da;"><span>✅</span> A senha nunca fica exposta em texto puro no código — apenas o hash.</li>
+        <li style="color:#c6f6da;"><span>✅</span> A sessão expira ao fechar a aba, sem rastro de autenticação persistido.</li>
+      </ul>
+
+      <h3 style="margin-top:18px;">O que o gate não protege</h3>
+      <ul class="check-list module-block" style="padding:18px 24px; margin-top:12px; border-color:rgba(225,6,19,.3);">
+        <li style="color:#fecaca;"><span>🚫</span> Acesso direto pela URL dos arquivos do manual — quem souber o endereço exato acessa sem senha.</li>
+        <li style="color:#fecaca;"><span>🚫</span> Usuários que inspecionam o código-fonte conseguem ver o hash e o caminho de destino.</li>
+        <li style="color:#fecaca;"><span>🚫</span> Conteúdo crítico ou confidencial — para isso é necessária autenticação server-side.</li>
+      </ul>
+
+      <div class="info-row warn" style="margin-top:18px;">
+        <span class="info-row-icon">⚠️</span>
+        <span>Esta solução é adequada para o nível descrito: conteúdo interno não crítico em portal estático. Para dados sensíveis, o correto é migrar para uma solução com backend e autenticação real.</span>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="module-block" id="referencia">
+      <h2>7. Referência rápida</h2>
+      <hr class="divider">
+
+      <h3>Variáveis configuráveis</h3>
+      <div class="code-block" style="margin-top:12px;"><span class="code-label">gate.html</span><span style="color:#79c0ff;">const</span> HASH_CORRETO    = <span style="color:#a5d6ff;">"abc86b0b..."</span>;  <span style="color:#8b949e;">// hash SHA-256 da senha</span>
+<span style="color:#79c0ff;">const</span> DESTINO         = <span style="color:#a5d6ff;">"./manual_controle_acessos/manual-acessos-bloco-01.html"</span>;
+<span style="color:#79c0ff;">const</span> SESSION_MINUTES = <span style="color:#f8c555;">120</span>;               <span style="color:#8b949e;">// 0 = sem expiração por tempo</span></div>
+
+      <h3 style="margin-top:22px;">Comando para gerar hash</h3>
+      <div class="two-col" style="margin-top:10px;">
+        <div>
+          <p style="font-size:.82rem; color:var(--gray); margin-bottom:6px; text-transform:uppercase; letter-spacing:.06em; font-weight:700;">Mac / Linux / Git Bash</p>
+          <div class="code-block">echo -n "SENHA" | sha256sum</div>
+        </div>
+        <div>
+          <p style="font-size:.82rem; color:var(--gray); margin-bottom:6px; text-transform:uppercase; letter-spacing:.06em; font-weight:700;">Console do navegador (F12)</p>
+          <div class="code-block">// cole o snippet da seção 3.2</div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:22px;">Arquivo a editar</h3>
+      <div class="code-block" style="margin-top:10px; color:#e8eaf0;">modulos/rh/manual-acesso-gate.html</div>
+
+      <h3 style="margin-top:22px;">Senha padrão de fábrica</h3>
+      <p style="margin-top:10px;"><span class="badge-inline badge-yellow">⚠️ Trocar antes de publicar</span></p>
+      <div class="code-block" style="margin-top:10px; color:#e8eaf0;">nofire2026</div>
+    </div>
+
+    <!-- NAV -->
+    <nav class="module-nav">
+      <a class="module-link" href="../../index.html">← Voltar ao portal</a>
+      <a class="module-link" href="./manual-acesso-gate.html">Ir para o gate de acesso</a>
+    </nav>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-left"><span id="footer-year"></span> © ConnectOps | V.1.0</div>
+  <div class="footer-center">
+    <a href="https://www.connectops.com.br" target="_blank" rel="noopener noreferrer">
+      <img src="../../../assets/img/connectops-logo.png" alt="ConnectOps">
+    </a>
+  </div>
+  <div class="footer-right">
+    Dúvidas e suporte:
+    <a href="mailto:nofire@connectops.com.br">nofire@connectops.com.br</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

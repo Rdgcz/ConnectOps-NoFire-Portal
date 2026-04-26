@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manual de Controle de Acessos | Bloco 02 | No Fire</title>
+  <meta name="description" content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 02 - Como o controle de acessos funciona de verdade no sistema.">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <link rel="icon" href="../../../assets/img/favicon/favicon.ico" type="image/png">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="https://www.nofire.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da No Fire">
+        <img src="../../../assets/img/nofire-logo.png" alt="No Fire">
+      </a>
+    </div>
+
+    <div class="nav-center">
+      <a href="../../../index.html">Início</a> |
+      <a href="./manual-acessos-bloco-01.html">Bloco 01</a> |
+      <a href="./manual-acessos-bloco-03.html">Bloco 03</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da CAD Sistemas">
+        <img src="../../../assets/img/cad-logo.png" alt="CAD">
+      </a>
+    </div>
+  </nav>
+</header>
+
+<section class="internal-hero">
+  <div class="internal-hero-content">
+    <span class="internal-kicker">Manual Operacional · Controle de Acessos · Bloco 02/10</span>
+    <h1>Como o controle de acessos funciona de verdade no CAD ERP</h1>
+    <p>
+      Este bloco explica a arquitetura real de controle de acessos identificada no CAD ERP, diferenciando perfil,
+      vinculação de programas, restrição direta por usuário, permissões internas por checkbox e situações que dependem
+      de governança operacional.
+    </p>
+  </div>
+</section>
+
+<main class="module-content">
+  <div class="module-shell">
+
+    <section class="module-block">
+      <h2>1. Objetivo do Bloco 02</h2>
+      <p>
+        O objetivo deste bloco é explicar como o controle de acessos do CAD ERP deve ser compreendido na prática.
+        Antes de definir permissões, perfis ou responsabilidades, é necessário entender que o sistema possui diferentes
+        camadas de controle, e que essas camadas não possuem o mesmo peso operacional.
+      </p>
+
+      <p>
+        A leitura superficial do sistema pode levar à impressão de que o acesso é controlado principalmente por perfis.
+        Porém, a análise prática demonstrou que essa leitura é incompleta.
+      </p>
+
+      <p>
+        Na operação real da No Fire, o controle de acessos deverá considerar cinco elementos principais:
+      </p>
+
+      <ol>
+        <li><strong>PBCA079</strong> — Cadastro de Perfil;</li>
+        <li><strong>PBCA079A</strong> — Vinculação Perfil x Programas;</li>
+        <li><strong>PBCA035</strong> — Restrição de Usuário x Programa;</li>
+        <li><strong>PBCA035C</strong> — Cadastro de Usuário e permissões internas;</li>
+        <li><strong>Comportamentos não controlados tecnicamente</strong> — acessos indiretos, bypass ou telas abertas fora da lógica esperada.</li>
+      </ol>
+
+      <p class="module-highlight">
+        A regra central deste bloco é: perfil organiza, mas não garante sozinho o controle real do ambiente.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>2. Visão geral da arquitetura de acesso</h2>
+      <p>
+        A arquitetura de acesso identificada no CAD ERP pode ser entendida como uma sequência de camadas.
+        Cada camada possui uma função diferente. Algumas organizam o acesso, outras liberam programas, outras restringem
+        usuários, e outras refinam o que pode ser feito dentro de determinadas telas.
+      </p>
+
+      <p>
+        A estrutura geral deve ser compreendida da seguinte forma:
+      </p>
+
+      <p class="module-highlight">
+        PBCA079 → PBCA079A → PBCA035 → PBCA035C → Governança operacional
+      </p>
+
+      <p>
+        Essa sequência não deve ser interpretada como uma garantia automática de segurança. Ela representa o caminho
+        lógico de configuração e revisão que deverá ser adotado pela No Fire.
+      </p>
+
+      <ul>
+        <li><strong>PBCA079:</strong> cria ou organiza perfis;</li>
+        <li><strong>PBCA079A:</strong> vincula programas aos perfis;</li>
+        <li><strong>PBCA035:</strong> restringe ou valida acesso diretamente por usuário;</li>
+        <li><strong>PBCA035C:</strong> define campos e permissões internas do cadastro de usuário;</li>
+        <li><strong>Governança:</strong> cobre tudo aquilo que o sistema não controlar adequadamente.</li>
+      </ul>
+
+      <p>
+        O erro conceitual mais perigoso seria imaginar que a criação de um perfil resolve automaticamente todo o controle
+        de acesso. Não resolve. O perfil é apenas uma parte da estrutura.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>3. Tela PBCA079 — Cadastro de Perfil</h2>
+      <p>
+        A tela PBCA079 é utilizada para cadastrar e organizar perfis no sistema. O perfil funciona como uma identificação
+        lógica de grupo. Ele permite separar usuários por função, área ou padrão operacional.
+      </p>
+
+      <p>
+        Exemplos de perfis funcionais que podem existir na organização:
+      </p>
+
+      <ul>
+        <li>Administrador;</li>
+        <li>Vendedor;</li>
+        <li>Administrativo;</li>
+        <li>Engenharia;</li>
+        <li>RH;</li>
+        <li>Gestão Comercial;</li>
+        <li>Financeiro.</li>
+      </ul>
+
+      <p>
+        Porém, para fins de segurança operacional, o perfil não deve ser tratado como camada suficiente de proteção.
+        Ele ajuda a organizar o ambiente, mas não elimina a necessidade de restrição direta e revisão manual.
+      </p>
+
+
+      <div class="module-image" style="max-width:300px; margin-left:auto; margin-right:auto;">
+        <img style="max-width:300px;" src="../../../assets/img/manuais/rh/manual_controle_acesso/pbca079-cadastro-perfil.webp" alt="Tela PBCA079 - Cadastro de Perfil no CAD ERP">
+      </div>
+        <h3 style="text-align: center;">Imagem: Tela - Cadastro de Perfil de Usuários - PBCA079</h3>
+      <p class="module-highlight">
+        O PBCA079 deve ser usado como organização de perfis, não como garantia isolada de segurança.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>4. O que o perfil faz — e o que ele não faz</h2>
+
+      <h3>4.1 O que o perfil faz</h3>
+      <p>
+        O perfil permite criar uma base lógica para agrupar usuários com funções semelhantes. Isso facilita a configuração,
+        a leitura do ambiente e a replicação inicial de permissões.
+      </p>
+
+      <p>
+        Na prática, o perfil ajuda a responder perguntas como:
+      </p>
+
+      <ul>
+        <li>este usuário pertence ao grupo comercial?</li>
+        <li>este usuário pertence ao administrativo?</li>
+        <li>este usuário pertence ao RH?</li>
+        <li>este usuário deve ter uma base de programas semelhante a outro grupo?</li>
+      </ul>
+
+      <h3>4.2 O que o perfil não faz</h3>
+      <p>
+        O perfil não deve ser tratado como uma barreira absoluta. Ele não elimina a necessidade de revisar acessos reais,
+        testar comportamento do usuário e aplicar restrições específicas.
+      </p>
+
+      <p>
+        Portanto, o perfil não deve ser usado como argumento único para dizer que determinado usuário está seguro ou
+        corretamente limitado.
+      </p>
+
+      <p class="module-highlight">
+        Perfil é organização. Controle real exige revisão adicional.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>5. Tela PBCA079A — Vinculação Perfil x Programas</h2>
+      <p>
+        A tela PBCA079A é responsável por vincular programas a um perfil. É nela que se define a base inicial de programas
+        que determinado perfil poderá acessar.
+      </p>
+
+      <p>
+        Essa tela é importante porque permite montar uma primeira camada de acesso por grupo. Por exemplo: um perfil de
+        vendedor pode receber programas comerciais, enquanto um perfil administrativo pode receber programas financeiros
+        e cadastrais.
+      </p>
+
+      <p>
+        Entretanto, a vinculação Perfil x Programas não deve ser interpretada como controle final. Ela define uma base,
+        mas não substitui a revisão individual por usuário.
+      </p>
+
+     
+      <div class="module-image" style="max-width:700px; margin-left:auto; margin-right:auto;">
+        <img style="max-width:700px;" src="../../../assets/img/manuais/rh/manual_controle_acesso/pbca079a-vinculacao-perfil-programas.webp" alt="Tela PBCA079A - Vinculação Perfil x Programas no CAD ERP">
+      </div>
+       <h3 style="text-align: center;">Imagem: Tela - Vinculação Perfil x Programas - PBCA079A</h3>
+     <p class="module-highlight">
+        O PBCA079A cria a base de acesso. A validação final deve considerar usuário, função, risco e restrições específicas.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>6. Como interpretar a vinculação de programas</h2>
+      <p>
+        Cada programa vinculado no PBCA079A representa uma tela, rotina ou funcionalidade que pode ser acessada dentro
+        do CAD ERP. Esses programas normalmente são identificados por códigos como PBCA, PBRE, BI, PBCX, GESTOR ou QGPB.
+      </p>
+
+      <p>
+        Exemplos:
+      </p>
+
+      <ul>
+        <li><strong>PBCA032</strong> — Orçamento de Venda;</li>
+        <li><strong>PBCA015</strong> — Pedido de Venda;</li>
+        <li><strong>PBCA056</strong> — Cadastro de Funcionários;</li>
+        <li><strong>PBCA035</strong> — Cadastro de Usuários;</li>
+        <li><strong>PBCA079</strong> — Cadastro de Perfil;</li>
+        <li><strong>PBCA079A</strong> — Vinculação Perfil x Programas;</li>
+        <li><strong>PBRE</strong> — relatórios operacionais;</li>
+        <li><strong>BI</strong> — relatórios analíticos;</li>
+        <li><strong>QGPB</strong> — rotinas específicas ou utilitárias.</li>
+      </ul>
+
+      <p>
+        A liberação de um programa deve ser analisada considerando sua função real. Nem todo programa é equivalente.
+        Alguns são apenas consultivos, enquanto outros alteram dados estruturais, financeiros, fiscais ou comerciais.
+      </p>
+
+      <p class="module-highlight">
+        Programa liberado não deve ser analisado apenas pelo nome. Deve ser analisado pelo impacto da ação que ele permite.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>7. Tela PBCA035 — Restrição de Usuário x Programa</h2>
+      <p>
+        A tela PBCA035 é uma das mais importantes para a governança do ambiente. Ela permite tratar restrições diretamente
+        por usuário, funcionando como uma camada de controle mais específica do que o perfil.
+      </p>
+
+      <p>
+        Enquanto o perfil organiza usuários em grupos, a restrição por usuário permite ajustar o acesso de forma individual.
+        Isso é essencial porque usuários com o mesmo perfil podem ter responsabilidades diferentes, níveis de confiança
+        diferentes ou necessidades operacionais diferentes.
+      </p>
+
+      <p>
+        Na prática, o PBCA035 deve ser tratado como a principal ferramenta de validação manual do acesso.
+      </p>
+
+
+      <div class="module-image" style="max-width:700px; margin-left:auto; margin-right:auto;">
+        <img src="../../../assets/img/manuais/rh/manual_controle_acesso/pbca035-restricao-usuario-programa.webp" alt="Tela PBCA035 - Restrição de Usuário por Programa no CAD ERP">
+      </div>
+      <h3 style="text-align: center;">Imagem: Tela - Restrição de Usuário x Programa -  PBCA035</h3>
+
+      <p class="module-highlight">
+        O PBCA035 deve ser tratado como a principal camada de controle técnico disponível para ajuste individual de usuário.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>8. Por que o PBCA035 é a camada mais importante</h2>
+      <p>
+        O PBCA035 é mais importante que o perfil porque atua diretamente sobre o usuário. Isso permite revisar e restringir
+        permissões de maneira mais precisa.
+      </p>
+
+      <p>
+        Esse ponto é essencial para a No Fire porque o ambiente possui usuários com responsabilidades distintas, além de
+        decisões operacionais que ampliam o uso de perfil administrador.
+      </p>
+
+      <p>
+        Com isso, a governança não pode depender apenas de uma regra genérica por perfil. É necessário validar usuário
+        por usuário.
+      </p>
+
+      <p>
+        O PBCA035 deve ser utilizado para:
+      </p>
+
+      <ul>
+        <li>bloquear acesso a programas críticos;</li>
+        <li>restringir rotinas administrativas;</li>
+        <li>controlar acesso a telas fiscais;</li>
+        <li>limitar acesso a utilitários sensíveis;</li>
+        <li>ajustar exceções específicas;</li>
+        <li>validar se o usuário possui apenas o necessário para sua função;</li>
+        <li>reforçar a matriz de permissões definida pela No Fire.</li>
+      </ul>
+
+      <p class="module-highlight">
+        Todo usuário deve ser revisado individualmente. O perfil não substitui a validação no PBCA035.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>9. Tela PBCA035C — Cadastro de Usuários e permissões internas</h2>
+      <p>
+        A tela PBCA035C é utilizada para cadastro de usuários e também contém campos e checkboxes relacionados a permissões
+        internas.
+      </p>
+
+      <p>
+        Essa tela possui dois papéis diferentes:
+      </p>
+
+      <ol>
+        <li>registrar dados cadastrais do usuário;</li>
+        <li>controlar permissões específicas por meio de campos e checkboxes.</li>
+      </ol>
+
+      <p>
+        Essa diferença é fundamental. O fato de o RH poder atuar no cadastro básico de usuário não significa que o RH
+        deva definir permissões internas, perfil, tipo ou autorizações sensíveis.
+      </p>
+
+
+      <div class="module-image" style="max-width:600px; margin-left:auto; margin-right:auto;">
+        <img src="../../../assets/img/manuais/rh/manual_controle_acesso/pbca035c-cadastro-usuarios-visao-geral.webp" alt="Tela PBCA035C - Cadastro de Usuários no CAD ERP">
+      </div>
+      <h3 style="text-align: center;">Imagem: Tela - Cadastro de Usuários - PBCA035C</h3>
+
+      <p class="module-highlight">
+        PBCA035C não é apenas cadastro. Também contém permissões internas sensíveis.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>10. Diferença entre PBCA035 e PBCA035C</h2>
+      <p>
+        Apesar dos nomes parecidos, PBCA035 e PBCA035C não devem ser confundidos.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tela</th>
+            <th>Função principal</th>
+            <th>Tipo de controle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PBCA035</td>
+            <td>Restrição de Usuário x Programa</td>
+            <td>Controla acesso à tela/programa</td>
+          </tr>
+          <tr>
+            <td>PBCA035C</td>
+            <td>Cadastro de Usuários e permissões internas</td>
+            <td>Controla cadastro e ações internas por checkbox</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Em linguagem simples:
+      </p>
+
+      <ul>
+        <li><strong>PBCA035</strong> define se o usuário deve ou não acessar determinado programa;</li>
+        <li><strong>PBCA035C</strong> define dados do usuário e permissões internas específicas.</li>
+      </ul>
+
+      <p class="module-highlight">
+        PBCA035 controla acesso à tela. PBCA035C refina o que o usuário pode fazer em determinadas rotinas.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>11. Checkboxes do PBCA035C</h2>
+      <p>
+        Os checkboxes do PBCA035C representam permissões específicas dentro de determinadas áreas do sistema.
+        Eles podem controlar ações financeiras, comerciais, fiscais, operacionais ou de comunicação.
+      </p>
+
+      <p>
+        Exemplos de permissões internas identificadas:
+      </p>
+
+      <ul>
+        <li>Aprovar títulos;</li>
+        <li>Baixar títulos;</li>
+        <li>Reabrir títulos;</li>
+        <li>Alterar dados chave de título;</li>
+        <li>Permitir alterar valor do produto;</li>
+        <li>Permitir alterar desconto do produto;</li>
+        <li>Cancelar pedido;</li>
+        <li>Excluir pedido;</li>
+        <li>Aprovar orçamento;</li>
+        <li>Alterar vendedor;</li>
+        <li>Desbloquear cliente;</li>
+        <li>Cancelar nota fiscal;</li>
+        <li>Usar envio por WhatsApp.</li>
+      </ul>
+
+      <p>
+        Esses checkboxes devem ser analisados com extremo cuidado, pois alguns deles autorizam ações de alto impacto.
+      </p>
+
+
+      <div class="module-image" style="max-width:600px; margin-left:auto; margin-right:auto;">
+        <img src="../../../assets/img/manuais/rh/manual_controle_acesso/pbca035c-checkboxes-permissoes.webp" alt="Checkboxes de permissões internas na tela PBCA035C do CAD ERP">
+      </div>
+      <h3 style="text-align: center;">Imagem: Tela - Checkboxes de Permissões Internas - PBCA035C</h3>
+
+      <p class="module-highlight">
+        Checkbox marcado pode significar autorização para ação crítica. Não deve ser marcado por conveniência.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>12. Limite dos checkboxes</h2>
+      <p>
+        Os checkboxes são importantes, mas não resolvem tudo.
+      </p>
+
+      <p>
+        Eles funcionam apenas quando a tela ou rotina está sujeita àquele tipo de controle interno. Nem todo programa
+        possui refinamento por checkbox. Algumas telas são controladas apenas por acesso ao programa. Outras podem
+        apresentar comportamento fora da lógica esperada de permissão.
+      </p>
+
+      <p>
+        Portanto, os checkboxes devem ser entendidos como uma camada de refinamento, não como garantia total de segurança.
+      </p>
+
+      <ul>
+        <li>algumas permissões são controladas por checkbox;</li>
+        <li>algumas telas são liberadas ou bloqueadas como um todo;</li>
+        <li>algumas funções podem exigir controle por processo;</li>
+        <li>alguns comportamentos podem depender de correção pela CAD;</li>
+        <li>algumas situações exigem auditoria posterior.</li>
+      </ul>
+
+      <p class="module-highlight">
+        Checkbox é refinamento. Não substitui matriz, restrição por usuário e governança.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>13. Hierarquia prática de controle</h2>
+      <p>
+        Para fins operacionais, a No Fire deverá considerar a seguinte hierarquia prática:
+      </p>
+
+      <ol>
+        <li><strong>Comportamento real do sistema</strong> — aquilo que foi validado na prática;</li>
+        <li><strong>PBCA035</strong> — restrição direta por usuário;</li>
+        <li><strong>PBCA035C</strong> — permissões internas por checkbox;</li>
+        <li><strong>PBCA079A</strong> — programas vinculados ao perfil;</li>
+        <li><strong>PBCA079</strong> — cadastro e organização do perfil;</li>
+        <li><strong>Governança operacional</strong> — regra obrigatória para tudo que o sistema não controla adequadamente.</li>
+      </ol>
+
+      <p>
+        Essa hierarquia existe porque o comportamento observado em ambiente real deve prevalecer sobre a suposição de
+        funcionamento ideal.
+      </p>
+
+      <p class="module-highlight">
+        A configuração teórica nunca deve ser mais importante que o comportamento real validado no sistema.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>14. Comportamentos fora da lógica esperada</h2>
+      <p>
+        Durante a análise do ambiente, foram identificados comportamentos em que telas ou rotinas puderam ser acessadas
+        mesmo sem a liberação esperada.
+      </p>
+
+      <p>
+        Esses comportamentos podem ocorrer por diferentes motivos:
+      </p>
+
+      <ul>
+        <li>atalhos internos do sistema;</li>
+        <li>menus que não respeitam integralmente o perfil;</li>
+        <li>chamadas indiretas a partir de outras telas;</li>
+        <li>rotinas externas abertas fora do controle principal;</li>
+        <li>falhas de bloqueio por perfil;</li>
+        <li>funções sem restrição completa disponível.</li>
+      </ul>
+
+      <p>
+        Quando isso ocorrer, a No Fire não deve interpretar o acesso como autorização automática. A regra operacional
+        continua valendo.
+      </p>
+
+
+      <div class="module-image" style="max-width:800px; margin-left:auto; margin-right:auto;">
+        <img src="../../../assets/img/manuais/rh/manual_controle_acesso/exemplo-acesso-indireto-tela-01.webp" alt="Exemplo de acesso indireto a tela no CAD ERP">
+      </div>
+      <h3 style="text-align: center;">Imagem: Exemplo de Acesso Indireto - Tela Orçamento de Venda - PBCA032I </h3>
+
+        <div class="module-image" style="max-width:800px; margin-left:auto; margin-right:auto;">
+        <img src="../../../assets/img/manuais/rh/manual_controle_acesso/exemplo-acesso-indireto-tela-02.webp" alt="Exemplo de acesso indireto a tela no CAD ERP">
+      </div>
+      <h3 style="text-align: center;">Imagem: Exemplo de Acesso Indireto - Tela de Cadastro de Itens/Produtos - PBCA005C </h3>
+
+      <p class="module-highlight">
+        Se uma tela abrir indevidamente, isso não transforma o uso em permitido.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>15. Controle técnico versus controle operacional</h2>
+      <p>
+        O controle técnico é aquilo que o sistema consegue impedir, liberar ou restringir por configuração.
+      </p>
+
+      <p>
+        O controle operacional é aquilo que a empresa define como regra de uso, independentemente de o sistema bloquear
+        ou não.
+      </p>
+
+      <p>
+        No ambiente da No Fire, os dois controles precisam existir juntos.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo de controle</th>
+            <th>Exemplo</th>
+            <th>Responsável principal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Controle técnico</td>
+            <td>Restrição no PBCA035</td>
+            <td>Gestão / Implantação</td>
+          </tr>
+          <tr>
+            <td>Controle técnico</td>
+            <td>Checkbox desmarcado no PBCA035C</td>
+            <td>Gestão / Implantação</td>
+          </tr>
+          <tr>
+            <td>Controle operacional</td>
+            <td>Regra proibindo uso de função mesmo que apareça na tela</td>
+            <td>Empresa / Gestão</td>
+          </tr>
+          <tr>
+            <td>Controle operacional</td>
+            <td>Comunicação obrigatória de alteração sensível</td>
+            <td>Usuário / Gestor</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="module-highlight">
+        Onde o controle técnico não for suficiente, o controle operacional passa a ser obrigatório.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>16. Tipos de telas quanto ao controle</h2>
+      <p>
+        Para facilitar a governança, as telas do sistema devem ser classificadas em três grupos principais.
+      </p>
+
+      <h3>16.1 Telas governáveis</h3>
+      <p>
+        São telas em que o acesso pode ser controlado de forma mais consistente por perfil, vinculação, restrição ou
+        checkbox.
+      </p>
+
+      <p>
+        Exemplos esperados:
+      </p>
+
+      <ul>
+        <li>parte das rotinas financeiras;</li>
+        <li>parte das rotinas comerciais;</li>
+        <li>parte das rotinas de CRM;</li>
+        <li>rotinas com checkboxes específicos no PBCA035C.</li>
+      </ul>
+
+      <h3>16.2 Telas parcialmente governáveis</h3>
+      <p>
+        São telas em que existe algum nível de controle, mas a proteção não deve ser considerada absoluta.
+      </p>
+
+      <p>
+        Nesses casos, a matriz deve ser aplicada, mas também deve haver revisão, orientação e acompanhamento.
+      </p>
+
+      <h3>16.3 Telas não governáveis apenas por configuração</h3>
+      <p>
+        São telas, rotinas ou acessos que podem exigir controle por processo, porque o bloqueio técnico pode não ser
+        suficiente no cenário atual.
+      </p>
+
+      <p>
+        Para essas telas, a resposta correta não é confiar no sistema. A resposta correta é estabelecer regra, comunicação,
+        limitação de uso e auditoria.
+      </p>
+
+      <p class="module-highlight">
+        Nem todo risco será resolvido por configuração. Alguns riscos deverão ser administrados por processo.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>17. Programas, telas e códigos PBCA</h2>
+      <p>
+        O CAD ERP identifica grande parte de suas telas e rotinas por códigos de programa. Esses códigos são essenciais
+        para a matriz de permissões, porque permitem tratar acessos de forma objetiva.
+      </p>
+
+      <p>
+        Exemplos:
+      </p>
+
+      <ul>
+        <li><strong>PBCA035</strong> — Cadastro de Usuários;</li>
+        <li><strong>PBCA079</strong> — Cadastro de Perfil;</li>
+        <li><strong>PBCA079A</strong> — Vinculação Perfil x Programas;</li>
+        <li><strong>PBCA041</strong> — Exportação de Dados;</li>
+        <li><strong>PBCA013</strong> — Tributação;</li>
+        <li><strong>PBCA027</strong> — Títulos;</li>
+        <li><strong>PBCA032</strong> — Orçamento de Venda;</li>
+        <li><strong>PBCA015</strong> — Pedido de Venda;</li>
+        <li><strong>PBCA056</strong> — Funcionários.</li>
+      </ul>
+
+      <p>
+        O uso do código evita ambiguidade. Em vez de dizer apenas “tela de usuário” ou “tela financeira”, o manual deve
+        sempre que possível indicar o programa correspondente.
+      </p>
+
+      <p class="module-highlight">
+        Código PBCA é referência operacional. Ele reduz confusão na configuração, auditoria e comunicação com a CAD.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>18. Como a No Fire deve interpretar uma tela aberta</h2>
+      <p>
+        Uma tela aberta deve ser interpretada com cautela.
+      </p>
+
+      <p>
+        O usuário deve considerar três perguntas antes de qualquer ação:
+      </p>
+
+      <ol>
+        <li>Esta tela faz parte da minha função?</li>
+        <li>Esta ação está prevista na matriz de permissões?</li>
+        <li>Tenho orientação formal para executar esta operação?</li>
+      </ol>
+
+      <p>
+        Se a resposta for negativa ou incerta, a ação não deve ser executada.
+      </p>
+
+      <p>
+        Esse princípio será especialmente importante em rotinas críticas, como:
+      </p>
+
+      <ul>
+        <li>cadastro de usuários;</li>
+        <li>perfil e permissões;</li>
+        <li>tributação;</li>
+        <li>financeiro;</li>
+        <li>exportação de dados;</li>
+        <li>backup;</li>
+        <li>atualização do sistema;</li>
+        <li>cadastros estruturais;</li>
+        <li>relatórios estratégicos;</li>
+        <li>acesso remoto.</li>
+      </ul>
+
+      <p class="module-highlight">
+        A pergunta correta não é “o sistema deixou?”. A pergunta correta é “minha função autoriza?”.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>19. Imagens recomendadas para este bloco</h2>
+      <p>
+        Para tornar este bloco mais didático, recomenda-se incluir prints das principais telas de controle.
+        Os arquivos devem ser salvos em formato <strong>.webp</strong>, utilizando exatamente os nomes abaixo:
+      </p>
+
+      <ul>
+        <li><strong>pbca079-cadastro-perfil.webp</strong></li>
+        <li><strong>pbca079a-vinculacao-perfil-programas.webp</strong></li>
+        <li><strong>pbca035-restricao-usuario-programa.webp</strong></li>
+        <li><strong>pbca035c-cadastro-usuarios-visao-geral.webp</strong></li>
+        <li><strong>pbca035c-checkboxes-permissoes.webp</strong></li>
+        <li><strong>exemplo-acesso-indireto-tela.webp</strong></li>
+      </ul>
+
+      <p>
+        Caminho sugerido para salvar as imagens:
+      </p>
+
+      <p class="module-highlight">
+        assets/img/manual/acessos/bloco-02/
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>20. Conclusão do Bloco 02</h2>
+      <p>
+        O controle de acessos do CAD ERP deve ser entendido como uma arquitetura em camadas. O perfil é apenas uma dessas
+        camadas e não deve ser tratado como garantia suficiente de segurança.
+      </p>
+
+      <p>
+        Para a No Fire, o controle efetivo dependerá da combinação entre vinculação de programas, restrição direta por
+        usuário, revisão dos checkboxes internos e governança operacional.
+      </p>
+
+      <p>
+        O ponto mais importante deste bloco é compreender que o sistema deve ser operado com base no comportamento real
+        validado em ambiente de implantação, e não apenas com base na expectativa teórica de funcionamento.
+      </p>
+
+      <p class="module-highlight">
+        O modelo correto é: organizar por perfil, validar por usuário, refinar por checkbox e controlar por governança.
+      </p>
+
+      <div class="module-nav">
+        <a class="module-link" href="./manual-acessos-bloco-01.html">Voltar para Bloco 01</a>
+        <a class="module-link" href="./manual-acessos-bloco-03.html">Avançar para Bloco 03</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-left"><span id="footer-year"></span> © ConnectOps | V.1.0</div>
+
+  <div class="footer-center">
+    <a href="https://www.connectops.com.br" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da ConnectOps">
+      <img src="../../../assets/img/connectops-logo.png" alt="Logomarca ConnectOps">
+    </a>
+  </div>
+
+  <div class="footer-right">
+    Dúvidas e suporte:
+    <a href="mailto:nofire@connectops.com.br">nofire@connectops.com.br</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

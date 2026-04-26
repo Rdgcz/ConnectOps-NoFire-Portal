@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manual de Controle de Acessos | Bloco 01 | No Fire</title>
+  <meta name="description" content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 01 - Fundamento, contexto, premissas e finalidade do manual.">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <link rel="icon" href="../../../assets/img/favicon/favicon.ico" type="image/png">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="https://www.nofire.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da No Fire">
+        <img src="../../../assets/img/nofire-logo.png" alt="No Fire">
+      </a>
+    </div>
+
+    <div class="nav-center">
+      <a href="../../../index.html">Início</a> |
+      <a href="../../../modulos/rh/manual_controle_acessos/manual-acessos-bloco-02.html">Bloco 02</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da CAD Sistemas">
+        <img src="../../../assets/img/cad-logo.png" alt="CAD">
+      </a>
+    </div>
+  </nav>
+</header>
+
+<section class="internal-hero">
+  <div class="internal-hero-content">
+    <span class="internal-kicker">Manual Operacional · Controle de Acessos · Bloco 01/10</span>
+    <h1>Fundamento, contexto e finalidade do Manual de Controle de Acessos</h1>
+    <p>
+      Este bloco apresenta a base conceitual do manual, explica por que o controle de acessos no CAD ERP exige
+      governança operacional própria e estabelece as premissas que deverão orientar o uso do sistema pela<BR>
+      No Fire.
+    </p>
+  </div>
+</section>
+
+<main class="module-content">
+  <div class="module-shell">
+
+    <section class="module-block">
+      <h2>1. Objetivo deste manual</h2>
+      <p>
+        Este manual tem como objetivo orientar a No Fire quanto ao controle operacional de usuários, perfis,
+        permissões, níveis de acesso, responsabilidades e regras de utilização do CAD ERP no contexto da implantação
+        controlada do módulo comercial.
+      </p>
+
+      <p>
+        O manual não deve ser entendido apenas como um documento técnico de configuração. Sua função é mais ampla:
+        ele estabelece um modelo de operação segura para um ambiente em que o sistema, isoladamente, não deve ser
+        tratado como mecanismo suficiente de controle.
+      </p>
+
+      <p>
+        A finalidade principal é permitir que a No Fire utilize o CAD ERP de forma organizada, rastreável e disciplinada,
+        mesmo diante de limitações estruturais identificadas durante a implantação.
+      </p>
+
+      <p class="module-highlight">
+        Este manual define como a No Fire deverá operar o controle de acessos no CAD ERP. Ele não parte de um cenário
+        ideal. Parte do comportamento real observado no sistema.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>2. Escopo do manual</h2>
+      <p>
+        Este manual cobre os principais elementos relacionados à administração de usuários e permissões no CAD ERP,
+        incluindo:
+      </p>
+
+      <ul>
+        <li>cadastro de funcionários;</li>
+        <li>cadastro de usuários;</li>
+        <li>estrutura de perfis;</li>
+        <li>vinculação de programas aos perfis;</li>
+        <li>restrição direta de usuário por programa;</li>
+        <li>permissões internas por checkbox;</li>
+        <li>responsabilidades por função;</li>
+        <li>regras de uso operacional;</li>
+        <li>governança compensatória;</li>
+        <li>controle de exceções;</li>
+        <li>rastreabilidade e auditoria posterior.</li>
+      </ul>
+
+      <p>
+        O manual também estabelece a diferença entre aquilo que o sistema permite tecnicamente e aquilo que a No Fire
+        autoriza operacionalmente.
+      </p>
+
+      <p class="module-highlight">
+        Nem tudo que o sistema permite deve ser considerado autorizado. A permissão técnica não substitui a regra operacional.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>3. Contexto da implantação</h2>
+      <p>
+        Este manual foi desenvolvido dentro da Etapa 1 da implantação comercial do CAD ERP na No Fire, durante a Fase 2
+        de execução do projeto.
+      </p>
+
+      <p>
+        A Fase 2 teve como objetivo avançar da análise estrutural para a preparação prática do ambiente, incluindo:
+      </p>
+
+      <ul>
+        <li>levantamento de usuários existentes;</li>
+        <li>validação de usuários ativos e inativos;</li>
+        <li>identificação de novos usuários necessários;</li>
+        <li>análise de perfis e permissões;</li>
+        <li>auditoria prática de acessos;</li>
+        <li>identificação de acessos indevidos;</li>
+        <li>estruturação de governança compensatória;</li>
+        <li>preparação para operação assistida e Go Live.</li>
+      </ul>
+
+      <p>
+        O sistema ainda se encontra em ambiente de implantação. Portanto, este manual não registra erros cometidos por
+        usuários em operação real. Ele registra regras, decisões, validações e riscos identificados antes do Go Live,
+        com o objetivo de prevenir falhas quando a operação for iniciada.
+      </p>
+
+      <p class="module-highlight">
+        O ambiente está em fase pré-Go Live. O manual tem caráter preventivo, normativo e operacional.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>4. Premissa central</h2>
+      <p>
+        A premissa central deste manual é simples:
+      </p>
+
+      <p class="module-highlight">
+        O controle de acessos do CAD ERP, no ambiente da No Fire, não pode depender exclusivamente da configuração técnica do sistema.
+      </p>
+
+      <p>
+        Durante as análises e auditorias realizadas, foi identificado que o CAD ERP apresenta comportamento permissivo
+        em determinados pontos. Isso significa que algumas telas, funções ou rotinas podem ficar acessíveis mesmo quando
+        a configuração esperada indicaria bloqueio ou restrição.
+      </p>
+
+      <p>
+        Por esse motivo, a No Fire deverá operar com uma combinação de:
+      </p>
+
+      <ul>
+        <li>configuração técnica possível;</li>
+        <li>restrição manual por usuário;</li>
+        <li>definição clara de responsabilidades;</li>
+        <li>regras operacionais obrigatórias;</li>
+        <li>treinamento dos usuários;</li>
+        <li>comunicação de exceções;</li>
+        <li>auditoria posterior quando necessário.</li>
+      </ul>
+
+      <p>
+        Esse conjunto de medidas será tratado ao longo do manual como governança compensatória.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>5. O que é governança compensatória</h2>
+      <p>
+        Governança compensatória é o conjunto de regras, processos e controles adotados para reduzir riscos quando o
+        sistema não oferece bloqueio técnico suficiente.
+      </p>
+
+      <p>
+        Em um cenário ideal, o próprio sistema impediria automaticamente qualquer acesso indevido. Porém, quando isso
+        não ocorre de forma confiável, a organização precisa compensar a limitação técnica com disciplina operacional.
+      </p>
+
+      <p>
+        Na prática, isso significa que:
+      </p>
+
+      <ul>
+        <li>usuários devem saber claramente o que podem e o que não podem fazer;</li>
+        <li>ações críticas devem ser limitadas por regra, mesmo que o sistema permita;</li>
+        <li>alterações relevantes devem ser comunicadas;</li>
+        <li>acessos sensíveis devem ser revisados;</li>
+        <li>o uso do sistema deve respeitar a função real de cada usuário;</li>
+        <li>decisões de risco devem ser registradas e assumidas pela gestão.</li>
+      </ul>
+
+      <p class="module-highlight">
+        Quando o sistema não impede, a regra operacional deve impedir.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>6. Diferença entre acesso técnico e autorização operacional</h2>
+      <p>
+        Um dos conceitos mais importantes deste manual é a separação entre acesso técnico e autorização operacional.
+      </p>
+
+      <p>
+        <strong>Acesso técnico</strong> significa que o sistema permite abrir uma tela, clicar em uma função ou executar
+        determinada ação.
+      </p>
+
+      <p>
+        <strong>Autorização operacional</strong> significa que a No Fire reconhece aquela ação como permitida para aquele
+        usuário, dentro da função que ele exerce.
+      </p>
+
+      <p>
+        Essas duas coisas não são iguais.
+      </p>
+
+      <p>
+        Um usuário pode eventualmente conseguir acessar uma função no sistema, mas isso não significa que ele esteja
+        autorizado a utilizá-la. A autorização depende da regra operacional, da função do usuário e da matriz de
+        permissões definida pela empresa.
+      </p>
+
+      <p class="module-highlight">
+        Acesso técnico não é autorização. Botão disponível não significa permissão de uso.<br>
+        Toda ação executada pelo usuário é registrada e rastreável e a detecção de uso indevido por usuário não autorizado pode ser feita posteriormente.<br>
+        Tal postura será considerada como violação das regras operacionais.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>7. Situação estrutural identificada</h2>
+      <p>
+        As análises realizadas durante a implantação identificaram que o CAD ERP possui uma estrutura de controle de
+        acesso formada por diferentes camadas.
+      </p>
+
+      <p>
+        As principais telas e estruturas relacionadas ao controle são:
+      </p>
+
+      <ul>
+        <li><strong>PBCA079</strong> — Cadastro de Perfil;</li>
+        <li><strong>PBCA079A</strong> — Vinculação Perfil x Programas;</li>
+        <li><strong>PBCA035</strong> — Restrição de Usuário x Programa;</li>
+        <li><strong>PBCA035C</strong> — Cadastro de Usuários e permissões internas por checkbox.</li>
+      </ul>
+
+      <p>
+        A análise prática demonstrou que o perfil, isoladamente, não deve ser tratado como base suficiente de segurança.
+        O perfil organiza acessos, mas não garante bloqueio total em todos os cenários avaliados.
+      </p>
+
+      <p>
+        Por isso, o controle real precisará considerar principalmente a restrição direta por usuário, a revisão das
+        permissões internas e a governança operacional.
+      </p>
+
+      <p class="module-highlight">
+        O perfil ajuda a organizar. A restrição por usuário é a camada mais importante de controle técnico disponível.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>8. Decisão operacional da No Fire</h2>
+      <p>
+        Durante a consolidação do modelo de acessos, foi definido que o ambiente da No Fire contará com múltiplos
+        usuários com perfil de administrador.
+      </p>
+
+      <p>
+        Essa decisão deve ser entendida como uma escolha operacional da empresa. Ela amplia a flexibilidade de uso,
+        mas também aumenta o risco, pois usuários administradores possuem acesso abrangente a funções críticas do sistema.
+      </p>
+
+      <p>
+        A partir dessa decisão, o modelo de controle adotado deixa de depender exclusivamente de segregação técnica por
+        perfil e passa a depender de:
+      </p>
+
+      <ul>
+        <li>responsabilidade individual;</li>
+        <li>uso correto do login pessoal;</li>
+        <li>rastreabilidade de ações;</li>
+        <li>cumprimento das regras operacionais;</li>
+        <li>consciência dos riscos associados ao perfil administrador;</li>
+        <li>auditoria e revisão quando necessário.</li>
+      </ul>
+
+      <p class="module-highlight">
+        Administrador não significa uso livre. Administrador significa maior responsabilidade.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>9. Modelo de controle adotado</h2>
+      <p>
+        O modelo adotado pela No Fire para controle de acessos no CAD ERP será baseado em três pilares:
+      </p>
+
+      <ol>
+        <li><strong>Responsabilidade individual por usuário</strong></li>
+        <li><strong>Rastreabilidade das ações realizadas no sistema</strong></li>
+        <li><strong>Governança operacional obrigatória</strong></li>
+      </ol>
+
+      <h3>9.1 Responsabilidade individual</h3>
+      <p>
+        Cada usuário deve operar com seu próprio login. O login representa uma pessoa, uma função e uma responsabilidade.
+        Não deve haver compartilhamento de credenciais, reaproveitamento de usuários antigos ou uso genérico para rotinas
+        individuais.
+      </p>
+
+      <h3>9.2 Rastreabilidade</h3>
+      <p>
+        Quando o sistema registra ações por usuário, esses registros podem ser utilizados para auditoria, investigação
+        de inconsistências e validação posterior de alterações.
+      </p>
+
+      <h3>9.3 Governança operacional</h3>
+      <p>
+        A governança operacional define o que pode ser feito, quem pode fazer, em quais condições e com qual nível de
+        controle. Ela será a principal proteção nos pontos em que o sistema não bloquear tecnicamente uma ação indevida.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>10. Responsabilidade dos usuários</h2>
+      <p>
+        Todo usuário do CAD ERP deverá compreender que seu acesso ao sistema está vinculado à sua função na empresa.
+        O uso do sistema deve respeitar a atividade exercida, o fluxo definido e as regras estabelecidas neste manual.
+      </p>
+
+      <p>
+        Isso significa que o usuário não deve:
+      </p>
+
+      <ul>
+        <li>explorar telas sem finalidade operacional;</li>
+        <li>alterar cadastros que não fazem parte de sua função;</li>
+        <li>executar rotinas administrativas sem orientação;</li>
+        <li>alterar permissões próprias ou de terceiros;</li>
+        <li>abrir rotinas críticas apenas porque estão disponíveis;</li>
+        <li>utilizar acesso administrador como justificativa para atuação fora do fluxo;</li>
+        <li>realizar alterações estruturais sem comunicação ou validação.</li>
+      </ul>
+
+      <p class="module-highlight">
+        O usuário deve operar dentro da sua função, não dentro do limite máximo que o sistema permite.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>11. Papel da diretoria e da gestão</h2>
+      <p>
+        A diretoria e a gestão possuem papel essencial neste modelo, pois parte relevante do controle dependerá de
+        decisão organizacional, e não apenas de configuração técnica.
+      </p>
+
+      <p>
+        Cabe à gestão:
+      </p>
+
+      <ul>
+        <li>definir quais usuários devem permanecer ativos;</li>
+        <li>validar funções e responsabilidades;</li>
+        <li>autorizar acessos sensíveis quando necessário;</li>
+        <li>assumir formalmente riscos operacionais conhecidos;</li>
+        <li>orientar usuários quanto ao uso correto do sistema;</li>
+        <li>cobrar cumprimento das regras estabelecidas;</li>
+        <li>apoiar revisões periódicas da matriz de permissões.</li>
+      </ul>
+
+      <p>
+        Sem participação da gestão, o manual perde força prática. O controle de acessos não é apenas uma tarefa técnica:
+        é uma decisão operacional da empresa.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>12. Papel do RH</h2>
+      <p>
+        O RH terá papel específico no fluxo de usuários, especialmente no cadastro de funcionários, cadastro básico de
+        usuários e inativação de acessos quando aplicável.
+      </p>
+
+      <p>
+        O RH poderá atuar na execução cadastral, mas não deverá definir permissões, perfis, liberações, acessos críticos
+        ou checkboxes sensíveis.
+      </p>
+
+      <p>
+        Essa separação existe porque cadastro e permissão são assuntos diferentes.
+      </p>
+
+      <ul>
+        <li><strong>Cadastro</strong> identifica a pessoa no sistema.</li>
+        <li><strong>Permissão</strong> define o que essa pessoa poderá fazer.</li>
+      </ul>
+
+      <p class="module-highlight">
+        O RH cadastra e informa. A definição de acesso segue governança própria.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>13. Papel da implantação</h2>
+      <p>
+        A implantação tem papel de estruturação, orientação, documentação e suporte ao modelo de controle adotado.
+      </p>
+
+      <p>
+        Durante a fase de implantação, cabe à implantação:
+      </p>
+
+      <ul>
+        <li>documentar a arquitetura real de controle de acesso;</li>
+        <li>organizar a matriz de permissões;</li>
+        <li>identificar riscos estruturais;</li>
+        <li>orientar a separação entre cadastro e permissão;</li>
+        <li>definir critérios de governança compensatória;</li>
+        <li>produzir material didático para treinamento;</li>
+        <li>apoiar a transição para operação assistida.</li>
+      </ul>
+
+      <p>
+        Após o Go Live, a manutenção do modelo dependerá da adoção interna das regras pela No Fire.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>14. Limite deste bloco</h2>
+      <p>
+        Este primeiro bloco não ensina ainda como configurar perfis, vincular programas, aplicar restrições ou marcar
+        checkboxes.
+      </p>
+
+      <p>
+        A função deste bloco é estabelecer o fundamento do manual. Antes de ensinar o procedimento, é necessário
+        compreender por que ele existe.
+      </p>
+
+      <p>
+        Os próximos blocos detalharão:
+      </p>
+
+      <ul>
+        <li>como o CAD ERP estrutura tecnicamente o controle de acessos;</li>
+        <li>quais telas fazem parte da administração de permissões;</li>
+        <li>como interpretar os PBCAs;</li>
+        <li>como a matriz de permissões deve ser usada;</li>
+        <li>como tratar usuários, perfis, checkboxes e exceções;</li>
+        <li>como auditar e revisar o ambiente.</li>
+      </ul>
+    </section>
+
+    <section class="module-block">
+      <h2>15. Conclusão do Bloco 01</h2>
+      <p>
+        O controle de acessos do CAD ERP na No Fire deve ser tratado como uma atividade crítica da implantação.
+        A empresa não deve presumir que o sistema, sozinho, bloqueará toda ação indevida ou impedirá todos os riscos.
+      </p>
+
+      <p>
+        A operação segura dependerá da combinação entre configuração técnica, responsabilidade individual, regras
+        documentadas, rastreabilidade e governança ativa.
+      </p>
+
+      <p>
+        Este manual será a referência para organizar esse modelo, orientar os usuários e sustentar a operação com
+        clareza, disciplina e responsabilidade.
+      </p>
+
+      <p class="module-highlight">
+        O controle do ambiente não está apenas na ferramenta. Está na forma como a ferramenta será utilizada.
+      </p>
+
+      <div class="module-nav">
+        <a class="module-link" href="../../../index.html">Voltar ao Portal</a>
+        <a class="module-link" href="./manual-acessos-bloco-02.html">Avançar para Bloco 02</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-left"><span id="footer-year"></span> © ConnectOps | V.1.0</div>
+
+  <div class="footer-center">
+    <a href="https://www.connectops.com.br" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da ConnectOps">
+      <img src="../../../assets/img/connectops-logo.png" alt="Logomarca ConnectOps">
+    </a>
+  </div>
+
+  <div class="footer-right">
+    Dúvidas e suporte:
+    <a href="mailto:nofire@connectops.com.br">nofire@connectops.com.br</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
