@@ -3,11 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manual de Controle de Acessos | Bloco 01 | No Fire</title>
-  <meta name="description" content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 01 - Fundamento, contexto, premissas e finalidade do manual.">
+  <title>Manual de Controle de Acessos | Bloco 07 | No Fire</title>
+  <meta name="description" content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 07 - Permissões internas (checkboxes) - PBCA035C.">
   <link rel="stylesheet" href="../../../assets/css/style.css">
   <link rel="icon" href="../../../assets/img/favicon/favicon.ico" type="image/png">
+
+<style>
+    .manual-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+
+    .manual-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      font-size: 0.95rem;
+    }
+
+    .manual-table th,
+    .manual-table td {
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.45;
+    }
+
+    .manual-table th {
+      font-weight: 700;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .manual-tag-critical {
+      font-weight: 700;
+      color: #ff6b6b;
+    }
+
+    .manual-tag-sensitive {
+      font-weight: 700;
+      color: #ffd166;
+    }
+
+    .manual-tag-operational {
+      font-weight: 700;
+      color: #7bd88f;
+    }
+
+    .manual-step-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .manual-step-card {
+      padding: 18px 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .manual-step-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #ffe3e6;
+    }
+
+    .manual-step-card p {
+      margin-bottom: 0;
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 780px) {
+      .manual-step-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 <header class="site-header">
@@ -18,19 +95,19 @@
       </a>
     </div>
 
-    <div class="nav-center" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; font-size: 0.9em;">
-      <a style="font-size: 1rem;" href="../../../index.html">Portal</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-01.html">Bloco 01</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-02.html">Bloco 02</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-03.html">Bloco 03</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-04.html">Bloco 04</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-05.html">Bloco 05</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-06.html">Bloco 06</a> |
-      <a style="font-size: 1rem;  text-shadow: red 0px 0px 4px;">Bloco 07</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-08.html">Bloco 08</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-09.html">Bloco 09</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-10.html">Bloco 10</a>
-    </div>
+<div class="nav-center" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; font-size: 0.9em;">
+  <a style="font-size: 1rem;" href="../../../index.html">Portal</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-01.html">Fundamentos</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-02.html">Conceitos</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-03.html">Estrutura</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-04.html">Perfis</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-05.html">Vinculação</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-06.html">Restrições</a> |
+  <a style="font-size: 1rem; text-shadow: red 0px 0px 4px;">Permissões</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-08.html">Operação</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-09.html">Matriz</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-10.html">Governança</a>
+</div>
 
     <div class="nav-right">
       <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da CAD Sistemas">
@@ -40,14 +117,784 @@
   </nav>
 </header>
 
-<section style="padding-bottom: 50vh; text-align: center;" class="internal-hero">
+<section class="internal-hero">
   <div class="internal-hero-content">
-    <h1>Em construção</h1>
+    <span class="internal-kicker">Manual Operacional · Controle de Acessos · Bloco 07/10</span>
+    <h1>Permissões internas (checkboxes)<br> PBCA035C</h1>
+    <p>
+      Este bloco trata das permissões internas do usuário, definidas diretamente na tela de cadastro,
+      e que podem liberar ações críticas independentemente do perfil ou dos programas vinculados.
+    </p>
   </div>
 </section>
 
-<main>
+<main class="module-content">
+<div class="module-shell">
 
+<section class="module-block">
+<h2>1. Objetivo do Bloco 07</h2>
+
+<p>
+Este bloco tem como objetivo explicar como funcionam os <strong>checkboxes de permissões internas</strong>
+na tela de cadastro de usuários.
+</p>
+
+<p>
+Essas permissões são extremamente sensíveis porque:
+</p>
+
+<ul>
+<li>não dependem diretamente do perfil;</li>
+<li>não dependem diretamente da vinculação de programas;</li>
+<li>podem liberar ações críticas dentro de telas já acessíveis;</li>
+<li>podem estar marcadas sem validação.</li>
+</ul>
+
+<p class="module-highlight">
+Os checkboxes da PBCA035C podem conceder poder real ao usuário, mesmo quando o restante da configuração está correta.
+</p>
+
+</section>
+
+<section class="module-block">
+<h2>2. Caminho da tela</h2>
+
+<p class="module-highlight">
+Menu Utilitários &gt; Cadastro de Usuários &gt; (Tela) Cadastro de Usuários - PBCA035C
+</p>
+
+<div class="module-image" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+<img src="../../../assets/img/manuais/rh/manual_controle_acesso/pbca035c-cadastro-usuarios-visao-geral.webp">
+</div>
+
+<p class="module-caption">
+Tela Cadastro de Usuários - PBCA035C.
+</p>
+
+</section>
+
+<section class="module-block">
+<h2>3. O problema real dos checkboxes</h2>
+
+<p>
+Diferente das outras telas:
+</p>
+
+<ul>
+<li>PBCA079 → apenas nome do perfil</li>
+<li>PBCA079A → define programas</li>
+<li>PBCA035 → restringe programas</li>
+</ul>
+
+<p>
+A PBCA035C contém permissões que:
+</p>
+
+<ul>
+<li>alteram comportamento dentro das telas;</li>
+<li>permitem ações críticas;</li>
+<li>não são visíveis diretamente na navegação;</li>
+<li>podem ser esquecidas na revisão.</li>
+</ul>
+
+<p class="module-highlight">
+Checkbox errado = usuário com poder invisível.
+</p>
+
+</section>
+
+<section class="module-block">
+<h2>4. Erro comum (grave)</h2>
+
+<p>
+Durante o cadastro do usuário:
+</p>
+
+<ul>
+<li>checkbox já vem marcado;</li>
+<li>ninguém revisa;</li>
+<li>usuário entra no sistema com poder indevido.</li>
+</ul>
+
+<p class="module-highlight">
+Checkbox marcado por padrão deve ser tratado como NÃO VALIDADO.
+</p>
+
+</section>
+
+<section class="module-block">
+<h2>5. Regra operacional obrigatória</h2>
+
+<p>
+A No Fire deve adotar a seguinte regra:
+</p>
+
+<ul>
+<li>nenhum checkbox é confiável por padrão;</li>
+<li>todo checkbox deve ser revisado;</li>
+<li>permissões devem ser justificadas;</li>
+<li>o que não for entendido não deve ser liberado.</li>
+</ul>
+
+<p class="module-highlight">
+Se não sabe o que o checkbox faz, NÃO libera.
+</p>
+
+</section>
+
+<section class="module-block">
+<h2>6. Momento correto para configurar checkboxes</h2>
+
+<p>
+A ordem correta é:
+</p>
+
+<ol>
+<li>criar usuário</li>
+<li>definir perfil</li>
+<li>vincular programas</li>
+<li>restringir na PBCA035</li>
+<li><strong>apenas depois ajustar checkboxes</strong></li>
+</ol>
+
+<p class="module-highlight">
+Checkbox é ajuste fino. Nunca é ponto de partida.
+</p>
+
+</section>
+
+<section class="module-block">
+<h2>7. Tipos de permissões internas</h2>
+
+<p>
+Os checkboxes estão organizados em grupos:
+</p>
+
+<ul>
+<li>Financeiro</li>
+<li>Compras</li>
+<li>Gestão de Vendas</li>
+<li>Cliente</li>
+<li>CRM</li>
+<li>CADEX</li>
+<li>Nota Fiscal</li>
+<li>WhatsApp / Integrações</li>
+</ul>
+
+<p>
+Cada grupo pode conter permissões que:
+</p>
+
+<ul>
+<li>alteram valor</li>
+<li>aprovam operação</li>
+<li>cancelam registros</li>
+<li>liberam exceções</li>
+</ul>
+
+</section>
+
+<section class="module-block">
+<h2>8. Exemplo de risco (crítico)</h2>
+
+<p>
+Mesmo com restrições corretas:
+</p>
+
+<ul>
+<li>usuário acessa PBCA032I (orçamento)</li>
+<li>clica em <strong>&lt;...&gt;</strong></li>
+<li>abre PBCA005C</li>
+</ul>
+
+<div class="module-image" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+<img src="../../../assets/img/manuais/rh/manual_controle_acesso/exemplo-acesso-indireto-tela-01.webp">
+</div>
+
+<div class="module-image" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+<img src="../../../assets/img/manuais/rh/manual_controle_acesso/exemplo-acesso-indireto-tela-02.webp">
+</div>
+
+
+
+<p class="module-highlight">
+Perfil correto + programa correto + checkbox correto + acesso por rotina indireta = acesso indevido.<br>
+Nestes casos, o controle de acessos deve ser regido por governança e gestão.
+</p>
+
+</section>
+
+<section class="module-block">
+<h2>9. Regra de interpretação</h2>
+
+<p>
+Para cada checkbox, o responsável deve perguntar:
+</p>
+
+<ul>
+<li>isso altera dados?</li>
+<li>isso aprova algo?</li>
+<li>isso ignora regra?</li>
+<li>isso impacta financeiro?</li>
+<li>isso impacta cliente?</li>
+</ul>
+
+<p class="module-highlight">
+Se a resposta for sim para qualquer um, o checkbox é sensível.
+</p>
+
+</section>
+
+
+<section class="module-block">
+  <h2>10. Matriz prática de checkboxes — visão geral</h2>
+
+  <p>
+    A matriz abaixo organiza os principais grupos de permissões internas identificados na PBCA035C.
+    Ela deve ser usada como referência de análise antes de marcar ou manter qualquer checkbox ativo.
+  </p>
+
+  <div class="manual-table-wrap">
+    <table class="manual-table">
+      <thead>
+        <tr>
+          <th>Grupo</th>
+          <th>Tipo de permissão</th>
+          <th>Risco</th>
+          <th>Regra operacional</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Financeiro</td>
+          <td>Aprovar, baixar, reabrir ou alterar títulos</td>
+          <td>Crítico</td>
+          <td>Restrito a usuários financeiros autorizados.</td>
+        </tr>
+        <tr>
+          <td>Compras</td>
+          <td>Comprar, aprovar cotação ou visualizar notas</td>
+          <td>Alto</td>
+          <td>Restrito a usuários com função de compras.</td>
+        </tr>
+        <tr>
+          <td>Gestão de Vendas</td>
+          <td>Alterar valor, desconto, aprovar, cancelar ou excluir pedido</td>
+          <td>Crítico</td>
+          <td>Bloquear por padrão para vendedores. Liberar apenas exceções validadas.</td>
+        </tr>
+        <tr>
+          <td>Cliente</td>
+          <td>Desbloquear cliente</td>
+          <td>Alto</td>
+          <td>Restrito à gestão ou responsável autorizado.</td>
+        </tr>
+        <tr>
+          <td>CRM</td>
+          <td>Usuário CRM / visualização de preço</td>
+          <td>Médio</td>
+          <td>Liberar conforme função.</td>
+        </tr>
+        <tr>
+          <td>CADEX</td>
+          <td>Usuário / desativar equipamento</td>
+          <td>Alto</td>
+          <td>Restrito a usuários técnicos autorizados.</td>
+        </tr>
+        <tr>
+          <td>WhatsApp</td>
+          <td>Usar envio ou sessão WhatsApp</td>
+          <td>Médio</td>
+          <td>Liberar apenas para usuários que atendem clientes.</td>
+        </tr>
+        <tr>
+          <td>Nota Fiscal</td>
+          <td>Cancelar NF</td>
+          <td>Crítico</td>
+          <td>Restrito. Não liberar para usuários comerciais comuns.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="module-highlight">
+    A regra padrão é: checkbox crítico nasce bloqueado. Só é liberado com motivo claro.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>11. Checkboxes financeiros</h2>
+
+  <p>
+    As permissões financeiras devem ser tratadas como críticas. Elas podem permitir ações que impactam cobrança,
+    pagamento, baixa, reabertura, dados financeiros e visualização de totais.
+  </p>
+
+  <div class="manual-table-wrap">
+    <table class="manual-table">
+      <thead>
+        <tr>
+          <th>Permissão</th>
+          <th>Impacto</th>
+          <th>Diretriz</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Aprova Títulos</td>
+          <td>Autoriza movimentação ou validação financeira.</td>
+          <td>Restrito.</td>
+        </tr>
+        <tr>
+          <td>Baixa Títulos</td>
+          <td>Permite dar baixa financeira.</td>
+          <td>Controlado.</td>
+        </tr>
+        <tr>
+          <td>Reabrir Títulos</td>
+          <td>Permite desfazer baixa ou reabrir obrigação.</td>
+          <td>Restrito.</td>
+        </tr>
+        <tr>
+          <td>Busca todos os títulos na tela</td>
+          <td>Amplia visualização de dados financeiros.</td>
+          <td>Controlado.</td>
+        </tr>
+        <tr>
+          <td>Alterar dados chave do título</td>
+          <td>Permite alterar valor, vencimento ou dados sensíveis.</td>
+          <td>Restrito.</td>
+        </tr>
+        <tr>
+          <td>Utilizar todos os portadores</td>
+          <td>Permite operar com diferentes bancos/portadores.</td>
+          <td>Restrito.</td>
+        </tr>
+        <tr>
+          <td>Visualiza totais financeiro</td>
+          <td>Permite visualizar consolidações financeiras.</td>
+          <td>Controlado.</td>
+        </tr>
+        <tr>
+          <td>Usa contas a receber</td>
+          <td>Permite atuação em contas a receber.</td>
+          <td>Controlado por função.</td>
+        </tr>
+        <tr>
+          <td>Usa contas a pagar</td>
+          <td>Permite atuação em contas a pagar.</td>
+          <td>Controlado por função.</td>
+        </tr>
+        <tr>
+          <td>Visualiza títulos funcionário</td>
+          <td>Exposição interna.</td>
+          <td>Restrito.</td>
+        </tr>
+        <tr>
+          <td>Visualiza títulos vendedor</td>
+          <td>Exposição comercial/comissão.</td>
+          <td>Restrito.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="module-highlight">
+    Usuário sem função financeira não deve ter checkbox financeiro marcado.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>12. Checkboxes de compras</h2>
+
+  <p>
+    As permissões de compras devem ser liberadas apenas para usuários que participam diretamente do fluxo de compra,
+    cotação, aprovação ou conferência fiscal relacionada.
+  </p>
+
+  <div class="manual-table-wrap">
+    <table class="manual-table">
+      <thead>
+        <tr>
+          <th>Permissão</th>
+          <th>Impacto</th>
+          <th>Diretriz</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>É comprador</td>
+          <td>Identifica usuário como operador de compras.</td>
+          <td>Controlado.</td>
+        </tr>
+        <tr>
+          <td>Aprova cotação / ordem de compra</td>
+          <td>Permite avanço ou aprovação no fluxo de compras.</td>
+          <td>Restrito.</td>
+        </tr>
+        <tr>
+          <td>Visualiza NF funcionário</td>
+          <td>Exposição de informações internas.</td>
+          <td>Restrito.</td>
+        </tr>
+        <tr>
+          <td>Visualiza NF vendedor</td>
+          <td>Exposição de informações comerciais/fiscais.</td>
+          <td>Restrito.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="module-highlight">
+    Compra não é consulta genérica. Quem aprova compra assume impacto operacional e financeiro.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>13. Checkboxes de gestão de vendas</h2>
+
+  <p>
+    Este é um dos grupos mais críticos para a operação comercial. Algumas permissões podem afetar preço,
+    desconto, aprovação, cancelamento, exclusão, vendedor responsável e comportamento do pedido.
+  </p>
+
+  <div class="manual-table-wrap">
+    <table class="manual-table">
+      <thead>
+        <tr>
+          <th>Permissão</th>
+          <th>Impacto</th>
+          <th>Diretriz</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Antecipar pedido</td>
+          <td>Altera fluxo comercial ou operacional.</td>
+          <td>Controlado.</td>
+        </tr>
+        <tr>
+          <td>Reserva pedido</td>
+          <td>Impacta disponibilidade/fluxo de atendimento.</td>
+          <td>Controlado.</td>
+        </tr>
+        <tr>
+          <td>Copiar pedido</td>
+          <td>Facilita rotina operacional.</td>
+          <td>Baixo risco, mas revisar conforme perfil.</td>
+        </tr>
+        <tr>
+          <td>Retornar pedido para orçamento</td>
+          <td>Reverte etapa do fluxo comercial.</td>
+          <td>Restrito.</td>
+        </tr>
+        <tr>
+          <td>Permitir alterar valor do produto</td>
+          <td>Impacta preço e margem.</td>
+          <td>Bloquear por padrão.</td>
+        </tr>
+        <tr>
+          <td>Permitir alterar desconto do produto</td>
+          <td>Impacta margem e política comercial.</td>
+          <td>Bloquear por padrão.</td>
+        </tr>
+        <tr>
+          <td>Visualizar relatório tabela preço</td>
+          <td>Consulta comercial.</td>
+          <td>Liberar conforme função.</td>
+        </tr>
+        <tr>
+          <td>Cancelar pedido</td>
+          <td>Interrompe venda ou fluxo operacional.</td>
+          <td>Restrito.</td>
+        </tr>
+        <tr>
+          <td>Excluir pedidos</td>
+          <td>Remove registro operacional.</td>
+          <td>Bloquear por padrão.</td>
+        </tr>
+        <tr>
+          <td>Agrupar pedidos</td>
+          <td>Impacta organização logística/operacional.</td>
+          <td>Controlado.</td>
+        </tr>
+        <tr>
+          <td>Aprovar orçamento</td>
+          <td>Avança negociação para etapa comercial relevante.</td>
+          <td>Restrito conforme política da No Fire.</td>
+        </tr>
+        <tr>
+          <td>Preço triagem</td>
+          <td>Impacta análise prévia de preço.</td>
+          <td>Controlado.</td>
+        </tr>
+        <tr>
+          <td>Reabrir pedidos</td>
+          <td>Reverte fluxo já avançado.</td>
+          <td>Restrito.</td>
+        </tr>
+        <tr>
+          <td>Alterar vendedor</td>
+          <td>Impacta responsabilidade e comissão.</td>
+          <td>Restrito.</td>
+        </tr>
+        <tr>
+          <td>Alterar OBS item</td>
+          <td>Permite ajuste de observação em item.</td>
+          <td>Baixo/médio risco, liberar com critério.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="module-highlight">
+    Para vendedor comum, alterar valor, alterar desconto, excluir, cancelar, aprovar e reabrir devem nascer bloqueados.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>14. Checkboxes de cliente, CRM, CADEX, WhatsApp e Nota Fiscal</h2>
+
+  <p>
+    Além dos grupos financeiros, compras e vendas, a PBCA035C pode conter permissões complementares que também devem
+    ser revisadas.
+  </p>
+
+  <div class="manual-table-wrap">
+    <table class="manual-table">
+      <thead>
+        <tr>
+          <th>Grupo</th>
+          <th>Permissão</th>
+          <th>Impacto</th>
+          <th>Diretriz</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cliente</td>
+          <td>Desbloqueia cliente</td>
+          <td>Permite liberar cliente bloqueado.</td>
+          <td>Restrito.</td>
+        </tr>
+        <tr>
+          <td>CRM</td>
+          <td>Usuário do CRM</td>
+          <td>Permite uso do módulo CRM.</td>
+          <td>Liberar conforme função.</td>
+        </tr>
+        <tr>
+          <td>CRM</td>
+          <td>Visualiza preço</td>
+          <td>Exposição comercial.</td>
+          <td>Controlado.</td>
+        </tr>
+        <tr>
+          <td>CADEX</td>
+          <td>Usuário</td>
+          <td>Acesso a rotinas técnicas/operacionais.</td>
+          <td>Controlado por função.</td>
+        </tr>
+        <tr>
+          <td>CADEX</td>
+          <td>Desativar equipamento</td>
+          <td>Impacto técnico e operacional.</td>
+          <td>Restrito.</td>
+        </tr>
+        <tr>
+          <td>WhatsApp</td>
+          <td>Usa envio WhatsApp</td>
+          <td>Comunicação direta com cliente.</td>
+          <td>Liberar apenas a usuários autorizados.</td>
+        </tr>
+        <tr>
+          <td>WhatsApp</td>
+          <td>Sessão WhatsApp</td>
+          <td>Controle de sessão/canal de comunicação.</td>
+          <td>Controlado.</td>
+        </tr>
+        <tr>
+          <td>Nota Fiscal</td>
+          <td>Permite cancelar NF</td>
+          <td>Impacto fiscal crítico.</td>
+          <td>Restrito. Não liberar para vendedor comum.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="module-highlight">
+    Cancelamento de NF, desbloqueio de cliente e desativação de equipamento não são permissões administrativas simples.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>15. Padrão recomendado por perfil</h2>
+
+  <p>
+    Abaixo está uma leitura operacional inicial para orientar a revisão dos checkboxes.
+    A matriz definitiva deverá ser ajustada conforme validação da No Fire.
+  </p>
+
+  <div class="manual-table-wrap">
+    <table class="manual-table">
+      <thead>
+        <tr>
+          <th>Perfil</th>
+          <th>Checkboxes que podem fazer sentido</th>
+          <th>Checkboxes que devem ser bloqueados por padrão</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vendedor</td>
+          <td>Copiar pedido, visualizar preço/relatórios autorizados, alterar OBS item se validado.</td>
+          <td>Alterar valor, alterar desconto, excluir pedido, cancelar pedido, aprovar orçamento, alterar vendedor, financeiro, cancelar NF.</td>
+        </tr>
+        <tr>
+          <td>RH</td>
+          <td>Somente o necessário para cadastro básico, conforme orientação específica.</td>
+          <td>Financeiro, compras, vendas, fiscal, perfil, restrição, exportação, checkboxes sensíveis.</td>
+        </tr>
+        <tr>
+          <td>Administrativo</td>
+          <td>Contas a pagar/receber, baixa de títulos, conforme função.</td>
+          <td>Aprovar, reabrir, alterar dados chave, fiscal crítico e permissões comerciais sem necessidade.</td>
+        </tr>
+        <tr>
+          <td>Financeiro</td>
+          <td>Permissões financeiras necessárias à função.</td>
+          <td>Permissões comerciais, fiscais ou estruturais fora da função.</td>
+        </tr>
+        <tr>
+          <td>Engenharia</td>
+          <td>CRM, CADEX ou visualizações técnicas conforme função.</td>
+          <td>Financeiro, alteração comercial, cancelamento, aprovação, desconto e NF.</td>
+        </tr>
+        <tr>
+          <td>Administrador</td>
+          <td>Pode ter permissões amplas, se definido pela gestão.</td>
+          <td>Não se aplica como bloqueio padrão, mas exige responsabilidade e rastreabilidade.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="module-highlight">
+    Perfil operacional comum não deve carregar permissões críticas por conveniência.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>16. Procedimento de revisão dos checkboxes</h2>
+
+  <p>
+    Ao revisar um usuário na PBCA035C, o responsável deve seguir o procedimento abaixo:
+  </p>
+
+  <ol>
+    <li>Confirmar que o usuário selecionado é o usuário correto.</li>
+    <li>Confirmar função e área do usuário.</li>
+    <li>Verificar quais checkboxes já estão marcados.</li>
+    <li>Desmarcar permissões sem justificativa.</li>
+    <li>Manter apenas permissões compatíveis com a função.</li>
+    <li>Validar permissões críticas com a gestão.</li>
+    <li>Conferir se a revisão da PBCA035 já foi realizada.</li>
+    <li>Salvar somente após revisão completa.</li>
+    <li>Registrar ou comunicar exceções relevantes.</li>
+  </ol>
+
+  <p class="module-highlight">
+    O checkbox deve ser consequência da função, não da configuração que veio marcada na tela.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>17. Checklist final da PBCA035C</h2>
+
+  <p>
+    Antes de considerar o usuário pronto para operação, conferir:
+  </p>
+
+  <ol>
+    <li>O usuário correto está selecionado?</li>
+    <li>A função foi confirmada?</li>
+    <li>O perfil foi definido?</li>
+    <li>Os programas foram vinculados na PBCA079A?</li>
+    <li>O usuário foi revisado na PBCA035?</li>
+    <li>Todos os checkboxes foram revisados manualmente?</li>
+    <li>Permissões financeiras indevidas foram removidas?</li>
+    <li>Permissões de compras indevidas foram removidas?</li>
+    <li>Permissões comerciais críticas foram bloqueadas?</li>
+    <li>Permissão de cancelar NF está bloqueada quando não aplicável?</li>
+    <li>Permissões de alteração de valor/desconto foram bloqueadas quando não aplicáveis?</li>
+    <li>Exceções foram validadas?</li>
+    <li>Alterações relevantes foram comunicadas?</li>
+  </ol>
+
+  <p class="module-highlight">
+    Sem revisão de PBCA035C, o acesso do usuário ainda não está fechado.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>19. Erros que devem ser evitados</h2>
+
+  <ul>
+    <li>deixar checkbox marcado porque “já veio assim”;</li>
+    <li>marcar checkbox sem saber exatamente o que ele faz;</li>
+    <li>liberar alteração de valor para vendedor comum;</li>
+    <li>liberar alteração de desconto sem política definida;</li>
+    <li>liberar exclusão de pedido por conveniência;</li>
+    <li>liberar cancelamento de NF para usuário sem função fiscal;</li>
+    <li>liberar financeiro para usuário não financeiro;</li>
+    <li>revisar perfil e esquecer checkboxes;</li>
+    <li>revisar PBCA035 e não voltar na PBCA035C;</li>
+    <li>considerar usuário pronto apenas porque login e perfil foram criados.</li>
+  </ul>
+
+  <p class="module-highlight">
+    O checkbox errado é perigoso justamente porque parece detalhe.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>20. Conclusão final do Bloco 07</h2>
+
+  <p>
+    A PBCA035C deve ser tratada como uma tela dupla: cadastro de usuário e permissões internas.
+  </p>
+
+  <p>
+    A parte cadastral pode parecer simples, mas os checkboxes presentes na mesma tela podem conceder poderes relevantes
+    dentro do sistema. Por isso, a revisão desses campos deve ser obrigatória em qualquer criação, alteração ou auditoria
+    de usuário.
+  </p>
+
+  <p>
+    O acesso correto depende da combinação entre:
+  </p>
+
+  <ul>
+    <li>perfil adequado;</li>
+    <li>programas vinculados corretamente;</li>
+    <li>restrições revisadas na PBCA035;</li>
+    <li>checkboxes validados na PBCA035C;</li>
+    <li>governança operacional para acessos indiretos.</li>
+  </ul>
+
+  <p class="module-highlight">
+    PBCA035C é onde o detalhe vira poder. Por isso, nenhum checkbox deve ficar sem revisão.
+  </p>
+
+  <div class="module-nav">
+<a class="module-link" href="./manual-acessos-bloco-06.html">Voltar</a>
+<a class="module-link" href="./manual-acessos-bloco-08.html">Avançar para Bloco 08</a>
+</div>
+
+</section>
+</div>
 </main>
 
 <footer class="site-footer">

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manual de Controle de Acessos | Bloco 01 | No Fire</title>
-  <meta name="description" content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 01 - Fundamento, contexto, premissas e finalidade do manual.">
+  <title>Manual de Controle de Acessos | Bloco 03 | No Fire</title>
+  <meta name="description" content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 03 - Separação entre cadastro, perfil, programas, restrições e permissões internas.">
   <link rel="stylesheet" href="../../../assets/css/style.css">
   <link rel="icon" href="../../../assets/img/favicon/favicon.ico" type="image/png">
 </head>
@@ -18,19 +18,19 @@
       </a>
     </div>
 
-    <div class="nav-center" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; font-size: 0.9em;">
-      <a style="font-size: 1rem;" href="../../../index.html">Portal</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-01.html">Bloco 01</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-02.html">Bloco 02</a> |
-      <a style="font-size: 1rem; text-shadow: red 0px 0px 4px;">Bloco 03</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-04.html">Bloco 04</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-05.html">Bloco 05</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-06.html">Bloco 06</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-07.html">Bloco 07</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-08.html">Bloco 08</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-09.html">Bloco 09</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-10.html">Bloco 10</a>
-    </div>
+<div class="nav-center" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; font-size: 0.9em;">
+  <a style="font-size: 1rem;" href="../../../index.html">Portal</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-01.html">Fundamentos</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-02.html">Conceitos</a> |
+  <a style="font-size: 1rem; text-shadow: red 0px 0px 4px;">Estrutura</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-04.html">Perfis</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-05.html">Vinculação</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-06.html">Restrições</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-07.html">Permissões</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-08.html">Operação</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-09.html">Matriz</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-10.html">Governança</a>
+</div>
 
     <div class="nav-right">
       <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da CAD Sistemas">
@@ -40,14 +40,514 @@
   </nav>
 </header>
 
-<section style="padding-bottom: 50vh; text-align: center;" class="internal-hero">
+<section style="padding-bottom: 15vh;" class="internal-hero">
   <div class="internal-hero-content">
-    <h1>Em construção</h1>
+    <span class="internal-kicker">Manual Operacional · Controle de Acessos · Bloco 03/10</span>
+    <h1>Separação entre cadastro, perfil, programas, restrições e permissões internas</h1>
+    <p>
+      Este bloco organiza a lógica operacional que deve ser seguida antes de qualquer definição de acesso,
+      separando cadastro de usuário, criação de perfil, vinculação de programas, restrições por usuário e
+      permissões internas por checkbox.
+    </p>
   </div>
 </section>
 
-<main>
+<main class="module-content">
+  <div class="module-shell">
 
+    <section class="module-block">
+      <h2>1. Objetivo do Bloco 03</h2>
+      <p>
+        O objetivo deste bloco é deixar clara a diferença entre cadastrar uma pessoa no sistema e conceder acesso
+        operacional a essa pessoa.
+      </p>
+
+      <p>
+        No CAD ERP, algumas telas relacionadas a cadastro, perfil e permissões estão próximas entre si no menu e,
+        em alguns casos, permitem que diferentes definições sejam feitas no mesmo momento. Porém, para a operação
+        da No Fire, essas etapas não devem ser tratadas como uma única ação.
+      </p>
+
+      <p>
+        O controle correto exige separar:
+      </p>
+
+      <ul>
+        <li>cadastro de funcionário;</li>
+        <li>cadastro de usuário;</li>
+        <li>cadastro do nome do perfil;</li>
+        <li>vinculação de programas ao perfil;</li>
+        <li>restrição direta por usuário;</li>
+        <li>revisão de checkboxes internos;</li>
+        <li>governança operacional sobre acessos indiretos.</li>
+      </ul>
+
+      <p class="module-highlight">
+        Cadastro identifica a pessoa. Permissão define o que essa pessoa pode fazer. Misturar essas duas coisas é uma falha operacional.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>2. Princípio central deste bloco</h2>
+      <p>
+        O CAD ERP pode permitir que o usuário avance em etapas de configuração sem uma sequência rígida obrigatória.
+        Isso não significa que a No Fire deve trabalhar dessa forma.
+      </p>
+
+      <p>
+        Para reduzir risco, a configuração de acessos deve seguir uma ordem lógica, documentada e revisável.
+        A criação de um usuário não deve ser confundida com liberação de acesso.
+      </p>
+
+      <p class="module-highlight">
+        O sistema pode permitir fazer. O processo da No Fire deve definir quando fazer, quem pode fazer e em qual ordem.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>3. Separação de responsabilidades</h2>
+
+      <h3>3.1 RH</h3>
+      <p>
+        O RH atua na parte cadastral. Seu papel é registrar ou atualizar dados de funcionário e usuário, conforme
+        orientação já tratada na Aula 03 do módulo de RH.
+      </p>
+
+      <p>
+        O RH pode atuar em:
+      </p>
+
+      <ul>
+        <li>cadastro de funcionário;</li>
+        <li>cadastro básico de usuário;</li>
+        <li>correção de dados cadastrais autorizados;</li>
+        <li>inativação de funcionário ou usuário, quando aplicável;</li>
+        <li>comunicação posterior para definição de acesso.</li>
+      </ul>
+
+      <p>
+        O RH não deve definir perfil, tipo, programas, restrições ou permissões internas sensíveis.
+      </p>
+
+      <h3>3.2 Key user / responsável pela configuração de acesso</h3>
+      <p>
+        O key user, ou responsável definido pela No Fire para configuração de acesso, deve atuar na etapa posterior
+        ao cadastro básico.
+      </p>
+
+      <p>
+        Sua responsabilidade envolve:
+      </p>
+
+      <ul>
+        <li>validar qual perfil funcional será aplicado;</li>
+        <li>confirmar quais programas fazem sentido para a função;</li>
+        <li>revisar restrições por usuário;</li>
+        <li>ajustar checkboxes internos quando necessário;</li>
+        <li>evitar permissões herdadas ou marcadas sem validação;</li>
+        <li>documentar ou comunicar exceções relevantes.</li>
+      </ul>
+
+      <h3>3.3 Gestão</h3>
+      <p>
+        A gestão deve validar a necessidade de acesso quando houver dúvida, risco ou exceção.
+        A concessão de acesso não deve ser baseada apenas em conveniência, urgência ou costume.
+      </p>
+
+      <p class="module-highlight">
+        RH cadastra. Key user configura. Gestão valida exceções e assume riscos.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>4. Fluxo geral correto</h2>
+      <p>
+        O fluxo operacional recomendado para criação e configuração de usuário deve seguir a sequência abaixo:
+      </p>
+
+      <ol>
+        <li><strong>Cadastro de Funcionário</strong> — realizado no fluxo cadastral do RH.</li>
+        <li><strong>Cadastro de Usuário</strong> — criação do usuário no sistema, sem definição indevida de permissões.</li>
+        <li><strong>Definição do perfil funcional</strong> — escolha do perfil adequado à função.</li>
+        <li><strong>Vinculação de programas</strong> — definição dos programas relacionados ao perfil.</li>
+        <li><strong>Restrição por usuário</strong> — revisão individual do acesso.</li>
+        <li><strong>Revisão de checkboxes</strong> — definição ou remoção de permissões internas sensíveis.</li>
+        <li><strong>Validação final</strong> — conferência antes de considerar o usuário pronto para operação.</li>
+      </ol>
+
+      <p>
+        Essa ordem não existe para burocratizar o processo. Ela existe para evitar que um usuário seja liberado com
+        permissões indevidas logo na criação.
+      </p>
+
+      <p class="module-highlight">
+        A criação do usuário não encerra o processo. Ela apenas inicia o ciclo de definição de acesso.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>5. Cadastro de Usuários — PBCA035C</h2>
+
+      <p>
+        A tela PBCA035C é utilizada para cadastro de usuários e também contém checkboxes de permissões internas.
+        Por isso, ela deve ser tratada com atenção.
+      </p>
+
+      <p class="module-highlight">
+        Caminho da tela: Menu Utilitários &gt; Cadastro de Usuários &gt; (Tela) Cadastro de Usuários - PBCA035C
+      </p>
+
+      <p>
+        A tela possui campos cadastrais, como login, senha, nome completo, CPF, e-mail e situação. Porém, também
+        possui grupos de permissões internas, como Financeiro, Compras, Gestão de Vendas, Cliente, CRM, CADEX,
+        WhatsApp e Nota Fiscal.
+      </p>
+
+      <div class="module-image" style="max-width:600px; margin-left:auto; margin-right:auto;">
+        <img src="../../../assets/img/manuais/rh/manual_controle_acesso/pbca035c-cadastro-usuarios-visao-geral.webp" alt="Tela PBCA035C - Cadastro de Usuários no CAD ERP">
+      </div>
+      <p class="module-caption">
+        Tela Cadastro de Usuários - PBCA035C.
+      </p>
+
+      <p>
+        Isso cria um ponto de risco: no mesmo local onde o usuário é cadastrado, também podem existir permissões
+        de alto impacto. Portanto, o usuário responsável pelo cadastro não deve assumir que todos os campos da tela
+        fazem parte do cadastro básico.
+      </p>
+
+      <p class="module-highlight">
+        PBCA035C não é apenas cadastro. A tela também contém permissões internas sensíveis.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>6. Checkboxes na PBCA035C: quando revisar</h2>
+
+      <p>
+        Tecnicamente, é possível revisar ou marcar checkboxes na PBCA035C no momento da criação do usuário.
+        Porém, essa não deve ser a regra operacional padrão da No Fire.
+      </p>
+
+      <p>
+        A definição de checkboxes deve ocorrer somente depois que houver clareza sobre:
+      </p>
+
+      <ul>
+        <li>função real do usuário;</li>
+        <li>perfil operacional aplicável;</li>
+        <li>programas necessários;</li>
+        <li>restrições individuais;</li>
+        <li>nível de risco das permissões internas;</li>
+        <li>validação da gestão, quando aplicável.</li>
+      </ul>
+
+      <p>
+        Marcar checkboxes antes dessa análise pode conceder poderes internos sem contexto. Isso é especialmente
+        perigoso em permissões relacionadas a desconto, alteração de valor, cancelamento, aprovação, exclusão,
+        financeiro, nota fiscal ou acesso a informações sensíveis.
+      </p>
+
+      <p class="module-highlight">
+        Checkbox antes da análise de perfil, programas e restrições é acesso sem controle.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>7. Ponto de atenção: checkboxes pré-marcados</h2>
+
+      <p>
+        Foi observado que alguns checkboxes podem aparecer previamente marcados por padrão. Isso deve ser tratado
+        como ponto crítico de atenção.
+      </p>
+
+      <p>
+        Um checkbox marcado não deve ser interpretado automaticamente como permissão validada. Ele pode estar marcado
+        por padrão, por herança, por configuração anterior ou por comportamento indevido do sistema.
+      </p>
+
+      <div class="module-image" style="max-width:600px; margin-left:auto; margin-right:auto;">
+        <img src="../../../assets/img/manuais/rh/manual_controle_acesso/pbca035c-checkboxes-permissoes.webp" alt="Checkboxes de permissões internas na tela PBCA035C do CAD ERP">
+      </div>
+      <p class="module-caption">
+        Checkboxes internos da tela Cadastro de Usuários - PBCA035C.
+      </p>
+
+      <p>
+        Na prática, o responsável pela configuração de acesso deve revisar os checkboxes antes de considerar um
+        usuário pronto para uso operacional.
+      </p>
+
+      <p>
+        A regra deve ser simples:
+      </p>
+
+      <ul>
+        <li>checkbox necessário: manter ou marcar com critério;</li>
+        <li>checkbox desnecessário: desmarcar;</li>
+        <li>checkbox sensível: liberar somente com validação;</li>
+        <li>checkbox não compreendido: não liberar até confirmação.</li>
+      </ul>
+
+      <p class="module-highlight">
+        Checkbox marcado por padrão deve ser tratado como não validado até revisão manual.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>8. Cadastro de Perfil de Usuários — PBCA079</h2>
+
+      <p>
+        A tela PBCA079 serve apenas para cadastrar o nome do perfil. Ela não define programas, não libera telas
+        e não configura permissões internas por checkbox.
+      </p>
+
+      <p class="module-highlight">
+        Caminho da tela: Menu Utilitários &gt; Perfil de Usuários &gt; (Tela) Cadastro de Perfil de Usuários - PBCA079
+      </p>
+
+      <p>
+        Ao clicar em <strong>Adicionar</strong>, o sistema cria uma nova linha na grade. O usuário informa o nome do
+        perfil e salva o registro.
+      </p>
+
+      <div class="module-image" style="max-width:320px; margin-left:auto; margin-right:auto;">
+        <img src="../../../assets/img/manuais/rh/manual_controle_acesso/pbca079-cadastro-perfil.webp" alt="Tela PBCA079 - Cadastro de Perfil de Usuários no CAD ERP">
+      </div>
+      <p class="module-caption">
+        Tela Cadastro de Perfil de Usuários - PBCA079.
+      </p>
+
+      <p>
+        Essa tela deverá ser pouco utilizada na rotina, pois os perfis necessários para a implantação tendem a ser
+        criados previamente. Após a criação dos perfis principais, o uso da PBCA079 deverá ocorrer apenas quando
+        houver necessidade real de criação de novo perfil.
+      </p>
+
+      <p class="module-highlight">
+        PBCA079 cria o nome do perfil. A liberação de acesso acontece em outras telas.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>9. Vinculação Perfil x Programas — PBCA079A</h2>
+
+      <p>
+        A tela PBCA079A é a etapa em que os programas são vinculados a um perfil. Diferente da PBCA079, esta tela
+        efetivamente começa a montar a base de acesso de um perfil.
+      </p>
+
+      <p class="module-highlight">
+        Caminho da tela: Menu Utilitários &gt; Vinculação Perfil X Programas &gt; (Tela) Vinculação Perfil X Programas - PBCA079A
+      </p>
+
+      <p>
+        Nessa tela, o responsável seleciona um perfil e vincula os programas que devem compor sua base de acesso.
+        A definição de quais programas serão liberados para cada perfil deverá ser feita nos próximos passos da
+        implantação, com base na matriz operacional da No Fire.
+      </p>
+
+      <div class="module-image" style="max-width:760px; margin-left:auto; margin-right:auto;">
+        <img src="../../../assets/img/manuais/rh/manual_controle_acesso/pbca079a-vinculacao-perfil-programas.webp" alt="Tela PBCA079A - Vinculação Perfil x Programas no CAD ERP">
+      </div>
+      <p class="module-caption">
+        Tela Vinculação Perfil x Programas - PBCA079A.
+      </p>
+
+      <p>
+        A vinculação de programas não deve ser feita por tentativa, conveniência ou cópia cega de outro perfil.
+        Cada programa deve ser analisado considerando o impacto da rotina que ele libera.
+      </p>
+
+      <p class="module-highlight">
+        PBCA079A não é uma tela para “liberar tudo”. É uma tela para montar acesso com critério.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>10. Restrição de Usuários x Programas — PBCA035</h2>
+
+      <p>
+        A tela PBCA035 é usada para controlar, revisar ou restringir acessos diretamente por usuário. Ela é uma das
+        telas mais importantes do processo, porque permite tratar permissões de forma individual.
+      </p>
+
+      <p class="module-highlight">
+        Caminho da tela: Menu Utilitários &gt; Restrição de Usuários X Programas &gt; (Tela) Restrição de Usuários X Programas - PBCA035
+      </p>
+
+      <p>
+        Enquanto o perfil organiza uma base de acesso, a restrição por usuário permite verificar se aquele usuário,
+        especificamente, deve ou não consultar, alterar, excluir, exportar, imprimir ou incluir em determinado programa.
+      </p>
+
+      <div class="module-image" style="max-width:760px; margin-left:auto; margin-right:auto;">
+        <img src="../../../assets/img/manuais/rh/manual_controle_acesso/pbca035-restricao-usuario-programa.webp" alt="Tela PBCA035 - Restrição de Usuário x Programa no CAD ERP">
+      </div>
+      <p class="module-caption">
+        Tela Restrição de Usuários x Programas - PBCA035.
+      </p>
+
+      <p>
+        Esta tela deve ser usada para revisar o acesso real do usuário, especialmente em programas críticos,
+        sensíveis ou não relacionados à função.
+      </p>
+
+      <p class="module-highlight">
+        PBCA035 é a camada de revisão individual. Nenhum usuário deve ser considerado validado apenas pelo perfil.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>11. Sequência recomendada para definição de acesso</h2>
+
+      <p>
+        Considerando as telas envolvidas, a sequência recomendada para definição de acesso é:
+      </p>
+
+      <ol>
+        <li>Usuário é cadastrado na PBCA035C com dados básicos.</li>
+        <li>Função do usuário é confirmada.</li>
+        <li>Perfil aplicável é identificado ou criado na PBCA079, se ainda não existir.</li>
+        <li>Programas são vinculados ao perfil na PBCA079A.</li>
+        <li>Usuário é revisado individualmente na PBCA035.</li>
+        <li>Checkboxes internos são revisados na PBCA035C.</li>
+        <li>Acesso é considerado pronto somente após conferência final.</li>
+      </ol>
+
+      <p>
+        Essa sequência evita que o usuário seja criado com permissões internas marcadas antes da definição de perfil
+        e antes da revisão dos programas vinculados.
+      </p>
+
+      <p class="module-highlight">
+        Primeiro identifica. Depois organiza. Depois vincula. Depois restringe. Só então refina por checkbox.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>12. Exemplo de risco: acesso indireto por orçamento</h2>
+
+      <p>
+        Um dos motivos para a No Fire não confiar apenas na configuração teórica de perfil é a existência de acessos
+        indiretos. Um usuário pode acessar uma tela sensível por meio de outra rotina, mesmo que aquela tela não faça
+        parte da sua função operacional.
+      </p>
+
+      <p>
+        Exemplo identificado:
+      </p>
+
+      <ul>
+        <li>tela de origem: <strong>Orçamento de Venda - PBCA032I</strong>;</li>
+        <li>ação: botão com três pontos <strong>&lt;...&gt;</strong> no item/produto;</li>
+        <li>tela aberta: <strong>Cadastro de Item/Produto - PBCA005C</strong>;</li>
+        <li>risco: acesso a dados estruturais do item/produto.</li>
+      </ul>
+
+      <div class="module-image" style="max-width:820px; margin-left:auto; margin-right:auto;">
+        <img src="../../../assets/img/manuais/rh/manual_controle_acesso/exemplo-acesso-indireto-tela-01.webp" alt="Exemplo de acesso indireto pela tela Orçamento de Venda PBCA032I">
+      </div>
+      <p class="module-caption">
+        Exemplo de acesso indireto a partir da tela Orçamento de Venda - PBCA032I.
+      </p>
+
+      <div class="module-image" style="max-width:820px; margin-left:auto; margin-right:auto;">
+        <img src="../../../assets/img/manuais/rh/manual_controle_acesso/exemplo-acesso-indireto-tela-02.webp" alt="Exemplo de acesso indireto ao Cadastro de Item Produto PBCA005C">
+      </div>
+      <p class="module-caption">
+        Exemplo de tela aberta por acesso indireto: Cadastro de Item/Produto - PBCA005C.
+      </p>
+
+      <p>
+        Esse exemplo demonstra por que o manual separa acesso técnico de autorização operacional. Mesmo que o botão
+        exista e a tela abra, o usuário não deve alterar informações estruturais se isso não fizer parte da sua função.
+      </p>
+
+      <p class="module-highlight">
+        Se uma tela abre por caminho indireto, isso não transforma o uso em autorizado.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>13. Regra prática para o key user</h2>
+
+      <p>
+        Ao configurar ou revisar um usuário, o key user deve responder às seguintes perguntas:
+      </p>
+
+      <ol>
+        <li>Este usuário representa uma pessoa real?</li>
+        <li>O cadastro básico está correto?</li>
+        <li>A função do usuário foi confirmada?</li>
+        <li>O perfil aplicado faz sentido para essa função?</li>
+        <li>Os programas vinculados ao perfil são necessários?</li>
+        <li>Algum programa crítico precisa ser bloqueado na PBCA035?</li>
+        <li>Algum checkbox veio marcado por padrão?</li>
+        <li>Os checkboxes marcados foram realmente validados?</li>
+        <li>Existe risco de acesso indireto relacionado à função?</li>
+        <li>A concessão de acesso está coerente com a matriz de permissões?</li>
+      </ol>
+
+      <p>
+        Se alguma resposta não estiver clara, o acesso não deve ser considerado finalizado.
+      </p>
+
+      <p class="module-highlight">
+        Usuário sem revisão completa é usuário pendente, mesmo que já consiga entrar no sistema.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>14. Erros que devem ser evitados</h2>
+
+      <ul>
+        <li>tratar cadastro de usuário como liberação completa de acesso;</li>
+        <li>marcar checkboxes sem validar perfil e função;</li>
+        <li>manter checkboxes marcados apenas porque já vieram selecionados;</li>
+        <li>criar novo perfil sem necessidade real;</li>
+        <li>achar que PBCA079 libera acesso;</li>
+        <li>liberar programas em massa na PBCA079A sem análise;</li>
+        <li>deixar de revisar o usuário individualmente na PBCA035;</li>
+        <li>ignorar acessos indiretos;</li>
+        <li>confiar apenas no comportamento esperado do sistema;</li>
+        <li>considerar o usuário pronto sem checklist mínimo.</li>
+      </ul>
+
+      <p class="module-highlight">
+        O erro mais perigoso é achar que o acesso está correto apenas porque o sistema permitiu salvar.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>15. Conclusão do Bloco 03</h2>
+
+      <p>
+        O controle de acessos no CAD ERP não acontece em uma única tela. Ele depende da combinação entre cadastro
+        de usuário, perfil, vinculação de programas, restrição por usuário, permissões internas e governança operacional.
+      </p>
+
+      <p>
+        A PBCA035C cria ou mantém o usuário, mas também contém checkboxes sensíveis. A PBCA079 cria apenas o nome
+        do perfil. A PBCA079A vincula programas ao perfil. A PBCA035 permite revisar restrições diretamente por usuário.
+      </p>
+
+      <p>
+        Por isso, a No Fire deve tratar a criação de usuário como início do processo, não como conclusão da liberação
+        de acesso.
+      </p>
+
+      <p class="module-highlight">
+        A segurança não está em uma tela isolada. Está na sequência correta de configuração, revisão e responsabilidade.
+      </p>
+
+      <div class="module-nav">
+        <a class="module-link" href="./manual-acessos-bloco-02.html">Voltar para Bloco 02</a>
+        <a class="module-link" href="./manual-acessos-bloco-04.html">Avançar para Bloco 04</a>
+      </div>
+    </section>
+
+  </div>
 </main>
 
 <footer class="site-footer">

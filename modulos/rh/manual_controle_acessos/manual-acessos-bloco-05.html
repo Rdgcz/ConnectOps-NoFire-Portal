@@ -3,11 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manual de Controle de Acessos | Bloco 01 | No Fire</title>
-  <meta name="description" content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 01 - Fundamento, contexto, premissas e finalidade do manual.">
+  <title>Manual de Controle de Acessos | Bloco 05 | No Fire</title>
+  <meta name="description" content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 05 - Vinculação Perfil x Programas PBCA079A.">
   <link rel="stylesheet" href="../../../assets/css/style.css">
   <link rel="icon" href="../../../assets/img/favicon/favicon.ico" type="image/png">
+
+  <style>
+    .manual-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+
+    .manual-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      font-size: 0.95rem;
+    }
+
+    .manual-table th,
+    .manual-table td {
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.45;
+    }
+
+    .manual-table th {
+      font-weight: 700;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .manual-tag-critical {
+      font-weight: 700;
+      color: #ff6b6b;
+    }
+
+    .manual-tag-sensitive {
+      font-weight: 700;
+      color: #ffd166;
+    }
+
+    .manual-tag-operational {
+      font-weight: 700;
+      color: #7bd88f;
+    }
+
+    .manual-code-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .manual-code-card {
+      padding: 16px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .manual-code-card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #ffe3e6;
+    }
+
+    .manual-code-card p {
+      margin-bottom: 0;
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 780px) {
+      .manual-code-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 <header class="site-header">
@@ -18,19 +95,19 @@
       </a>
     </div>
 
-    <div class="nav-center" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; font-size: 0.9em;">
-      <a style="font-size: 1rem;" href="../../../index.html">Portal</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-01.html">Bloco 01</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-02.html">Bloco 02</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-03.html">Bloco 03</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-04.html">Bloco 04</a> |
-      <a style="font-size: 1rem; text-shadow: red 0px 0px 4px;">Bloco 05</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-06.html">Bloco 06</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-07.html">Bloco 07</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-08.html">Bloco 08</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-09.html">Bloco 09</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-10.html">Bloco 10</a>
-    </div>
+<div class="nav-center" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; font-size: 0.9em;">
+  <a style="font-size: 1rem;" href="../../../index.html">Portal</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-01.html">Fundamentos</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-02.html">Conceitos</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-03.html">Estrutura</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-04.html">Perfis</a> |
+  <a style="font-size: 1rem; text-shadow: red 0px 0px 4px;">Vinculação</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-06.html">Restrições</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-07.html">Permissões</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-08.html">Operação</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-09.html">Matriz</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-10.html">Governança</a>
+</div>
 
     <div class="nav-right">
       <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da CAD Sistemas">
@@ -40,14 +117,923 @@
   </nav>
 </header>
 
-<section style="padding-bottom: 50vh; text-align: center;" class="internal-hero">
+<section style="padding-bottom: 15vh;" class="internal-hero">
   <div class="internal-hero-content">
-    <h1>Em construção</h1>
+    <span class="internal-kicker">Manual Operacional · Controle de Acessos · Bloco 05/10</span>
+    <h1>Vinculação Perfil x Programas<br> PBCA079A</h1>
+    <p>
+      Este bloco explica como funciona a vinculação de programas aos perfis de usuários no CAD ERP,
+      etapa crítica para montar a base inicial de acesso de cada perfil operacional da No Fire.
+    </p>
   </div>
 </section>
 
-<main>
+<main class="module-content">
+  <div class="module-shell">
 
+    <section class="module-block">
+      <h2>1. Objetivo do Bloco 05</h2>
+
+      <p>
+        O objetivo deste bloco é orientar o responsável pela configuração de acessos sobre a tela
+        <strong>Vinculação Perfil x Programas — PBCA079A</strong>.
+      </p>
+
+      <p>
+        Esta tela é uma das mais importantes do controle de acessos do CAD ERP, porque é nela que os programas
+        são vinculados aos perfis cadastrados. Em outras palavras: depois que o perfil existe como nome na PBCA079,
+        é na PBCA079A que começa a montagem da base prática de acesso desse perfil.
+      </p>
+
+      <p>
+        A PBCA079A não deve ser usada de forma automática, por tentativa ou por cópia cega de outro perfil.
+        Cada programa vinculado deve ter uma justificativa operacional.
+      </p>
+
+      <p class="module-highlight">
+        PBCA079A define a base de programas vinculados ao perfil. Uma liberação errada nesta tela pode abrir acesso indevido para todos os usuários daquele perfil.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>2. Caminho da tela</h2>
+
+      <p>
+        Para acessar a tela de vinculação de programas aos perfis, utilizar o caminho abaixo:
+      </p>
+
+      <p class="module-highlight">
+        Menu Utilitários &gt; Vinculação Perfil X Programas &gt; (Tela) Vinculação Perfil X Programas - PBCA079A
+      </p>
+
+      <div class="module-image" style="max-width:800px; margin-left:auto; margin-right:auto;">
+        <img src="../../../assets/img/manuais/rh/manual_controle_acesso/pbca079a-vinculacao-perfil-programas.webp" alt="Tela Vinculação Perfil x Programas - PBCA079A no CAD ERP">
+      </div>
+      <p class="module-caption">
+        Tela Vinculação Perfil x Programas - PBCA079A.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>3. Diferença entre PBCA079 e PBCA079A</h2>
+
+      <p>
+        Antes de operar a PBCA079A, é obrigatório compreender a diferença entre as duas telas:
+      </p>
+
+      <div class="manual-table-wrap">
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th>Tela</th>
+              <th>Nome</th>
+              <th>Função</th>
+              <th>Impacto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PBCA079</td>
+              <td>Cadastro de Perfil de Usuários</td>
+              <td>Cadastra apenas o nome do perfil</td>
+              <td>Organizacional</td>
+            </tr>
+            <tr>
+              <td>PBCA079A</td>
+              <td>Vinculação Perfil x Programas</td>
+              <td>Vincula programas ao perfil</td>
+              <td>Operacional e sensível</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        A PBCA079 apenas cria a descrição do perfil. A PBCA079A define quais programas aquele perfil terá como base.
+      </p>
+
+      <p class="module-highlight">
+        PBCA079 dá nome ao perfil. PBCA079A começa a dar acesso ao perfil.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>4. Como a tela PBCA079A funciona</h2>
+
+      <p>
+        A tela PBCA079A apresenta, de forma geral, três áreas principais:
+      </p>
+
+      <ol>
+        <li><strong>Seleção do perfil:</strong> campo onde é escolhido o perfil que será configurado.</li>
+        <li><strong>Lista de programas disponíveis:</strong> relação dos programas que podem ser vinculados.</li>
+        <li><strong>Programas liberados:</strong> área onde aparecem os programas já vinculados ao perfil selecionado.</li>
+      </ol>
+
+      <p>
+        A instrução exibida na própria tela indica que o vínculo pode ser feito por duplo clique na linha do programa.
+        Também existem botões para vincular ou desvincular programas em massa.
+      </p>
+
+      <p>
+        Esses recursos devem ser usados com cuidado. Principalmente os comandos de vinculação em massa, porque podem
+        liberar muitos programas de uma vez, sem análise individual.
+      </p>
+
+      <p class="module-highlight">
+        Duplo clique vincula ou desvincula programa. Botões de vínculo em massa só devem ser usados com critério extremo.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>5. O que é um programa no CAD ERP</h2>
+
+      <p>
+        No CAD ERP, muitas telas, rotinas e relatórios são identificados por códigos de programa.
+        Esses códigos podem iniciar com diferentes prefixos, de acordo com o tipo de rotina.
+      </p>
+
+      <div class="manual-code-grid">
+        <div class="manual-code-card">
+          <h3>PBCA</h3>
+          <p>Rotinas principais do CAD ERP, incluindo cadastros, vendas, financeiro, estoque, utilitários e controles.</p>
+        </div>
+
+        <div class="manual-code-card">
+          <h3>PBRE</h3>
+          <p>Relatórios operacionais do sistema, geralmente relacionados a pedidos, vendas, comissões, notas e conferências.</p>
+        </div>
+
+        <div class="manual-code-card">
+          <h3>BI</h3>
+          <p>Relatórios analíticos e gerenciais, com potencial de exposição de dados estratégicos.</p>
+        </div>
+
+        <div class="manual-code-card">
+          <h3>PBCX</h3>
+          <p>Rotinas específicas, complementares ou vinculadas ao CADEX e integrações operacionais.</p>
+        </div>
+
+        <div class="manual-code-card">
+          <h3>GESTOR</h3>
+          <p>Relatórios gerenciais de pedidos, orçamentos, faturamento e controle.</p>
+        </div>
+
+        <div class="manual-code-card">
+          <h3>QGPB</h3>
+          <p>Rotinas utilitárias ou específicas, como importações, alteração de número de pedido e rateios.</p>
+        </div>
+      </div>
+
+      <p class="module-highlight">
+        O código do programa é a referência objetiva para configuração, auditoria e comunicação com a CAD.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>6. Regra principal para vinculação</h2>
+
+      <p>
+        A regra principal da No Fire para vinculação de programas deve ser:
+      </p>
+
+      <p class="module-highlight">
+        Vincular apenas os programas necessários para a função do perfil. Nada além disso.
+      </p>
+
+      <p>
+        A vinculação deve considerar:
+      </p>
+
+      <ul>
+        <li>a função real dos usuários daquele perfil;</li>
+        <li>o impacto operacional do programa;</li>
+        <li>o risco de alteração de dados;</li>
+        <li>o risco fiscal, financeiro ou comercial;</li>
+        <li>a necessidade de consulta;</li>
+        <li>a necessidade de inclusão ou alteração;</li>
+        <li>a possibilidade de exposição de dados sensíveis;</li>
+        <li>a existência de controle complementar na PBCA035;</li>
+        <li>a existência de checkboxes internos na PBCA035C.</li>
+      </ul>
+
+      <p>
+        A pergunta correta não é “este perfil pode ter acesso?”.
+        A pergunta correta é:
+      </p>
+
+      <p class="module-highlight">
+        Este perfil precisa deste programa para executar sua função sem risco desnecessário?
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>7. Classificação operacional dos programas</h2>
+
+      <p>
+        Nem todos os programas possuem o mesmo risco. Para configurar a PBCA079A corretamente, os programas devem ser
+        classificados por impacto.
+      </p>
+
+      <div class="manual-table-wrap">
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th>Classificação</th>
+              <th>Descrição</th>
+              <th>Exemplos</th>
+              <th>Regra de uso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="manual-tag-critical">Crítico</span></td>
+              <td>Programa que pode afetar acesso, base de dados, financeiro, fiscal, exportação, usuário ou estrutura.</td>
+              <td>PBCA035, PBCA079, PBCA079A, PBCA041, PBCA052, PBCA013, PBCA027, PBCA074, PBCA139</td>
+              <td>Vincular somente a perfis autorizados e revisar individualmente na PBCA035.</td>
+            </tr>
+            <tr>
+              <td><span class="manual-tag-sensitive">Sensível</span></td>
+              <td>Programa que pode alterar cadastros, parâmetros, estoque, preços, clientes ou estrutura operacional.</td>
+              <td>PBCA005, PBCA006, PBCA010C, PBCA026, PBCA088, PBCA123, PBCA124</td>
+              <td>Vincular apenas quando houver necessidade clara e responsável definido.</td>
+            </tr>
+            <tr>
+              <td><span class="manual-tag-operational">Operacional</span></td>
+              <td>Programa necessário para rotina diária, consulta, operação comercial ou acompanhamento.</td>
+              <td>PBCA015, PBCA032, PBCA069, PBCA097, PBCA101, relatórios específicos</td>
+              <td>Vincular conforme função do perfil, evitando excesso.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="module-highlight">
+        Um programa não deve ser liberado pelo nome da tela, mas pelo impacto do que ele permite executar.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>8. Programas críticos que exigem atenção máxima</h2>
+
+      <p>
+        Alguns programas devem ser tratados como críticos por padrão. A vinculação desses programas a qualquer perfil
+        deve ser feita apenas com validação clara da necessidade.
+      </p>
+
+      <div class="manual-table-wrap">
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th>Programa</th>
+              <th>Nome / Função</th>
+              <th>Risco</th>
+              <th>Diretriz</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PBCA035</td>
+              <td>Cadastro / Restrição de Usuários</td>
+              <td>Permite controle direto de usuários e programas.</td>
+              <td>Restrito a responsáveis pela governança de acesso.</td>
+            </tr>
+            <tr>
+              <td>PBCA079</td>
+              <td>Cadastro de Perfil</td>
+              <td>Permite criar ou alterar agrupadores de acesso.</td>
+              <td>Uso controlado, normalmente durante implantação ou revisão.</td>
+            </tr>
+            <tr>
+              <td>PBCA079A</td>
+              <td>Vinculação Perfil x Programas</td>
+              <td>Permite alterar base de acesso de perfis.</td>
+              <td>Restrito a key user ou responsável autorizado.</td>
+            </tr>
+            <tr>
+              <td>PBCA041</td>
+              <td>Exportação de Dados</td>
+              <td>Risco de extração de informações da base.</td>
+              <td>Não vincular a perfis operacionais comuns.</td>
+            </tr>
+            <tr>
+              <td>PBCA052</td>
+              <td>Liberação de Usuários</td>
+              <td>Risco de alteração indevida de acesso.</td>
+              <td>Restrito a administração autorizada.</td>
+            </tr>
+            <tr>
+              <td>PBCA013</td>
+              <td>Tributação</td>
+              <td>Impacto fiscal e operacional.</td>
+              <td>Não liberar sem validação específica.</td>
+            </tr>
+            <tr>
+              <td>PBCA027</td>
+              <td>Títulos</td>
+              <td>Impacto financeiro.</td>
+              <td>Restrito a perfis financeiros/administrativos autorizados.</td>
+            </tr>
+            <tr>
+              <td>PBCA074</td>
+              <td>Movimentação Conta Corrente</td>
+              <td>Impacto financeiro/bancário.</td>
+              <td>Restrito e revisado por usuário.</td>
+            </tr>
+            <tr>
+              <td>PBCA139</td>
+              <td>Movimentação Caixa Diário</td>
+              <td>Impacto financeiro direto.</td>
+              <td>Restrito e validado pela gestão.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="module-highlight">
+        Programas críticos não devem ser vinculados por conveniência. Devem ter necessidade, responsável e revisão.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>9. Procedimento para vincular programas a um perfil</h2>
+
+      <p>
+        Para vincular programas a um perfil na PBCA079A, seguir o procedimento abaixo:
+      </p>
+
+      <ol>
+        <li>Acessar <strong>Menu Utilitários &gt; Vinculação Perfil X Programas</strong>.</li>
+        <li>Confirmar que a tela aberta é <strong>Vinculação Perfil X Programas - PBCA079A</strong>.</li>
+        <li>Selecionar o perfil que será configurado.</li>
+        <li>Localizar o programa na lista de programas disponíveis.</li>
+        <li>Conferir o código e o nome do programa antes de vincular.</li>
+        <li>Avaliar se o programa é operacional, sensível ou crítico.</li>
+        <li>Vincular apenas se houver necessidade real para o perfil.</li>
+        <li>Confirmar se o programa aparece na lista de programas liberados.</li>
+        <li>Salvar a configuração.</li>
+        <li>Registrar ou comunicar a alteração, quando o impacto for relevante.</li>
+      </ol>
+
+      <p class="module-highlight">
+        Antes de vincular, confirmar código, nome, impacto e necessidade. Depois de vincular, salvar e revisar.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>10. Procedimento para desvincular programas</h2>
+
+      <p>
+        Desvincular programas é tão importante quanto vincular. A remoção de acesso deve ser feita quando um programa
+        não fizer mais sentido para o perfil, quando representar risco desnecessário ou quando tiver sido vinculado por erro.
+      </p>
+
+      <ol>
+        <li>Acessar a tela <strong>PBCA079A</strong>.</li>
+        <li>Selecionar o perfil correto.</li>
+        <li>Localizar o programa na lista de programas liberados.</li>
+        <li>Confirmar que o programa deve realmente ser removido.</li>
+        <li>Desvincular o programa.</li>
+        <li>Salvar a alteração.</li>
+        <li>Validar se os usuários daquele perfil ainda conseguem executar suas rotinas necessárias.</li>
+      </ol>
+
+      <p>
+        Se a remoção impactar a operação, a alteração deve ser comunicada aos envolvidos.
+      </p>
+
+      <p class="module-highlight">
+        Remover acesso crítico é correto. Remover acesso operacional necessário sem aviso pode travar a operação.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>11. Atenção aos botões de vinculação em massa</h2>
+
+      <p>
+        A tela PBCA079A pode apresentar recursos como <strong>Vincular Todos</strong> ou <strong>Desvincular Todos</strong>.
+        Esses botões devem ser usados com extrema cautela.
+      </p>
+
+      <p>
+        O uso indevido de vinculação em massa pode liberar programas críticos, financeiros, fiscais, administrativos
+        ou estruturais para um perfil que não deveria ter esse nível de acesso.
+      </p>
+
+      <p>
+        O uso indevido de desvinculação em massa pode remover acessos necessários e impedir a operação de uma área.
+      </p>
+
+      <p class="module-highlight">
+        Em regra, não usar vinculação em massa para perfis operacionais. O acesso deve ser construído programa por programa.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>12. Relação entre PBCA079A e PBCA035</h2>
+
+      <p>
+        A PBCA079A monta a base de acesso do perfil, mas não encerra a validação do usuário.
+      </p>
+
+      <p>
+        Após vincular programas ao perfil, ainda será necessário revisar usuários individualmente na tela
+        <strong>Restrição de Usuários x Programas — PBCA035</strong>.
+      </p>
+
+      <p>
+        Isso ocorre porque:
+      </p>
+
+      <ul>
+        <li>usuários do mesmo perfil podem ter necessidades diferentes;</li>
+        <li>um perfil pode conter programas que exigem restrição por usuário;</li>
+        <li>alguns acessos podem precisar ser bloqueados mesmo dentro do perfil;</li>
+        <li>há comportamento permissivo identificado no sistema;</li>
+        <li>a governança da No Fire exige revisão individual.</li>
+      </ul>
+
+      <p class="module-highlight">
+        PBCA079A define a base. PBCA035 confirma, restringe e ajusta por usuário.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>13. Relação entre PBCA079A e PBCA035C</h2>
+
+      <p>
+        A vinculação de programas ao perfil não substitui os checkboxes internos da PBCA035C.
+      </p>
+
+      <p>
+        Um programa pode estar vinculado ao perfil, mas determinadas ações internas podem depender de checkbox específico.
+        Da mesma forma, um checkbox marcado sem critério pode liberar ações sensíveis dentro de rotinas já acessíveis.
+      </p>
+
+      <p>
+        Por isso, após definir a base de programas:
+      </p>
+
+      <ol>
+        <li>revisar o usuário na PBCA035;</li>
+        <li>revisar checkboxes na PBCA035C;</li>
+        <li>desmarcar permissões que não tenham justificativa;</li>
+        <li>validar permissões sensíveis com a gestão.</li>
+      </ol>
+
+      <p class="module-highlight">
+        Programa vinculado permite acesso à rotina. Checkbox pode permitir ações críticas dentro da rotina.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>14. Critérios para montar a base de um perfil</h2>
+
+      <p>
+        Antes de vincular programas, o responsável deve responder:
+      </p>
+
+      <ol>
+        <li>Qual é a função real deste perfil?</li>
+        <li>Quais rotinas esse perfil executa diariamente?</li>
+        <li>Quais rotinas são apenas consulta?</li>
+        <li>Quais rotinas permitem alteração de dados?</li>
+        <li>Existe impacto financeiro?</li>
+        <li>Existe impacto fiscal?</li>
+        <li>Existe impacto comercial?</li>
+        <li>Existe risco de alteração estrutural?</li>
+        <li>Existe risco de exportação ou vazamento de dados?</li>
+        <li>O programa precisa estar no perfil ou pode ser tratado por exceção?</li>
+      </ol>
+
+      <p class="module-highlight">
+        A matriz de acesso deve nascer da função, não da pressa de liberar o sistema.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>15. Exemplos de leitura operacional</h2>
+
+      <p>
+        Abaixo estão exemplos de como interpretar programas antes de vincular.
+      </p>
+
+      <div class="manual-table-wrap">
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th>Programa</th>
+              <th>Nome</th>
+              <th>Leitura operacional</th>
+              <th>Diretriz</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PBCA032</td>
+              <td>Orçamento de Venda</td>
+              <td>Rotina central para área comercial.</td>
+              <td>Pode compor perfil comercial, com revisão de riscos indiretos.</td>
+            </tr>
+            <tr>
+              <td>PBCA015</td>
+              <td>Pedido de Venda</td>
+              <td>Rotina operacional de vendas/pedidos.</td>
+              <td>Vincular conforme função e processo comercial.</td>
+            </tr>
+            <tr>
+              <td>PBCA005</td>
+              <td>Produtos de Compra, Venda e Serviço</td>
+              <td>Cadastro estrutural de item/produto.</td>
+              <td>Não liberar a vendedores como rotina.</td>
+            </tr>
+            <tr>
+              <td>PBCA006</td>
+              <td>Tabelas de Preços</td>
+              <td>Impacta preço, margem e operação comercial.</td>
+              <td>Restrito a responsáveis autorizados.</td>
+            </tr>
+            <tr>
+              <td>PBCA013</td>
+              <td>Tributação</td>
+              <td>Impacto fiscal crítico.</td>
+              <td>Não liberar sem validação formal.</td>
+            </tr>
+            <tr>
+              <td>BI003</td>
+              <td>Comparação de Faturamento</td>
+              <td>Relatório gerencial com dados estratégicos.</td>
+              <td>Consulta restrita por perfil gerencial.</td>
+            </tr>
+            <tr>
+              <td>PBCA041</td>
+              <td>Exportação de Dados</td>
+              <td>Risco de extração de base.</td>
+              <td>Bloquear para perfis operacionais.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="module-highlight">
+        O nome do programa pode parecer simples. O impacto dele pode ser crítico.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>16. Lista de grupos de programas vinculáveis</h2>
+
+      <p>
+        A tela PBCA079A apresenta programas organizados em grupos. Abaixo está a referência operacional dos principais
+        grupos identificados para vinculação.
+      </p>
+
+      <p>
+        Esta lista deve ser usada como referência para consulta e montagem da matriz de acesso. A definição final por
+        perfil será tratada nos blocos de matriz e governança.
+      </p>
+
+      <div class="manual-table-wrap">
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th>Grupo</th>
+              <th>Programas identificados</th>
+              <th>Diretriz geral</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cadastros</td>
+              <td>PBCA006, PBCA008, PBCA008R, PBCA010, PBCA010-PR, PBCA010C, PBCA010R, PBCA016, PBCA017, PBCA025, PBCA026, PBCA048, PBCA050, PBCA056, PBCA060, PBCA064, PBCA065, PBCA080, PBCA081, PBCA083, PBCA110, PBCA114, PBCA125</td>
+              <td>Alta atenção. Muitos cadastros alteram base estrutural, comercial ou administrativa.</td>
+            </tr>
+            <tr>
+              <td>Cliente / Contador</td>
+              <td>PBCA067, PBCA009</td>
+              <td>Vincular conforme responsabilidade cadastral ou administrativa.</td>
+            </tr>
+            <tr>
+              <td>Financeiro / Base</td>
+              <td>PBCA007, PBCA009, PBCA011, PBCA028, PBCA029</td>
+              <td>Restrito a perfis administrativos ou financeiros autorizados.</td>
+            </tr>
+            <tr>
+              <td>Imposto</td>
+              <td>PBCA012, PBCA013, PBCA043, PBCA066, PBCA142, PBCA143</td>
+              <td>Crítico. Não liberar sem validação fiscal/gestão.</td>
+            </tr>
+            <tr>
+              <td>Produtos</td>
+              <td>PBCA001, PBCA002, PBCA003, PBCA004, PBCA005</td>
+              <td>Estrutural. Não liberar para operação comercial comum sem regra clara.</td>
+            </tr>
+            <tr>
+              <td>Transporte</td>
+              <td>PBCA084, PBCA085</td>
+              <td>Operacional/logístico. Liberar apenas para usuários responsáveis.</td>
+            </tr>
+            <tr>
+              <td>CADEX</td>
+              <td>PBCA058, PBCA111, PBCA120, PBCX001, PBCX003</td>
+              <td>Operacional técnico. Avaliar por função.</td>
+            </tr>
+            <tr>
+              <td>Fábrica de Pó</td>
+              <td>PBCA092, PBCA093, PBCA095</td>
+              <td>Específico. Liberar apenas se fizer parte da rotina do usuário.</td>
+            </tr>
+            <tr>
+              <td>Prospecção</td>
+              <td>PBCA072</td>
+              <td>Pode ser operacional para CRM/prospecção, conforme função.</td>
+            </tr>
+            <tr>
+              <td>Compras</td>
+              <td>PBCA047, PBCA068, PBCA075, PBCA076, PBCA077, PBCA078, PBCA096, PBCA109, PBCA126</td>
+              <td>Compra/fiscal. Separar consulta, operação e aprovação.</td>
+            </tr>
+            <tr>
+              <td>Estoque</td>
+              <td>PBCA019, PBCA021, PBCA023, PBCA037, PBCA070, PBCA071, PBCA123</td>
+              <td>Sensível. Pode afetar movimentação e estrutura de estoque.</td>
+            </tr>
+            <tr>
+              <td>Financeiro Operacional</td>
+              <td>PBCA074, PBCA027, PBCA030, PBCA039, PBCA040, PBCA044, PBCA051, PBCA062, PBCA073, PBCA088, PBCA122, PBCA138, PBCA138A, PBCA139, PBCA152</td>
+              <td>Crítico. Liberar apenas para perfis administrativos/financeiros autorizados.</td>
+            </tr>
+            <tr>
+              <td>Cobrança</td>
+              <td>PBCA031, PBCA046</td>
+              <td>Financeiro. Exige validação.</td>
+            </tr>
+            <tr>
+              <td>Gestão de Vendas</td>
+              <td>PBCA015, PBCA015-ITE, PBCA018, PBCA022, PBCA032, PBCA032-ITE, PBCA034, PBCA038, PBCA042, PBCA045, PBCA069, PBCA090, PBCA097, PBCA124, PBCA134, PBCA155</td>
+              <td>Base comercial. Separar operação, faturamento, parâmetros e ações sensíveis.</td>
+            </tr>
+            <tr>
+              <td>Gestão de Pedidos</td>
+              <td>PBCA020, PBCA024</td>
+              <td>Operacional. Avaliar por área.</td>
+            </tr>
+            <tr>
+              <td>Pedidos Online</td>
+              <td>PBCA136, PBCA137</td>
+              <td>Sensível por integração/captura/exportação. Exige cuidado.</td>
+            </tr>
+            <tr>
+              <td>Logística</td>
+              <td>PBCA086, PBCA127</td>
+              <td>Operacional. Vincular conforme responsabilidade.</td>
+            </tr>
+            <tr>
+              <td>Menu / Gestor</td>
+              <td>GESTOR01, GESTOR02, GESTOR03, GESTOR04, GESTOR05, GESTOR06, PBCA054, PBCA133</td>
+              <td>Gerencial/documental. Avaliar exposição de dados.</td>
+            </tr>
+            <tr>
+              <td>Obras</td>
+              <td>PBCA055, PBCA082, PBCA082A</td>
+              <td>Operacional específico. Avaliar por função.</td>
+            </tr>
+            <tr>
+              <td>Processos / CRM</td>
+              <td>PBCA101, PBCA102, PBCA103, PBCA104, PBCA108, PBCA121, PBCA151</td>
+              <td>CRM e parâmetros. Separar usuário comum de configuração.</td>
+            </tr>
+            <tr>
+              <td>Relatórios</td>
+              <td>PBCA135, PBRE002, PBRE004, PBRE005, PBRE006, PBRE007, PBRE009, PBRE012, PBRE017, PBRE018</td>
+              <td>Consulta/exportação. Avaliar dados expostos.</td>
+            </tr>
+            <tr>
+              <td>Relatórios Financeiros</td>
+              <td>BI013, BI014, BI078</td>
+              <td>Dados financeiros. Restrito.</td>
+            </tr>
+            <tr>
+              <td>Relatórios Gestão</td>
+              <td>PBCA034, PBRE010, PBRE011, PBRE013</td>
+              <td>Gerencial. Avaliar por perfil.</td>
+            </tr>
+            <tr>
+              <td>Relatórios BI</td>
+              <td>BI002, BI003, BI004, BI005, BI012, BI016, BI020, BI082, BI083, BI011, BI021, BI027</td>
+              <td>Exposição analítica/estratégica. Não liberar sem critério.</td>
+            </tr>
+            <tr>
+              <td>Utilitários</td>
+              <td>CADERP090, PBCA035, PBCA035A, PBCA041, PBCA052, PBCA057, PBCA059, PBCA061, PBCA079, PBCA079A, PBCA089, PBCA091, PBCA100, PBCA144, PBCX005</td>
+              <td>Crítico. Contém controle de usuários, exportações, liberações e rotinas sensíveis.</td>
+            </tr>
+            <tr>
+              <td>Utilitários Extra</td>
+              <td>QGPB003, PBCA105</td>
+              <td>Sensível. Pode afetar pedidos ou exportações.</td>
+            </tr>
+            <tr>
+              <td>Gerenciamento</td>
+              <td>PBCX002, QGPB004, QGPB005</td>
+              <td>Importação, replicação e rateio. Usar somente com validação.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="module-highlight">
+        Esta lista é referência para análise. A liberação real deve seguir a matriz de permissões da No Fire.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>17. Atenção especial: programas que parecem simples, mas não são</h2>
+
+      <p>
+        Alguns programas podem parecer inofensivos pelo nome, mas carregam risco relevante.
+      </p>
+
+      <ul>
+        <li><strong>Relatórios BI:</strong> podem expor dados comerciais, financeiros e estratégicos.</li>
+        <li><strong>Exportação de Dados:</strong> pode permitir retirada de informação da base.</li>
+        <li><strong>Parâmetros:</strong> podem alterar comportamento do sistema.</li>
+        <li><strong>Cadastros estruturais:</strong> podem contaminar item, cliente, preço, estoque ou tributação.</li>
+        <li><strong>Utilitários:</strong> podem afetar usuários, integrações, liberações e rotinas críticas.</li>
+      </ul>
+
+      <p class="module-highlight">
+        Programa de consulta também pode ser sensível quando expõe dados estratégicos.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>18. Exemplo prático: perfil VENDEDOR</h2>
+
+      <p>
+        Para um perfil de vendedor, a lógica não deve ser liberar tudo relacionado a vendas.
+        A lógica correta é liberar apenas aquilo que o vendedor precisa para executar sua rotina.
+      </p>
+
+      <p>
+        Programas normalmente relacionados ao vendedor podem incluir:
+      </p>
+
+      <ul>
+        <li>PBCA032 — Orçamento de Venda;</li>
+        <li>PBCA032-ITE — Itens do Orçamento;</li>
+        <li>PBCA015 — Pedido de Venda;</li>
+        <li>PBCA015-ITE — Lançamento de Itens;</li>
+        <li>PBCA069 — Consulta de Preços;</li>
+        <li>PBCA097 — Consulta de Preços;</li>
+        <li>relatórios comerciais específicos, se autorizados.</li>
+      </ul>
+
+      <p>
+        Porém, programas como cadastro de produto, tributação, parâmetros, exportação, financeiro, liberação de usuários
+        e perfil não devem ser vinculados ao vendedor como rotina.
+      </p>
+
+      <p class="module-highlight">
+        Vendedor precisa operar venda. Não precisa administrar estrutura do sistema.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>19. Exemplo prático: perfil RH</h2>
+
+      <p>
+        Para o perfil de RH, a vinculação deve estar relacionada à rotina cadastral de funcionários e usuários,
+        respeitando o limite já definido na Aula 03 do RH.
+      </p>
+
+      <p>
+        Programas relacionados:
+      </p>
+
+      <ul>
+        <li>PBCA056 — Funcionários;</li>
+        <li>PBCA035C — Cadastro de Usuários, com limitação operacional de campos;</li>
+      </ul>
+
+      <p>
+        O RH não deve receber, por padrão:
+      </p>
+
+      <ul>
+        <li>PBCA079 — Cadastro de Perfil;</li>
+        <li>PBCA079A — Vinculação Perfil x Programas;</li>
+        <li>PBCA035 — Restrição de Usuários x Programas;</li>
+        <li>PBCA041 — Exportação de Dados;</li>
+        <li>rotinas financeiras, fiscais ou de parâmetros sem justificativa.</li>
+      </ul>
+
+      <p class="module-highlight">
+        RH cadastra usuários. RH não define poder de acesso.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>20. Exemplo prático: perfil ADMINISTRADOR</h2>
+
+      <p>
+        O perfil administrador é diferente dos perfis operacionais. Ele pode ter acesso amplo ao sistema, mas isso não
+        significa uso livre ou sem controle.
+      </p>
+
+      <p>
+        A existência de administradores na No Fire foi tratada como decisão operacional assumida. Portanto, o controle
+        passa a depender ainda mais de responsabilidade individual, rastreabilidade e governança.
+      </p>
+
+      <p>
+        Mesmo quando o administrador possui acesso a todos os programas, ele deve operar dentro de sua função real.
+      </p>
+
+      <p class="module-highlight">
+        Administrador não é perfil para resolver preguiça de configuração. É perfil de alto risco e alta responsabilidade.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>21. Checklist antes de salvar a vinculação</h2>
+
+      <p>
+        Antes de salvar alterações na PBCA079A, o responsável deve conferir:
+      </p>
+
+      <ol>
+        <li>O perfil selecionado está correto?</li>
+        <li>Os programas vinculados correspondem à função do perfil?</li>
+        <li>Algum programa crítico foi vinculado?</li>
+        <li>Algum programa financeiro foi vinculado?</li>
+        <li>Algum programa fiscal foi vinculado?</li>
+        <li>Algum programa de usuário, perfil ou liberação foi vinculado?</li>
+        <li>Algum programa de exportação foi vinculado?</li>
+        <li>Algum relatório BI estratégico foi vinculado?</li>
+        <li>Houve uso de vinculação em massa?</li>
+        <li>A alteração precisa ser comunicada ou registrada?</li>
+        <li>Será necessária revisão posterior na PBCA035?</li>
+        <li>Será necessária revisão posterior nos checkboxes da PBCA035C?</li>
+      </ol>
+
+      <p class="module-highlight">
+        Se houver dúvida sobre qualquer programa vinculado, não salve como definitivo sem validação.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>22. Erros que devem ser evitados</h2>
+
+      <ul>
+        <li>vincular todos os programas a um perfil por pressa;</li>
+        <li>copiar perfil antigo sem revisar;</li>
+        <li>liberar programa pelo nome sem entender impacto;</li>
+        <li>liberar utilitários para perfis operacionais;</li>
+        <li>liberar relatórios BI sem critério;</li>
+        <li>liberar financeiro para usuário não financeiro;</li>
+        <li>liberar tributação para usuário sem responsabilidade fiscal;</li>
+        <li>liberar cadastro de produtos para vendedor como rotina;</li>
+        <li>criar perfil e esquecer de vincular programas;</li>
+        <li>vincular programas e não revisar PBCA035;</li>
+        <li>vincular programas e não revisar checkboxes da PBCA035C;</li>
+        <li>achar que perfil configurado significa usuário seguro.</li>
+      </ul>
+
+      <p class="module-highlight">
+        O maior erro na PBCA079A é liberar acesso por atalhos. A tela exige critério, não velocidade.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>23. Conclusão do Bloco 05</h2>
+
+      <p>
+        A tela Vinculação Perfil x Programas — PBCA079A é uma das etapas mais críticas da governança de acessos
+        do CAD ERP na No Fire.
+      </p>
+
+      <p>
+        Ela transforma o perfil, que até então era apenas um nome cadastrado na PBCA079, em uma base prática de
+        programas vinculados. Por isso, qualquer erro nesta etapa pode afetar todos os usuários associados ao perfil.
+      </p>
+
+      <p>
+        A configuração correta exige análise de função, impacto, risco e necessidade real. Depois da PBCA079A,
+        o acesso ainda deve ser revisado por usuário na PBCA035 e refinado por checkboxes na PBCA035C quando aplicável.
+      </p>
+
+      <p class="module-highlight">
+        PBCA079A monta a base do acesso. PBCA035 valida o usuário. PBCA035C refina as ações. Sem as três etapas, o controle fica incompleto.
+      </p>
+
+      <div class="module-nav">
+        <a class="module-link" href="./manual-acessos-bloco-04.html">Voltar para Bloco 04</a>
+        <a class="module-link" href="./manual-acessos-bloco-06.html">Avançar para Bloco 06</a>
+      </div>
+    </section>
+
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -71,3 +1057,4 @@
 
 </body>
 </html>
+```

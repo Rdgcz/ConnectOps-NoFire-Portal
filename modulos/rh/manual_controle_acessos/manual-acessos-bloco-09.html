@@ -3,10 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manual de Controle de Acessos | Bloco 01 | No Fire</title>
-  <meta name="description" content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 01 - Fundamento, contexto, premissas e finalidade do manual.">
+  <title>Manual de Controle de Acessos | Bloco 09 | No Fire</title>
+  <meta name="description" content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 09 - Matriz de Acessos.">
   <link rel="stylesheet" href="../../../assets/css/style.css">
   <link rel="icon" href="../../../assets/img/favicon/favicon.ico" type="image/png">
+  <style>
+    .manual-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+
+    .manual-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      font-size: 0.95rem;
+    }
+
+    .manual-table th,
+    .manual-table td {
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.45;
+    }
+
+    .manual-table th {
+      font-weight: 700;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .manual-tag-critical {
+      font-weight: 700;
+      color: #ff6b6b;
+    }
+
+    .manual-tag-sensitive {
+      font-weight: 700;
+      color: #ffd166;
+    }
+
+    .manual-tag-operational {
+      font-weight: 700;
+      color: #7bd88f;
+    }
+
+    .manual-code-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .manual-code-card {
+      padding: 16px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .manual-code-card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #ffe3e6;
+    }
+
+    .manual-code-card p {
+      margin-bottom: 0;
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 780px) {
+      .manual-code-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -18,19 +93,19 @@
       </a>
     </div>
 
-    <div class="nav-center" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; font-size: 0.9em;">
-      <a style="font-size: 1rem;" href="../../../index.html">Portal</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-01.html">Bloco 01</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-02.html">Bloco 02</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-03.html">Bloco 03</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-04.html">Bloco 04</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-05.html">Bloco 05</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-06.html">Bloco 06</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-07.html">Bloco 07</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-08.html">Bloco 08</a> |
-      <a style="font-size: 1rem;  text-shadow: red 0px 0px 4px;">Bloco 09</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-10.html">Bloco 10</a>
-    </div>
+<div class="nav-center" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; font-size: 0.9em;">
+  <a style="font-size: 1rem;" href="../../../index.html">Portal</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-01.html">Fundamentos</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-02.html">Conceitos</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-03.html">Estrutura</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-04.html">Perfis</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-05.html">Vinculação</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-06.html">Restrições</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-07.html">Permissões</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-08.html">Operação</a> |
+  <a style="font-size: 1rem; text-shadow: red 0px 0px 4px;">Matriz</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-10.html">Governança</a>
+</div>
 
     <div class="nav-right">
       <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da CAD Sistemas">
@@ -40,14 +115,924 @@
   </nav>
 </header>
 
-<section style="padding-bottom: 50vh; text-align: center;" class="internal-hero">
+<section class="internal-hero">
   <div class="internal-hero-content">
-    <h1>Em construção</h1>
+    <span class="internal-kicker">Manual Operacional · Controle de Acessos · Bloco 09/10</span>
+    <h1>Matriz Base de Permissões por PBCA</h1>
+    <p>
+      Este bloco organiza a matriz base de permissões por programa, relacionando os principais PBCAs
+      aos perfis operacionais da No Fire e estabelecendo uma referência prática para liberação,
+      restrição e revisão de acessos.
+    </p>
   </div>
 </section>
 
-<main>
+<main class="module-content">
+  <div class="module-shell">
 
+    <section class="module-block">
+      <h2>1. Objetivo do Bloco 09</h2>
+
+      <p>
+        O objetivo deste bloco é consolidar a matriz base de permissões por programa, utilizando os códigos
+        PBCA como referência operacional para concessão e restrição de acesso no CAD ERP.
+      </p>
+
+      <p>
+        Até este ponto, o manual explicou a função de cada camada de controle: perfil, vinculação de programas,
+        restrição por usuário e checkboxes internos. Agora, essas camadas são aplicadas em uma matriz prática.
+      </p>
+
+      <p class="module-highlight">
+        A matriz de permissões é a referência operacional para decidir quem pode acessar o quê.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>2. Como interpretar esta matriz</h2>
+
+      <p>
+        A matriz deve ser lida considerando três perguntas:
+      </p>
+
+      <ol>
+        <li>Qual é o programa?</li>
+        <li>Qual é o impacto desse programa?</li>
+        <li>Qual perfil realmente precisa acessá-lo?</li>
+      </ol>
+
+      <p>
+        A liberação de acesso não deve ser feita apenas pelo nome da tela. O correto é analisar o impacto da rotina
+        que o programa permite executar.
+      </p>
+
+      <p class="module-highlight">
+        O nome da tela ajuda. O risco real está na ação que ela permite.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>3. Legenda da matriz</h2>
+
+      <div class="manual-table-wrap">
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th>Símbolo</th>
+              <th>Significado</th>
+              <th>Interpretação operacional</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>✔</td>
+              <td>Liberado</td>
+              <td>O perfil pode acessar, desde que respeite a função e os checkboxes aplicáveis.</td>
+            </tr>
+            <tr>
+              <td>❌</td>
+              <td>Bloqueado</td>
+              <td>O perfil não deve acessar como regra operacional.</td>
+            </tr>
+            <tr>
+              <td>⚠️</td>
+              <td>Controlado</td>
+              <td>Exige validação, restrição por usuário ou revisão adicional.</td>
+            </tr>
+            <tr>
+              <td>ADM</td>
+              <td>Administrativo / financeiro autorizado</td>
+              <td>Uso limitado a usuários administrativos ou financeiros com função definida.</td>
+            </tr>
+            <tr>
+              <td>MST</td>
+              <td>Administrador / master</td>
+              <td>Acesso amplo, tratado como risco assumido e responsabilidade ampliada.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="module-highlight">
+        A matriz não substitui a revisão por usuário. Ela orienta a configuração inicial.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>4. Bloco crítico — controle obrigatório</h2>
+
+      <p>
+        Os programas abaixo são críticos porque envolvem usuários, perfis, exportação, financeiro, fiscal ou controle
+        estrutural do sistema.
+      </p>
+
+      <div class="manual-table-wrap">
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th>PBCA</th>
+              <th>Nome do Programa</th>
+              <th>Tipo</th>
+              <th>Admin</th>
+              <th>Gestor</th>
+              <th>Vend.</th>
+              <th>Eng.</th>
+              <th>RH</th>
+              <th>Diretriz</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PBCA035</td>
+              <td>Restrição de Usuários x Programas</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Restrito à governança de acesso.</td>
+            </tr>
+            <tr>
+              <td>PBCA079</td>
+              <td>Cadastro de Perfil de Usuários</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Uso pontual para criação de perfis.</td>
+            </tr>
+            <tr>
+              <td>PBCA079A</td>
+              <td>Vinculação Perfil x Programas</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Altera base de acesso do perfil.</td>
+            </tr>
+            <tr>
+              <td>PBCA041</td>
+              <td>Exportação de Dados</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Bloquear para perfis operacionais.</td>
+            </tr>
+            <tr>
+              <td>PBCA052</td>
+              <td>Liberação de Usuários</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Restrito à administração autorizada.</td>
+            </tr>
+            <tr>
+              <td>PBCA013</td>
+              <td>Tributação</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Impacto fiscal. Não liberar sem validação.</td>
+            </tr>
+            <tr>
+              <td>PBCA027</td>
+              <td>Títulos</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>ADM</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Restrito a função financeira.</td>
+            </tr>
+            <tr>
+              <td>PBCA074</td>
+              <td>Movimentação Conta Corrente</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>ADM</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Impacto bancário/financeiro.</td>
+            </tr>
+            <tr>
+              <td>PBCA139</td>
+              <td>Movimentação Caixa Diário</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>ADM</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Impacto financeiro direto.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="module-highlight">
+        Programa crítico não deve ser liberado por conveniência. Deve existir função, autorização e revisão.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>5. Bloco comercial — vendedor</h2>
+
+      <p>
+        Os programas comerciais compõem a base operacional do vendedor, mas devem ser separados entre rotinas
+        de venda e funções sensíveis.
+      </p>
+
+      <div class="manual-table-wrap">
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th>PBCA</th>
+              <th>Nome</th>
+              <th>Tipo</th>
+              <th>Admin</th>
+              <th>Gestor</th>
+              <th>Vend.</th>
+              <th>Eng.</th>
+              <th>RH</th>
+              <th>Diretriz</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PBCA032</td>
+              <td>Orçamento de Venda</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Rotina base do comercial.</td>
+            </tr>
+            <tr>
+              <td>PBCA032-ITE</td>
+              <td>Itens do Orçamento</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Necessário para montagem do orçamento.</td>
+            </tr>
+            <tr>
+              <td>PBCA015</td>
+              <td>Pedido de Venda</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Conforme fluxo comercial definido.</td>
+            </tr>
+            <tr>
+              <td>PBCA015-ITE</td>
+              <td>Itens do Pedido</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Necessário quando vendedor operar pedidos.</td>
+            </tr>
+            <tr>
+              <td>PBCA069</td>
+              <td>Consulta de Preços</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>Consulta comercial.</td>
+            </tr>
+            <tr>
+              <td>PBCA097</td>
+              <td>Consulta de Preços</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>Consulta comercial complementar.</td>
+            </tr>
+            <tr>
+              <td>PBCA090</td>
+              <td>Adiantamento de Pedido</td>
+              <td>Sensível</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Validar necessidade antes de liberar.</td>
+            </tr>
+            <tr>
+              <td>PBCA034</td>
+              <td>Relatório Pedido por Data</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>Liberar conforme necessidade de consulta.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="module-highlight">
+        Comercial precisa operar orçamento e pedido. Não precisa acessar estrutura, fiscal, financeiro ou controle de usuários.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>6. Bloco administrativo / financeiro</h2>
+
+      <p>
+        Os programas administrativos e financeiros exigem atenção especial porque podem alterar obrigações,
+        cobranças, pagamentos, caixa, conta corrente e conciliação.
+      </p>
+
+      <div class="manual-table-wrap">
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th>PBCA</th>
+              <th>Nome</th>
+              <th>Tipo</th>
+              <th>Admin</th>
+              <th>Adm./Fin.</th>
+              <th>Vend.</th>
+              <th>Eng.</th>
+              <th>RH</th>
+              <th>Diretriz</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PBCA010C</td>
+              <td>Cadastro de Clientes</td>
+              <td>Sensível</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Definir se vendedor pode cadastrar ou apenas solicitar.</td>
+            </tr>
+            <tr>
+              <td>PBCA010R</td>
+              <td>Relatório de Clientes</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>Consulta conforme função.</td>
+            </tr>
+            <tr>
+              <td>PBCA067</td>
+              <td>Cadastro de Contatos</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Validar responsabilidade cadastral.</td>
+            </tr>
+            <tr>
+              <td>PBCA030</td>
+              <td>Geração de Comissão</td>
+              <td>Sensível</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Impacto em comissão. Restrito.</td>
+            </tr>
+            <tr>
+              <td>PBCA031</td>
+              <td>Emissão de Boletos</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Financeiro/cobrança.</td>
+            </tr>
+            <tr>
+              <td>PBCA039</td>
+              <td>Devolução de Nota</td>
+              <td>Sensível</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Impacto fiscal/operacional.</td>
+            </tr>
+            <tr>
+              <td>PBCA073</td>
+              <td>Conta Corrente</td>
+              <td>Sensível</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Validar função financeira.</td>
+            </tr>
+            <tr>
+              <td>PBCA152</td>
+              <td>Conciliação Bancária</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>Restrito a responsável autorizado.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="module-highlight">
+        Financeiro não deve ser parcialmente liberado sem entender exatamente o que cada programa permite.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>7. Bloco engenharia / CRM / técnico</h2>
+
+      <p>
+        Os acessos técnicos devem ser avaliados conforme a necessidade real da engenharia ou da equipe operacional.
+        Nem todo usuário técnico precisa acessar cadastros estruturais, parâmetros ou relatórios gerenciais.
+      </p>
+
+      <div class="manual-table-wrap">
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th>PBCA</th>
+              <th>Nome</th>
+              <th>Tipo</th>
+              <th>Admin</th>
+              <th>Gestor</th>
+              <th>Vend.</th>
+              <th>Eng.</th>
+              <th>RH</th>
+              <th>Diretriz</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PBCA101</td>
+              <td>CRM</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>✔</td>
+              <td>❌</td>
+              <td>Liberar conforme uso real do CRM.</td>
+            </tr>
+            <tr>
+              <td>PBCA102</td>
+              <td>Categoria CRM</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>Configuração. Não liberar sem necessidade.</td>
+            </tr>
+            <tr>
+              <td>PBCA103</td>
+              <td>Setor CRM</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>Configuração. Controlar.</td>
+            </tr>
+            <tr>
+              <td>PBCA104</td>
+              <td>Status CRM</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>Configuração. Controlar.</td>
+            </tr>
+            <tr>
+              <td>PBCA108</td>
+              <td>Classificação CRM</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>Configuração. Controlar.</td>
+            </tr>
+            <tr>
+              <td>PBCA121</td>
+              <td>Parâmetros CRM</td>
+              <td>Sensível</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>Parâmetro. Restrito.</td>
+            </tr>
+            <tr>
+              <td>PBCA151</td>
+              <td>Prioridades CRM</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>Liberar conforme função.</td>
+            </tr>
+            <tr>
+              <td>PBCA058</td>
+              <td>Gerar OS sem Pedido / CADEX</td>
+              <td>Sensível</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>Validar uso técnico.</td>
+            </tr>
+            <tr>
+              <td>PBCA072</td>
+              <td>Prospecção de Clientes</td>
+              <td>Operacional</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>Liberar conforme rotina.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="module-highlight">
+        Engenharia pode precisar consultar e operar rotinas técnicas. Isso não significa liberar parâmetros ou estrutura sem controle.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>8. Bloco RH</h2>
+
+      <p>
+        O RH possui papel limitado à rotina cadastral, conforme definido no treinamento específico.
+        A matriz deve proteger o RH de assumir funções de configuração de acesso.
+      </p>
+
+      <div class="manual-table-wrap">
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th>PBCA</th>
+              <th>Nome</th>
+              <th>Tipo</th>
+              <th>Admin</th>
+              <th>Gestor</th>
+              <th>Vend.</th>
+              <th>Eng.</th>
+              <th>RH</th>
+              <th>Diretriz</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PBCA056</td>
+              <td>Cadastro de Funcionários</td>
+              <td>Sensível</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>✔</td>
+              <td>Rotina cadastral do RH.</td>
+            </tr>
+            <tr>
+              <td>PBCA035C</td>
+              <td>Cadastro de Usuários</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>⚠️</td>
+              <td>RH pode preencher cadastro básico, sem definir permissões.</td>
+            </tr>
+            <tr>
+              <td>PBCA079</td>
+              <td>Cadastro de Perfil</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>RH não deve criar perfil.</td>
+            </tr>
+            <tr>
+              <td>PBCA079A</td>
+              <td>Vinculação Perfil x Programas</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>RH não deve vincular programas.</td>
+            </tr>
+            <tr>
+              <td>PBCA035</td>
+              <td>Restrição de Usuários x Programas</td>
+              <td>Crítico</td>
+              <td>✔</td>
+              <td>⚠️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>RH não deve definir restrição.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="module-highlight">
+        RH cadastra. RH não configura poder.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>9. Programas estruturalmente sensíveis</h2>
+
+      <p>
+        Alguns programas não pertencem a um perfil operacional comum. Eles alteram estrutura, parâmetros, dados
+        fiscais, base de produtos, preço ou comportamento do sistema.
+      </p>
+
+      <div class="manual-table-wrap">
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th>PBCA</th>
+              <th>Nome</th>
+              <th>Impacto</th>
+              <th>Diretriz</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PBCA005</td>
+              <td>Produtos de Compra, Venda e Serviço</td>
+              <td>Estrutura de itens/produtos.</td>
+              <td>Não liberar para vendedor como rotina.</td>
+            </tr>
+            <tr>
+              <td>PBCA006</td>
+              <td>Tabelas de Preços</td>
+              <td>Preço, margem e política comercial.</td>
+              <td>Restrito a responsáveis autorizados.</td>
+            </tr>
+            <tr>
+              <td>PBCA001</td>
+              <td>Unidade de Medida</td>
+              <td>Base estrutural de item.</td>
+              <td>Restrito.</td>
+            </tr>
+            <tr>
+              <td>PBCA002</td>
+              <td>Grupos e Subgrupos</td>
+              <td>Organização estrutural de produtos.</td>
+              <td>Restrito.</td>
+            </tr>
+            <tr>
+              <td>PBCA003</td>
+              <td>Família</td>
+              <td>Classificação estrutural.</td>
+              <td>Restrito.</td>
+            </tr>
+            <tr>
+              <td>PBCA016</td>
+              <td>Parâmetros do Sistema</td>
+              <td>Comportamento do sistema.</td>
+              <td>Restrito.</td>
+            </tr>
+            <tr>
+              <td>PBCA123</td>
+              <td>Parâmetros de Estoque</td>
+              <td>Controle de estoque.</td>
+              <td>Restrito.</td>
+            </tr>
+            <tr>
+              <td>PBCA124</td>
+              <td>Parâmetros Gestão de Vendas</td>
+              <td>Comportamento comercial.</td>
+              <td>Restrito.</td>
+            </tr>
+            <tr>
+              <td>PBCA122</td>
+              <td>Parâmetros Financeiros</td>
+              <td>Comportamento financeiro.</td>
+              <td>Restrito.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="module-highlight">
+        Cadastro estrutural não é rotina de usuário operacional. É governança de sistema.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>10. Programas de relatórios e BI</h2>
+
+      <p>
+        Relatórios e BIs podem parecer menos perigosos porque geralmente não alteram dados. Porém, eles podem expor
+        informações comerciais, financeiras, operacionais e estratégicas.
+      </p>
+
+      <div class="manual-table-wrap">
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th>Grupo</th>
+              <th>Exemplos</th>
+              <th>Risco</th>
+              <th>Diretriz</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Relatórios Operacionais</td>
+              <td>PBRE002, PBRE004, PBRE005, PBRE006, PBRE007, PBRE009, PBRE012, PBRE017, PBRE018</td>
+              <td>Exposição operacional.</td>
+              <td>Liberar conforme função.</td>
+            </tr>
+            <tr>
+              <td>Relatórios Financeiros</td>
+              <td>BI013, BI014, BI078</td>
+              <td>Exposição financeira.</td>
+              <td>Restrito a financeiro/gestão.</td>
+            </tr>
+            <tr>
+              <td>Relatórios Gestão</td>
+              <td>PBCA034, PBRE010, PBRE011, PBRE013</td>
+              <td>Exposição gerencial.</td>
+              <td>Liberar conforme necessidade gerencial.</td>
+            </tr>
+            <tr>
+              <td>Relatórios BI</td>
+              <td>BI002, BI003, BI004, BI005, BI011, BI012, BI016, BI020, BI021, BI027, BI082, BI083</td>
+              <td>Dados estratégicos.</td>
+              <td>Não liberar por padrão para usuários operacionais comuns.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="module-highlight">
+        Relatório não altera dados, mas pode expor informação crítica.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>11. Tratamento de exceções</h2>
+
+      <p>
+        Quando um usuário precisar de acesso fora do padrão do perfil, a situação deve ser tratada como exceção.
+      </p>
+
+      <p>
+        A exceção deve responder:
+      </p>
+
+      <ol>
+        <li>Quem precisa do acesso?</li>
+        <li>Qual programa será liberado?</li>
+        <li>Por que o perfil padrão não atende?</li>
+        <li>O acesso será temporário ou permanente?</li>
+        <li>Existe risco financeiro, fiscal, estrutural ou de exportação?</li>
+        <li>A gestão validou?</li>
+        <li>A exceção foi registrada?</li>
+      </ol>
+
+      <p class="module-highlight">
+        Exceção sem registro vira novo padrão informal. E padrão informal destrói governança.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>12. Checklist da matriz antes de liberar usuário</h2>
+
+      <p>
+        Antes de considerar um usuário pronto para operar, conferir:
+      </p>
+
+      <ol>
+        <li>O usuário está vinculado a uma função real?</li>
+        <li>O perfil aplicado corresponde à função?</li>
+        <li>Os PBCAs críticos estão bloqueados quando não aplicáveis?</li>
+        <li>Os PBCAs financeiros estão bloqueados para não financeiros?</li>
+        <li>Os PBCAs fiscais estão bloqueados para não fiscais?</li>
+        <li>Os utilitários estão bloqueados para usuários operacionais?</li>
+        <li>Os relatórios BI foram avaliados?</li>
+        <li>O acesso a exportação foi bloqueado?</li>
+        <li>As restrições na PBCA035 foram revisadas?</li>
+        <li>Os checkboxes da PBCA035C foram revisados?</li>
+        <li>Existe alguma exceção registrada?</li>
+      </ol>
+
+      <p class="module-highlight">
+        Usuário sem revisão da matriz é usuário pendente.
+      </p>
+    </section>
+
+    <section class="module-block">
+      <h2>13. Conclusão do Bloco 09</h2>
+
+      <p>
+        A matriz base de permissões por PBCA é a principal referência operacional para controlar acessos no CAD ERP.
+      </p>
+
+      <p>
+        Ela transforma a discussão abstrata sobre perfis em uma decisão objetiva: qual programa cada perfil deve ou
+        não deve acessar.
+      </p>
+
+      <p>
+        Porém, a matriz não resolve tudo sozinha. Ela deve ser combinada com:
+      </p>
+
+      <ul>
+        <li>vinculação correta na PBCA079A;</li>
+        <li>restrição individual na PBCA035;</li>
+        <li>revisão de checkboxes na PBCA035C;</li>
+        <li>governança sobre exceções;</li>
+        <li>auditoria periódica.</li>
+      </ul>
+
+      <p class="module-highlight">
+        A matriz é o mapa. A configuração é a execução. A auditoria é a confirmação.
+      </p>
+
+      <div class="module-nav">
+        <a class="module-link" href="./manual-acessos-bloco-08.html">Voltar para Bloco 08</a>
+        <a class="module-link" href="./manual-acessos-bloco-10.html">Avançar para Bloco 10</a>
+      </div>
+    </section>
+
+  </div>
 </main>
 
 <footer class="site-footer">

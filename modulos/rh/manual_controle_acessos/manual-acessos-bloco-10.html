@@ -1,73 +1,677 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manual de Controle de Acessos | Bloco 01 | No Fire</title>
-  <meta name="description" content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 01 - Fundamento, contexto, premissas e finalidade do manual.">
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-  <link rel="icon" href="../../../assets/img/favicon/favicon.ico" type="image/png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manual de Controle de Acessos | Bloco 10 | No Fire</title>
+    <meta name="description"
+        content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 10 - Governança e Compliance.">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="icon" href="../../../assets/img/favicon/favicon.ico" type="image/png">
+    <style>
+        .manual-table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+
+        .manual-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 760px;
+            font-size: 0.95rem;
+        }
+
+        .manual-table th,
+        .manual-table td {
+            padding: 12px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            text-align: left;
+            vertical-align: top;
+            line-height: 1.45;
+        }
+
+        .manual-table th {
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .manual-tag-critical {
+            font-weight: 700;
+            color: #ff6b6b;
+        }
+
+        .manual-tag-sensitive {
+            font-weight: 700;
+            color: #ffd166;
+        }
+
+        .manual-tag-operational {
+            font-weight: 700;
+            color: #7bd88f;
+        }
+
+        .manual-code-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .manual-code-card {
+            padding: 16px 18px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .manual-code-card h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            color: #ffe3e6;
+        }
+
+        .manual-code-card p {
+            margin-bottom: 0;
+            font-size: 1.05rem;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 780px) {
+            .manual-code-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<header class="site-header">
-  <nav class="nav">
-    <div class="nav-left">
-      <a href="https://www.nofire.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da No Fire">
-        <img src="../../../assets/img/nofire-logo.png" alt="No Fire">
-      </a>
-    </div>
+    <header class="site-header">
+        <nav class="nav">
+            <div class="nav-left">
+                <a href="https://www.nofire.com.br/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Acessar site da No Fire">
+                    <img src="../../../assets/img/nofire-logo.png" alt="No Fire">
+                </a>
+            </div>
 
-    <div class="nav-center" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; font-size: 0.9em;">
-      <a style="font-size: 1rem;" href="../../../index.html">Portal</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-01.html">Bloco 01</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-02.html">Bloco 02</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-03.html">Bloco 03</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-04.html">Bloco 04</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-05.html">Bloco 05</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-06.html">Bloco 06</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-07.html">Bloco 07</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-08.html">Bloco 08</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-09.html">Bloco 09</a> |
-      <a style="font-size: 1rem;  text-shadow: red 0px 0px 4px;">Bloco 10</a>
-    </div>
+            <div class="nav-center"
+                style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; font-size: 0.9em;">
+                <a style="font-size: 1rem;" href="../../../index.html">Portal</a> |
+                <a style="font-size: 1rem;" href="./manual-acessos-bloco-01.html">Fundamentos</a> |
+                <a style="font-size: 1rem;" href="./manual-acessos-bloco-02.html">Conceitos</a> |
+                <a style="font-size: 1rem;" href="./manual-acessos-bloco-03.html">Estrutura</a> |
+                <a style="font-size: 1rem;" href="./manual-acessos-bloco-04.html">Perfis</a> |
+                <a style="font-size: 1rem;" href="./manual-acessos-bloco-05.html">Vinculação</a> |
+                <a style="font-size: 1rem;" href="./manual-acessos-bloco-06.html">Restrições</a> |
+                <a style="font-size: 1rem;" href="./manual-acessos-bloco-07.html">Permissões</a> |
+                <a style="font-size: 1rem;" href="./manual-acessos-bloco-08.html">Operação</a> |
+                <a style="font-size: 1rem;" href="./manual-acessos-bloco-09.html">Matriz</a> |
+                <a style="font-size: 1rem; text-shadow: red 0px 0px 4px;">Governança</a>
+            </div>
 
-    <div class="nav-right">
-      <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da CAD Sistemas">
-        <img src="../../../assets/img/cad-logo.png" alt="CAD">
-      </a>
-    </div>
-  </nav>
-</header>
+            <div class="nav-right">
+                <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Acessar site da CAD Sistemas">
+                    <img src="../../../assets/img/cad-logo.png" alt="CAD">
+                </a>
+            </div>
+        </nav>
+    </header>
 
-<section style="padding-bottom: 50vh; text-align: center;" class="internal-hero">
-  <div class="internal-hero-content">
-    <h1>Em construção</h1>
-  </div>
-</section>
+    <section class="internal-hero">
+        <div class="internal-hero-content">
+            <span class="internal-kicker">Manual Operacional · Controle de Acessos · Bloco 10/10</span>
+            <h1>Governança, Auditoria e<br> Checklist Final</h1>
+            <p>
+                Este bloco consolida as regras finais de governança, auditoria e revisão contínua dos acessos,
+                garantindo que a matriz de permissões seja mantida após a implantação e não se degrade durante a
+                operação.
+            </p>
+        </div>
+    </section>
 
-<main>
+    <main class="module-content">
+        <div class="module-shell">
 
-</main>
+            <section class="module-block">
+                <h2>1. Objetivo do Bloco 10</h2>
 
-<footer class="site-footer">
-  <div class="footer-left"><span id="footer-year"></span> © ConnectOps | V.1.0</div>
+                <p>
+                    O objetivo deste bloco é definir como a No Fire deverá manter o controle de acessos após a
+                    configuração inicial.
+                </p>
 
-  <div class="footer-center">
-    <a href="https://www.connectops.com.br" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da ConnectOps">
-      <img src="../../../assets/img/connectops-logo.png" alt="Logomarca ConnectOps">
-    </a>
-  </div>
+                <p>
+                    A criação dos perfis, a vinculação de programas, a restrição por usuário e a revisão dos checkboxes
+                    não encerram
+                    o processo. O controle de acessos precisa ser mantido, revisado e corrigido sempre que houver
+                    mudança de usuário,
+                    função, responsabilidade ou risco.
+                </p>
 
-  <div class="footer-right">
-    Dúvidas e suporte:
-    <a href="mailto:nofire@connectops.com.br">nofire@connectops.com.br</a>
-  </div>
-</footer>
+                <p class="module-highlight">
+                    Controle de acesso não é tarefa única. É rotina contínua de governança.
+                </p>
+            </section>
 
-<script>
-  document.getElementById("footer-year").textContent = new Date().getFullYear();
-</script>
+            <section class="module-block">
+                <h2>2. Princípio de manutenção</h2>
+
+                <p>
+                    A No Fire deve considerar que o ambiente de acessos pode se degradar com o tempo se não houver
+                    revisão.
+                </p>
+
+                <p>
+                    Isso pode ocorrer por:
+                </p>
+
+                <ul>
+                    <li>criação de novos usuários;</li>
+                    <li>mudança de função;</li>
+                    <li>saída de colaboradores;</li>
+                    <li>concessão de exceções;</li>
+                    <li>marcação indevida de checkboxes;</li>
+                    <li>liberação temporária que não foi removida;</li>
+                    <li>uso de perfil administrador fora do necessário;</li>
+                    <li>novas rotinas implantadas no sistema;</li>
+                    <li>atualizações futuras do CAD ERP.</li>
+                </ul>
+
+                <p class="module-highlight">
+                    O risco não está apenas na configuração inicial. Está principalmente na falta de revisão depois.
+                </p>
+            </section>
+
+            <section class="module-block">
+                <h2>3. Responsáveis pela governança</h2>
+
+                <p>
+                    A governança de acessos deve ter responsáveis definidos. Sem responsável claro, o controle vira
+                    suposição.
+                </p>
+
+                <div class="manual-table-wrap">
+                    <table class="manual-table">
+                        <thead>
+                            <tr>
+                                <th>Responsável</th>
+                                <th>Papel</th>
+                                <th>Limite</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>RH</td>
+                                <td>Cadastrar, atualizar e inativar usuários e funcionários.</td>
+                                <td>Não define perfil, programas, restrições ou checkboxes sensíveis.</td>
+                            </tr>
+                            <tr>
+                                <td>Key User</td>
+                                <td>Configurar e revisar acessos conforme matriz.</td>
+                                <td>Não deve liberar exceções sem validação quando houver risco.</td>
+                            </tr>
+                            <tr>
+                                <td>Gestão</td>
+                                <td>Validar acessos sensíveis, exceções e riscos assumidos.</td>
+                                <td>Deve evitar autorização informal sem registro mínimo.</td>
+                            </tr>
+                            <tr>
+                                <td>Administrador</td>
+                                <td>Executar ações amplas quando necessário.</td>
+                                <td>Não usar acesso total como rotina comum sem critério.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="module-highlight">
+                    Cada acesso deve ter dono, motivo e limite.
+                </p>
+            </section>
+
+            <section class="module-block">
+                <h2>4. Eventos que exigem revisão de acesso</h2>
+
+                <p>
+                    A revisão de acesso deve ocorrer sempre que houver alteração relevante na estrutura de pessoas ou
+                    funções.
+                </p>
+
+                <p>
+                    Eventos obrigatórios de revisão:
+                </p>
+
+                <ul>
+                    <li>entrada de novo colaborador;</li>
+                    <li>alteração de cargo ou função;</li>
+                    <li>transferência de setor;</li>
+                    <li>desligamento;</li>
+                    <li>retorno de usuário inativo;</li>
+                    <li>concessão de acesso temporário;</li>
+                    <li>criação de novo perfil;</li>
+                    <li>alteração de perfil existente;</li>
+                    <li>identificação de erro de acesso;</li>
+                    <li>atualização do sistema;</li>
+                    <li>mudança de processo operacional.</li>
+                </ul>
+
+                <p class="module-highlight">
+                    Mudou a função, revisa o acesso. Saiu da empresa, inativa. Recebeu exceção, registra.
+                </p>
+            </section>
+
+            <section class="module-block">
+                <h2>5. Checklist de criação de usuário</h2>
+
+                <p>
+                    Todo novo usuário deve passar por uma conferência mínima antes de ser considerado liberado para
+                    operação.
+                </p>
+
+                <ol>
+                    <li>Funcionário foi cadastrado ou localizado corretamente?</li>
+                    <li>Usuário foi criado na PBCA035C?</li>
+                    <li>Dados cadastrais foram conferidos?</li>
+                    <li>Função do usuário foi confirmada?</li>
+                    <li>Perfil correto foi identificado?</li>
+                    <li>Perfil foi criado na PBCA079, se necessário?</li>
+                    <li>Programas foram vinculados na PBCA079A?</li>
+                    <li>Usuário foi revisado na PBCA035?</li>
+                    <li>Checkboxes da PBCA035C foram revisados?</li>
+                    <li>Permissões críticas foram bloqueadas quando não aplicáveis?</li>
+                    <li>Exceções foram validadas?</li>
+                    <li>Usuário foi comunicado como pronto para uso?</li>
+                </ol>
+
+                <p class="module-highlight">
+                    Usuário criado não é usuário liberado. Usuário só está pronto após revisão completa.
+                </p>
+            </section>
+
+            <section class="module-block">
+                <h2>6. Checklist de inativação de usuário</h2>
+
+                <p>
+                    A inativação é tão importante quanto a criação. Usuário que não deveria mais acessar o sistema não
+                    pode permanecer ativo.
+                </p>
+
+                <ol>
+                    <li>Usuário correto foi identificado?</li>
+                    <li>Funcionário correspondente foi localizado?</li>
+                    <li>Situação do usuário foi alterada para inativo?</li>
+                    <li>Situação do funcionário foi ajustada quando aplicável?</li>
+                    <li>Foi conferido se não existe usuário duplicado?</li>
+                    <li>Gestão foi informada da inativação?</li>
+                    <li>O acesso deixou de aparecer como ativo?</li>
+                </ol>
+
+                <p class="module-highlight">
+                    Usuário desligado ou sem função ativa não deve permanecer habilitado no sistema.
+                </p>
+            </section>
+
+            <section class="module-block">
+                <h2>7. Checklist de revisão mensal</h2>
+
+                <p>
+                    Recomenda-se executar uma revisão periódica da base de usuários e acessos.
+                </p>
+
+                <p>
+                    Na revisão mensal, verificar:
+                </p>
+
+                <ol>
+                    <li>Lista de usuários ativos.</li>
+                    <li>Usuários que deveriam estar inativos.</li>
+                    <li>Usuários com perfil administrador.</li>
+                    <li>Usuários sem perfil ou com perfil incorreto.</li>
+                    <li>Usuários com permissões financeiras.</li>
+                    <li>Usuários com permissões fiscais.</li>
+                    <li>Usuários com acesso a exportação de dados.</li>
+                    <li>Usuários com acesso a perfil, vinculação e restrição.</li>
+                    <li>Checkboxes críticos marcados.</li>
+                    <li>Exceções concedidas no mês.</li>
+                    <li>Acessos temporários ainda ativos.</li>
+                </ol>
+
+                <p class="module-highlight">
+                    Revisão mensal evita que exceção temporária vire acesso permanente.
+                </p>
+            </section>
+
+            <section class="module-block">
+                <h2>8. Checklist de revisão por perfil</h2>
+
+                <p>
+                    Além da revisão por usuário, os perfis também devem ser revisados periodicamente.
+                </p>
+
+                <ol>
+                    <li>O perfil ainda representa uma função real?</li>
+                    <li>Existem usuários associados ao perfil?</li>
+                    <li>Os programas vinculados continuam corretos?</li>
+                    <li>Algum programa crítico foi incluído sem justificativa?</li>
+                    <li>Algum programa financeiro foi incluído indevidamente?</li>
+                    <li>Algum programa fiscal foi incluído indevidamente?</li>
+                    <li>O perfil está sendo usado para exceções individuais?</li>
+                    <li>Há perfis duplicados ou parecidos demais?</li>
+                    <li>Há perfil que deveria ser descontinuado?</li>
+                </ol>
+
+                <p class="module-highlight">
+                    Perfil também envelhece. Se não for revisado, vira risco acumulado.
+                </p>
+            </section>
+
+            <section class="module-block">
+                <h2>9. Controle de exceções</h2>
+
+                <p>
+                    Exceção é qualquer acesso fora do padrão previsto para o perfil do usuário.
+                </p>
+
+                <p>
+                    Uma exceção pode ser necessária, mas deve ser controlada.
+                </p>
+
+                <p>
+                    Toda exceção relevante deve conter:
+                </p>
+
+                <ul>
+                    <li>nome do usuário;</li>
+                    <li>perfil atual;</li>
+                    <li>programa ou checkbox liberado;</li>
+                    <li>motivo da liberação;</li>
+                    <li>responsável pela validação;</li>
+                    <li>prazo, quando temporária;</li>
+                    <li>data de revisão.</li>
+                </ul>
+
+                <p class="module-highlight">
+                    Exceção sem registro não é exceção. É descontrole.
+                </p>
+            </section>
+
+            <section class="module-block">
+                <h2>10. Acessos que exigem registro obrigatório</h2>
+
+                <p>
+                    Algumas liberações são sensíveis o suficiente para exigir registro mínimo sempre que ocorrerem.
+                </p>
+
+                <ul>
+                    <li>perfil administrador;</li>
+                    <li>acesso à PBCA035;</li>
+                    <li>acesso à PBCA079;</li>
+                    <li>acesso à PBCA079A;</li>
+                    <li>acesso à exportação de dados;</li>
+                    <li>acesso a programas financeiros;</li>
+                    <li>acesso a programas fiscais;</li>
+                    <li>acesso a parâmetros do sistema;</li>
+                    <li>checkbox de alteração de valor;</li>
+                    <li>checkbox de alteração de desconto;</li>
+                    <li>checkbox de cancelamento de pedido;</li>
+                    <li>checkbox de exclusão de pedido;</li>
+                    <li>checkbox de cancelamento de nota fiscal.</li>
+                </ul>
+
+                <p class="module-highlight">
+                    Quanto maior o poder concedido, maior deve ser o rastro da decisão.
+                </p>
+            </section>
+
+            <section class="module-block">
+                <h2>11. Tratamento de acesso indevido</h2>
+
+                <p>
+                    Caso seja identificado acesso indevido, o procedimento não deve ser improvisado.
+                </p>
+
+                <ol>
+                    <li>Identificar o usuário.</li>
+                    <li>Identificar a tela ou programa acessado.</li>
+                    <li>Verificar se o acesso foi direto, por perfil, por restrição ou por caminho indireto.</li>
+                    <li>Verificar se houve alteração, exclusão, exportação ou apenas visualização.</li>
+                    <li>Bloquear ou ajustar a permissão quando possível.</li>
+                    <li>Revisar checkboxes relacionados.</li>
+                    <li>Registrar o ocorrido.</li>
+                    <li>Comunicar gestão quando houver risco relevante.</li>
+                    <li>Revisar se outros usuários possuem a mesma exposição.</li>
+                </ol>
+
+                <p class="module-highlight">
+                    Acesso indevido não deve ser tratado só no usuário afetado. Deve-se verificar se o problema é
+                    estrutural.
+                </p>
+            </section>
+
+            <section class="module-block">
+                <h2>12. Auditoria de acessos indiretos</h2>
+
+                <p>
+                    Como o sistema pode permitir acessos indiretos, a auditoria não deve olhar apenas menus e perfis.
+                </p>
+
+                <p>
+                    Também deve verificar:
+                </p>
+
+                <ul>
+                    <li>botões com acesso a outras telas;</li>
+                    <li>atalhos internos;</li>
+                    <li>rotinas abertas a partir de orçamento ou pedido;</li>
+                    <li>relatórios externos ou BI;</li>
+                    <li>utilitários acessíveis fora do fluxo principal;</li>
+                    <li>cadastros estruturais acessados por telas operacionais.</li>
+                </ul>
+
+                <p class="module-highlight">
+                    O usuário pode não ter o menu, mas ainda assim alcançar a tela por outro caminho.
+                </p>
+            </section>
+
+            <section class="module-block">
+                <h2>13. Regra de ouro para usuários</h2>
+
+                <p>
+                    Todos os usuários devem ser orientados com uma regra simples:
+                </p>
+
+                <p class="module-highlight">
+                    Se a tela abriu, mas a função não pertence ao seu trabalho, não use.
+                </p>
+
+                <p>
+                    O usuário deve entender que botão disponível não significa permissão operacional.
+                </p>
+
+                <p>
+                    Em caso de dúvida:
+                </p>
+
+                <ul>
+                    <li>não alterar;</li>
+                    <li>não excluir;</li>
+                    <li>não exportar;</li>
+                    <li>não cancelar;</li>
+                    <li>não aprovar;</li>
+                    <li>não improvisar;</li>
+                    <li>consultar o responsável.</li>
+                </ul>
+            </section>
+
+            <section class="module-block">
+                <h2>14. Regra de ouro para key user</h2>
+
+                <p>
+                    O key user deve seguir outra regra:
+                </p>
+
+                <p class="module-highlight">
+                    Acesso deve ser concedido pelo mínimo necessário, não pelo máximo possível.
+                </p>
+
+                <p>
+                    Na prática:
+                </p>
+
+                <ul>
+                    <li>liberar apenas o necessário;</li>
+                    <li>bloquear o que não pertence à função;</li>
+                    <li>desmarcar checkbox sem justificativa;</li>
+                    <li>evitar perfil administrador como atalho;</li>
+                    <li>documentar exceções;</li>
+                    <li>revisar depois.</li>
+                </ul>
+            </section>
+
+            <section class="module-block">
+                <h2>15. Modelo mínimo de registro de exceção</h2>
+
+                <p>
+                    A No Fire poderá utilizar um registro simples para controlar exceções.
+                </p>
+
+                <p class="module-highlight">
+                    Usuário:<br>
+                    Função:<br>
+                    Perfil atual:<br>
+                    Acesso solicitado:<br>
+                    Programa / checkbox:<br>
+                    Motivo:<br>
+                    Tipo: temporário ou permanente<br>
+                    Responsável pela validação:<br>
+                    Data da liberação:<br>
+                    Data prevista de revisão:<br>
+                    Observação:
+                </p>
+
+                <p>
+                    O importante é que a exceção deixe rastro suficiente para ser revista depois.
+                </p>
+            </section>
+
+            <section class="module-block">
+                <h2>16. Frequência recomendada de auditoria</h2>
+
+                <div class="manual-table-wrap">
+                    <table class="manual-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo de revisão</th>
+                                <th>Frequência recomendada</th>
+                                <th>Objetivo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Usuários ativos</td>
+                                <td>Mensal</td>
+                                <td>Identificar usuários indevidos, duplicados ou inativos.</td>
+                            </tr>
+                            <tr>
+                                <td>Administradores</td>
+                                <td>Mensal</td>
+                                <td>Confirmar se acesso total ainda é necessário.</td>
+                            </tr>
+                            <tr>
+                                <td>Financeiro / fiscal</td>
+                                <td>Mensal</td>
+                                <td>Evitar acessos críticos indevidos.</td>
+                            </tr>
+                            <tr>
+                                <td>Perfis e programas</td>
+                                <td>Trimestral</td>
+                                <td>Revisar matriz e remover excessos.</td>
+                            </tr>
+                            <tr>
+                                <td>Checkboxes críticos</td>
+                                <td>Mensal</td>
+                                <td>Confirmar que permissões internas continuam justificadas.</td>
+                            </tr>
+                            <tr>
+                                <td>Exceções</td>
+                                <td>Mensal</td>
+                                <td>Remover liberações temporárias vencidas.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="module-highlight">
+                    Auditoria simples feita todo mês é melhor que auditoria perfeita nunca feita.
+                </p>
+            </section>
+
+            <section class="module-block">
+                <h2>17. Encerramento do manual</h2>
+
+                <p>
+                    Este manual estabelece a estrutura operacional de controle de acessos do CAD ERP na No Fire.
+                </p>
+
+                <p>
+                    O sistema apresenta camadas técnicas de controle, mas também limitações, comportamentos permissivos
+                    e riscos
+                    que exigem governança compensatória.
+                </p>
+
+                <p>
+                    Portanto, a operação segura depende da combinação entre:
+                </p>
+
+                <ul>
+                    <li>cadastro correto de usuários;</li>
+                    <li>perfis bem definidos;</li>
+                    <li>programas vinculados com critério;</li>
+                    <li>restrição por usuário;</li>
+                    <li>checkboxes revisados;</li>
+                    <li>controle de exceções;</li>
+                    <li>auditoria recorrente;</li>
+                    <li>responsabilidade individual.</li>
+                </ul>
+
+                <p class="module-highlight">
+                    O controle do ambiente não está apenas no CAD ERP. Está na disciplina de uso, revisão e governança
+                    da No Fire.
+                </p>
+
+                <div class="module-nav">
+                    <a class="module-link" href="./manual-acessos-bloco-09.html">Voltar para Bloco 09</a>
+                    <a class="module-link" href="../../../index.html">Voltar ao Portal</a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-left"><span id="footer-year"></span> © ConnectOps | V.1.0</div>
+
+        <div class="footer-center">
+            <a href="https://www.connectops.com.br" target="_blank" rel="noopener noreferrer"
+                aria-label="Acessar site da ConnectOps">
+                <img src="../../../assets/img/connectops-logo.png" alt="Logomarca ConnectOps">
+            </a>
+        </div>
+
+        <div class="footer-right">
+            Dúvidas e suporte:
+            <a href="mailto:nofire@connectops.com.br">nofire@connectops.com.br</a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("footer-year").textContent = new Date().getFullYear();
+    </script>
 
 </body>
+
 </html>

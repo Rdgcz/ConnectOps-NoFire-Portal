@@ -3,10 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manual de Controle de Acessos | Bloco 01 | No Fire</title>
-  <meta name="description" content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 01 - Fundamento, contexto, premissas e finalidade do manual.">
+  <title>Manual de Controle de Acessos | Bloco 08 | No Fire</title>
+  <meta name="description" content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 08 - Operação dos checkboxes de permissões internas.">
   <link rel="stylesheet" href="../../../assets/css/style.css">
   <link rel="icon" href="../../../assets/img/favicon/favicon.ico" type="image/png">
+  <style>
+    .manual-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+
+    .manual-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      font-size: 0.95rem;
+    }
+
+    .manual-table th,
+    .manual-table td {
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.45;
+    }
+
+    .manual-table th {
+      font-weight: 700;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .manual-tag-critical {
+      font-weight: 700;
+      color: #ff6b6b;
+    }
+
+    .manual-tag-sensitive {
+      font-weight: 700;
+      color: #ffd166;
+    }
+
+    .manual-tag-operational {
+      font-weight: 700;
+      color: #7bd88f;
+    }
+
+    .manual-step-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .manual-step-card {
+      padding: 18px 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .manual-step-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #ffe3e6;
+    }
+
+    .manual-step-card p {
+      margin-bottom: 0;
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 780px) {
+      .manual-step-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -18,19 +93,19 @@
       </a>
     </div>
 
-    <div class="nav-center" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; font-size: 0.9em;">
-      <a style="font-size: 1rem;" href="../../../index.html">Portal</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-01.html">Bloco 01</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-02.html">Bloco 02</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-03.html">Bloco 03</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-04.html">Bloco 04</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-05.html">Bloco 05</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-06.html">Bloco 06</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-07.html">Bloco 07</a> |
-      <a style="font-size: 1rem;  text-shadow: red 0px 0px 4px;">Bloco 08</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-09.html">Bloco 09</a> |
-      <a style="font-size: 1rem;" href="./manual-acessos-bloco-10.html">Bloco 10</a>
-    </div>
+<div class="nav-center" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; font-size: 0.9em;">
+  <a style="font-size: 1rem;" href="../../../index.html">Portal</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-01.html">Fundamentos</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-02.html">Conceitos</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-03.html">Estrutura</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-04.html">Perfis</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-05.html">Vinculação</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-06.html">Restrições</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-07.html">Permissões</a> |
+  <a style="font-size: 1rem; text-shadow: red 0px 0px 4px;">Operação</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-09.html">Matriz</a> |
+  <a style="font-size: 1rem;" href="./manual-acessos-bloco-10.html">Governança</a>
+</div>
 
     <div class="nav-right">
       <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da CAD Sistemas">
@@ -40,15 +115,539 @@
   </nav>
 </header>
 
-<section style="padding-bottom: 50vh; text-align: center;" class="internal-hero">
+<section class="internal-hero">
   <div class="internal-hero-content">
-    <h1>Em construção</h1>
+    <span class="internal-kicker">Manual Operacional · Controle de Acessos · Bloco 08/10</span>
+    <h1>Perfis Operacionais:<br> Estrutura e Aplicação</h1>
+    <p>
+      Este bloco define os perfis operacionais da No Fire e traduz a estrutura técnica de controle de acessos
+      em funções reais dentro do sistema, estabelecendo padrões claros para concessão, restrição e governança
+      de acesso por perfil.
+    </p>
+
+    
   </div>
 </section>
 
-<main>
+<main class="module-content">
+  <div class="module-shell">
+    <section class="module-block">
+  <h2>1. Objetivo do Bloco 08</h2>
 
+  <p>
+    Este bloco tem como objetivo traduzir toda a estrutura técnica de controle de acesso
+    em perfis operacionais reais utilizados na No Fire.
+  </p>
+
+  <p>
+    Até este ponto do manual foram apresentados:
+  </p>
+
+  <ul>
+    <li>estrutura de acesso (PBCA079, PBCA079A, PBCA035, PBCA035C);</li>
+    <li>regras de vinculação de programas;</li>
+    <li>regras de restrição por usuário;</li>
+    <li>permissões internas por checkbox.</li>
+  </ul>
+
+  <p>
+    A partir deste bloco, essas definições passam a ser aplicadas em perfis reais.
+  </p>
+
+  <p class="module-highlight">
+    Perfil não é conceito técnico. Perfil é função operacional aplicada ao sistema.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>2. O que é um perfil operacional</h2>
+
+  <p>
+    Um perfil operacional representa um conjunto de acessos que refletem a função real de um usuário dentro da empresa.
+  </p>
+
+  <p>
+    O perfil não representa:
+  </p>
+
+  <ul>
+    <li>uma pessoa específica;</li>
+    <li>um usuário isolado;</li>
+    <li>uma exceção;</li>
+    <li>uma necessidade temporária;</li>
+    <li>um improviso.</li>
+  </ul>
+
+  <p>
+    O perfil representa:
+  </p>
+
+  <ul>
+    <li>uma função;</li>
+    <li>um conjunto de responsabilidades;</li>
+    <li>um padrão de acesso replicável;</li>
+    <li>uma base para controle e auditoria.</li>
+  </ul>
+
+  <p class="module-highlight">
+    Perfil deve ser replicável. Se só serve para uma pessoa, provavelmente está errado.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>3. Princípio da padronização</h2>
+
+  <p>
+    A No Fire deve trabalhar com um número reduzido de perfis bem definidos.
+  </p>
+
+  <p>
+    Quanto mais perfis forem criados:
+  </p>
+
+  <ul>
+    <li>maior a dificuldade de controle;</li>
+    <li>maior a chance de erro;</li>
+    <li>maior a dificuldade de auditoria;</li>
+    <li>maior a inconsistência operacional.</li>
+  </ul>
+
+  <p class="module-highlight">
+    Poucos perfis bem definidos são mais seguros do que muitos perfis mal definidos.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>4. Perfis base definidos para a No Fire</h2>
+
+  <p>
+    A estrutura inicial de perfis deve considerar as áreas operacionais da empresa.
+  </p>
+
+  <p>
+    Perfis base sugeridos:
+  </p>
+
+  <ul>
+    <li>VENDEDOR</li>
+    <li>ADMINISTRATIVO</li>
+    <li>FINANCEIRO</li>
+    <li>RH</li>
+    <li>ENGENHARIA</li>
+    <li>GESTOR</li>
+    <li>ADMINISTRADOR</li>
+  </ul>
+
+  <p>
+    Esses perfis podem ser ajustados conforme validação da operação, mas devem ser mantidos como base.
+  </p>
+
+  <p class="module-highlight">
+    Perfis devem nascer da estrutura da empresa, não da tela do sistema.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>5. Perfil VENDEDOR</h2>
+
+  <p>
+    O perfil VENDEDOR representa usuários que atuam diretamente na operação comercial,
+    com foco em orçamento, pedido e relacionamento com cliente.
+  </p>
+
+  <h3>Objetivo do perfil</h3>
+  <ul>
+    <li>realizar orçamentos;</li>
+    <li>gerar pedidos;</li>
+    <li>consultar preços;</li>
+    <li>acompanhar vendas.</li>
+  </ul>
+
+  <h3>Programas esperados</h3>
+  <ul>
+    <li>PBCA032 — Orçamento de Venda;</li>
+    <li>PBCA015 — Pedido de Venda;</li>
+    <li>PBCA069 — Consulta de Preços;</li>
+    <li>PBCA097 — Consulta de Preços;</li>
+  </ul>
+
+  <h3>Restrições obrigatórias</h3>
+  <ul>
+    <li>não acessar cadastro de produtos;</li>
+    <li>não acessar tabelas de preço;</li>
+    <li>não acessar financeiro;</li>
+    <li>não acessar tributação;</li>
+    <li>não acessar utilitários;</li>
+  </ul>
+
+  <h3>Checkboxes críticos bloqueados</h3>
+  <ul>
+    <li>alterar valor do produto;</li>
+    <li>alterar desconto;</li>
+    <li>excluir pedido;</li>
+    <li>cancelar pedido;</li>
+    <li>aprovar orçamento;</li>
+  </ul>
+
+  <p class="module-highlight">
+    Vendedor opera venda. Não altera estrutura, não define preço, não controla sistema.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>6. Perfil ADMINISTRATIVO</h2>
+
+  <p>
+    O perfil administrativo representa usuários que atuam no suporte à operação,
+    incluindo atividades financeiras, cadastro e controle interno.
+  </p>
+
+  <h3>Objetivo do perfil</h3>
+  <ul>
+    <li>executar rotinas administrativas;</li>
+    <li>operar financeiro conforme função;</li>
+    <li>manter cadastros autorizados;</li>
+  </ul>
+
+  <h3>Programas esperados</h3>
+  <ul>
+    <li>PBCA027 — Títulos;</li>
+    <li>PBCA074 — Conta Corrente;</li>
+    <li>PBCA031 — Boletos;</li>
+    <li>PBCA030 — Movimentações;</li>
+  </ul>
+
+  <h3>Restrições obrigatórias</h3>
+  <ul>
+    <li>não acessar perfil e vinculação;</li>
+    <li>não acessar exportação;</li>
+    <li>não acessar funções fiscais críticas sem validação;</li>
+  </ul>
+
+  <p class="module-highlight">
+    Administrativo executa operação. Não define acesso nem estrutura.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>7. Perfil FINANCEIRO</h2>
+
+  <p>
+    O perfil financeiro possui acesso a rotinas críticas relacionadas a valores,
+    pagamentos, recebimentos e conciliações.
+  </p>
+
+  <h3>Objetivo do perfil</h3>
+  <ul>
+    <li>gerenciar contas a pagar e receber;</li>
+    <li>realizar baixas;</li>
+    <li>executar conciliação;</li>
+    <li>controlar fluxo financeiro;</li>
+  </ul>
+
+  <h3>Programas esperados</h3>
+  <ul>
+    <li>PBCA027 — Títulos;</li>
+    <li>PBCA074 — Conta Corrente;</li>
+    <li>PBCA139 — Caixa;</li>
+    <li>PBCA152 — Conciliação;</li>
+  </ul>
+
+  <h3>Ponto crítico</h3>
+  <p>
+    Este perfil deve ser extremamente controlado.
+  </p>
+
+  <p class="module-highlight">
+    Acesso financeiro exige controle. Não existe “financeiro básico”.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>8. Perfil RH</h2>
+
+  <p>
+    O perfil RH possui atuação restrita ao cadastro e manutenção de usuários e funcionários,
+    conforme definido no treinamento específico.
+  </p>
+
+  <h3>Objetivo do perfil</h3>
+  <ul>
+    <li>cadastrar funcionários;</li>
+    <li>cadastrar usuários;</li>
+    <li>atualizar dados cadastrais;</li>
+  </ul>
+
+  <h3>Programas esperados</h3>
+  <ul>
+    <li>PBCA056 — Funcionários;</li>
+    <li>PBCA035C — Cadastro de Usuários (limitado);</li>
+  </ul>
+
+  <h3>Restrições obrigatórias</h3>
+  <ul>
+    <li>não acessar perfil;</li>
+    <li>não acessar vinculação;</li>
+    <li>não acessar restrição de usuário;</li>
+    <li>não acessar financeiro;</li>
+  </ul>
+
+  <p class="module-highlight">
+    RH cadastra. RH não define acesso.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>9. Perfil ENGENHARIA</h2>
+
+  <p>
+    O perfil ENGENHARIA representa usuários que atuam em rotinas técnicas, operacionais e estruturais,
+    principalmente relacionadas a equipamentos, serviços e execução técnica.
+  </p>
+
+  <h3>Objetivo do perfil</h3>
+  <ul>
+    <li>operar rotinas técnicas;</li>
+    <li>consultar dados de equipamentos;</li>
+    <li>interagir com CADEX;</li>
+    <li>acompanhar execução operacional;</li>
+  </ul>
+
+  <h3>Programas esperados</h3>
+  <ul>
+    <li>PBCA101, PBCA102, PBCA103 — Processos;</li>
+    <li>PBCX001, PBCX003 — CADEX;</li>
+    <li>PBCA082 — Obras (quando aplicável);</li>
+  </ul>
+
+  <h3>Restrições obrigatórias</h3>
+  <ul>
+    <li>não acessar financeiro;</li>
+    <li>não acessar cadastro de preços;</li>
+    <li>não acessar perfil e permissões;</li>
+    <li>não acessar tributação;</li>
+  </ul>
+
+  <p class="module-highlight">
+    Engenharia executa operação técnica. Não define regras comerciais ou financeiras.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>10. Perfil GESTOR</h2>
+
+  <p>
+    O perfil GESTOR representa usuários que possuem visão gerencial da operação,
+    com acesso a relatórios, acompanhamento e análise de dados.
+  </p>
+
+  <h3>Objetivo do perfil</h3>
+  <ul>
+    <li>acompanhar resultados;</li>
+    <li>analisar desempenho;</li>
+    <li>visualizar relatórios;</li>
+    <li>tomar decisões;</li>
+  </ul>
+
+  <h3>Programas esperados</h3>
+  <ul>
+    <li>GESTOR01 a GESTOR06;</li>
+    <li>Relatórios BI;</li>
+    <li>PBRE (relatórios operacionais);</li>
+  </ul>
+
+  <h3>Ponto de atenção</h3>
+  <p>
+    Este perfil pode ter acesso a dados sensíveis, incluindo:
+  </p>
+
+  <ul>
+    <li>faturamento;</li>
+    <li>margem;</li>
+    <li>comissões;</li>
+    <li>dados financeiros;</li>
+  </ul>
+
+  <p class="module-highlight">
+    Gestor precisa ver tudo. Mas não precisa alterar tudo.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>11. Perfil ADMINISTRADOR</h2>
+
+  <p>
+    O perfil ADMINISTRADOR é o perfil mais sensível do sistema.
+  </p>
+
+  <p>
+    Ele pode ter acesso a:
+  </p>
+
+  <ul>
+    <li>cadastro de usuários;</li>
+    <li>perfil e vinculação;</li>
+    <li>restrições;</li>
+    <li>financeiro;</li>
+    <li>tributação;</li>
+    <li>parâmetros;</li>
+    <li>exportação de dados;</li>
+  </ul>
+
+  <p>
+    Esse perfil não deve ser utilizado como solução para evitar configuração.
+  </p>
+
+  <p class="module-highlight">
+    ADMINISTRADOR não é perfil padrão. É perfil de risco controlado.
+  </p>
+
+  <h3>Regras obrigatórias</h3>
+  <ul>
+    <li>uso restrito a pessoas autorizadas;</li>
+    <li>uso apenas quando necessário;</li>
+    <li>responsabilidade total sobre ações executadas;</li>
+    <li>não utilizar para operação comum;</li>
+  </ul>
+
+</section>
+
+<section class="module-block">
+  <h2>12. Regra de exceção</h2>
+
+  <p>
+    Nem todas as necessidades serão atendidas diretamente pelos perfis padrão.
+  </p>
+
+  <p>
+    Quando houver exceção:
+  </p>
+
+  <ol>
+    <li>não criar novo perfil automaticamente;</li>
+    <li>avaliar se pode ser tratado na PBCA035;</li>
+    <li>avaliar se pode ser tratado por checkbox;</li>
+    <li>validar com responsável;</li>
+    <li>documentar a exceção;</li>
+  </ol>
+
+  <p class="module-highlight">
+    Exceção deve ser controlada. Não virar regra.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>13. Quando criar um novo perfil</h2>
+
+  <p>
+    Um novo perfil só deve ser criado quando:
+  </p>
+
+  <ul>
+    <li>existe função recorrente;</li>
+    <li>existe grupo de usuários com comportamento comum;</li>
+    <li>perfil atual não atende;</li>
+    <li>a diferença não pode ser tratada por restrição;</li>
+  </ul>
+
+  <p>
+    Não criar perfil quando:
+  </p>
+
+  <ul>
+    <li>é um único usuário;</li>
+    <li>é situação temporária;</li>
+    <li>é exceção pontual;</li>
+  </ul>
+
+  <p class="module-highlight">
+    Novo perfil sem critério = perda de controle.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>14. Checklist de validação de perfil</h2>
+
+  <p>
+    Antes de considerar um perfil pronto:
+  </p>
+
+  <ol>
+    <li>perfil representa função real?</li>
+    <li>programas vinculados estão corretos?</li>
+    <li>programas críticos foram avaliados?</li>
+    <li>restrições na PBCA035 foram aplicadas?</li>
+    <li>checkboxes foram revisados?</li>
+    <li>existe acesso indireto possível?</li>
+    <li>existe risco financeiro?</li>
+    <li>existe risco estrutural?</li>
+    <li>perfil é replicável?</li>
+  </ol>
+
+  <p class="module-highlight">
+    Perfil só está pronto quando passa pelo checklist completo.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>15. Erros que devem ser evitados</h2>
+
+  <ul>
+    <li>criar perfil por usuário;</li>
+    <li>duplicar perfil sem revisar;</li>
+    <li>liberar acesso por pressa;</li>
+    <li>usar ADMINISTRADOR como solução fácil;</li>
+    <li>não revisar PBCA035;</li>
+    <li>não revisar checkboxes;</li>
+    <li>não validar com operação;</li>
+  </ul>
+
+  <p class="module-highlight">
+    Perfil errado não dá erro imediato. Ele cria problema silencioso.
+  </p>
+</section>
+
+<section class="module-block">
+  <h2>16. Conclusão do Bloco 08</h2>
+
+  <p>
+    O controle de acesso do CAD ERP depende diretamente da qualidade dos perfis definidos.
+  </p>
+
+  <p>
+    Perfis mal estruturados geram:
+  </p>
+
+  <ul>
+    <li>acesso indevido;</li>
+    <li>erro operacional;</li>
+    <li>risco financeiro;</li>
+    <li>perda de controle;</li>
+  </ul>
+
+  <p>
+    Perfis bem definidos permitem:
+  </p>
+
+  <ul>
+    <li>controle;</li>
+    <li>padronização;</li>
+    <li>auditoria;</li>
+    <li>segurança operacional;</li>
+  </ul>
+
+  <p class="module-highlight">
+    O sistema não controla acesso. O perfil bem definido controla.
+  </p>
+
+  <div class="module-nav">
+    <a class="module-link" href="./manual-acessos-bloco-07.html">Voltar</a>
+    <a class="module-link" href="./manual-acessos-bloco-09.html">Avançar para Bloco 09</a>
+  </div>
+</section>
+</div>
 </main>
+
 
 <footer class="site-footer">
   <div class="footer-left"><span id="footer-year"></span> © ConnectOps | V.1.0</div>
