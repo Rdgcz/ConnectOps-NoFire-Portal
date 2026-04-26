@@ -7,6 +7,49 @@
   <meta name="description" content="Manual Operacional de Controle de Acessos do CAD ERP na No Fire - Bloco 02 - Como o controle de acessos funciona de verdade no sistema.">
   <link rel="stylesheet" href="../../../assets/css/style.css">
   <link rel="icon" href="../../../assets/img/favicon/favicon.ico" type="image/png">
+  <style>
+    .manual-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+
+    .manual-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+      font-size: 0.95rem;
+    }
+
+    .manual-table th,
+    .manual-table td {
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.45;
+    }
+
+    .manual-table th {
+      font-weight: 700;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .manual-tag-critical {
+      font-weight: 700;
+      color: #ff6b6b;
+    }
+
+    .manual-tag-medium {
+      font-weight: 700;
+      color: #ffd166;
+    }
+
+    .manual-tag-low {
+      font-weight: 700;
+      color: #7bd88f;
+    }
+  </style>
 </head>
 <body>
 
@@ -355,12 +398,13 @@
         Apesar dos nomes parecidos, PBCA035 e PBCA035C não devem ser confundidos.
       </p>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Tela</th>
-            <th>Função principal</th>
-            <th>Tipo de controle</th>
+      <div class="manual-table-wrap">
+        <table class="manual-table">
+          <thead>
+            <tr>
+              <th>Tela</th>
+              <th>Função principal</th>
+              <th>Tipo de controle</th>
           </tr>
         </thead>
         <tbody>
@@ -542,8 +586,8 @@
       <p>
         No ambiente da No Fire, os dois controles precisam existir juntos.
       </p>
-
-      <table>
+      <div class="manual-table-wrap">
+      <table class="manual-table" style="margin-top: 16px; margin-bottom: 16px;">
         <thead>
           <tr>
             <th>Tipo de controle</th>
@@ -574,7 +618,7 @@
           </tr>
         </tbody>
       </table>
-
+      </div>
       <p class="module-highlight">
         Onde o controle técnico não for suficiente, o controle operacional passa a ser obrigatório.
       </p>
@@ -703,33 +747,9 @@
       </p>
     </section>
 
+    
     <section class="module-block">
-      <h2>19. Imagens recomendadas para este bloco</h2>
-      <p>
-        Para tornar este bloco mais didático, recomenda-se incluir prints das principais telas de controle.
-        Os arquivos devem ser salvos em formato <strong>.webp</strong>, utilizando exatamente os nomes abaixo:
-      </p>
-
-      <ul>
-        <li><strong>pbca079-cadastro-perfil.webp</strong></li>
-        <li><strong>pbca079a-vinculacao-perfil-programas.webp</strong></li>
-        <li><strong>pbca035-restricao-usuario-programa.webp</strong></li>
-        <li><strong>pbca035c-cadastro-usuarios-visao-geral.webp</strong></li>
-        <li><strong>pbca035c-checkboxes-permissoes.webp</strong></li>
-        <li><strong>exemplo-acesso-indireto-tela.webp</strong></li>
-      </ul>
-
-      <p>
-        Caminho sugerido para salvar as imagens:
-      </p>
-
-      <p class="module-highlight">
-        assets/img/manual/acessos/bloco-02/
-      </p>
-    </section>
-
-    <section class="module-block">
-      <h2>20. Conclusão do Bloco 02</h2>
+      <h2>19. Conclusão do Bloco 02</h2>
       <p>
         O controle de acessos do CAD ERP deve ser entendido como uma arquitetura em camadas. O perfil é apenas uma dessas
         camadas e não deve ser tratado como garantia suficiente de segurança.
