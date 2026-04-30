@@ -343,7 +343,7 @@ a{
   border-radius:22px;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
-  border:1px solid var(--line);
+  border:1px solid var(--red);
   transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease, background .22s ease;
   box-shadow:0 10px 26px rgba(0,0,0,0.18);
 }
@@ -354,6 +354,13 @@ a{
   background:
     linear-gradient(180deg, rgba(225,6,19,0.10), rgba(255,255,255,0.03));
   box-shadow:0 10px 10px var(--red-soft);
+}
+
+.no-hover-page .quick-card:hover {
+  transform: none;
+  border-color: var(--red);
+  background: initial;
+  box-shadow: none;
 }
 
 .quick-number{
