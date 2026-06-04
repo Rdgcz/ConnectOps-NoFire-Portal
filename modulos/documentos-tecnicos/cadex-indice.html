@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ÍNDICE CADEX - CADERP</title>
+    <meta name="description" content="Índice visual de menus e telas do CADEX">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="icon" href="../../../assets/img/favicon/favicon.ico" type="image/png">
+    <style>
+        .nav-search {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .nav-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        #cadexSearchInput,
+        #cadexSelect {
+            min-height: 34px;
+            padding: 6px 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(20, 20, 24, 0.72);
+            color: #fff;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        #cadexSearchInput {
+            width: 300px;
+        }
+
+        #cadexSelect {
+            width: 300px;
+        }
+
+        #cadexSearchInput::placeholder {
+            color: rgba(255, 255, 255, 0.62);
+        }
+
+        .cadex-highlight {
+            background: rgba(225, 6, 19, 0.24);
+            border-left: 4px solid var(--red);
+            padding: 8px 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 14px rgba(225, 6, 19, 0.35);
+        }
+
+        @media (max-width: 700px) {
+
+            #cadexSearchInput,
+            #cadexSelect {
+                width: 100%;
+            }
+
+            .nav-title {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        ul img {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+
+<body class="no-hover-page">
+
+    <header class="site-header">
+        <nav class="nav">
+            <div class="nav-left">
+                <a href="https://www.nofire.com.br/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Acessar site da No Fire">
+                    <img src="../../../assets/img/nofire-logo.png" alt="No Fire">
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <a href="../../../index.html" class="nav-home-link" aria-label="Voltar para a página inicial">Portal |
+                </a>
+                <div class="nav-center nav-search">
+                    <p class="nav-title">Índice de telas CADEX</p>
+
+                    <input type="text" id="cadexSearchInput" placeholder="Buscar tela, código ou descrição..."
+                        autocomplete="off">
+
+                    <select id="cadexSelect">
+                        <option value="">Selecionar tela...</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <a href="https://www.cadsistemas.com.br/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Acessar site da CAD Sistemas">
+                    <img src="../../../assets/img/cad-logo.png" alt="CAD">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="internal-hero">
+        <div class="internal-hero-content">
+            <span class="internal-kicker">TELAS CADEX</span>
+            <h1>Índice visual de menus e telas CADEX</h1>
+        </div>
+    </section>
+
+    <main class="module-content">
+        <div class="module-shell">
+            <div class="quick-grid"
+                style="grid-template-columns:repeat(1, minmax(0, 1fr)); font-size: 1rem; line-height: 20px; font-weight: 600;">
+                <div class="quick-card">
+                    <p style="color: orange; font-style: italic; font-size: large;">
+                        Observação técnica: durante a abertura do executável do CADEX, foi exibido alerta de
+                        atualização. Ao clicar em continuar, o sistema retornou a mensagem "servidor não pode ser
+                        resolvido". A ocorrência será tratada posteriormente como achado de
+                        ambiente/versionamento/conectividade, sem análise conclusiva nesta página.
+                    </p>
+
+                    <ul style="padding-left: 40px;">
+                        <li>CADEX - LOGIN</li>
+                        <img src="../../../assets/img/telas-cadex/tela_login_cadex.PNG" alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX - INTERFACE PRINCIPAL</li>
+                        <img src="../../../assets/img/telas-cadex/interface_cadex.PNG" alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX - INTERFACE COM BOTÕES PRINCIPAIS</li>
+                        <img src="../../../assets/img/telas-cadex/interface_botoes_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX - INTERFACE DE FILTRO</li>
+                        <img src="../../../assets/img/telas-cadex/interface_filtro_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX - MENU PRINCIPAL</li>
+                        <img src="../../../assets/img/telas-cadex/interface_menu_cadex.PNG" alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: CADASTRO</li>
+                        <img src="../../../assets/img/telas-cadex/menu_cadastro_cadex.PNG" alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: CADASTRO | ALVARÁ / DOCUMENTOS</li>
+                        <img src="../../../assets/img/telas-cadex/menu_cadastro_alvara_documentos_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: CADASTRO | INSPEÇÃO</li>
+                        <img src="../../../assets/img/telas-cadex/menu_cadastro_inspecao_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: CADASTRO | RESPONSÁVEIS PELO SERVIÇO</li>
+                        <img src="../../../assets/img/telas-cadex/menu_cadastro_responsaveis_servico_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: MOVIMENTAÇÃO</li>
+                        <img src="../../../assets/img/telas-cadex/menu_movimentacao_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: MOVIMENTAÇÃO | INSPEÇÃO 2.0 ONLINE</li>
+                        <img src="../../../assets/img/telas-cadex/menu_movimentacao_inspecao2.0-online.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: RELATÓRIOS</li>
+                        <img src="../../../assets/img/telas-cadex/menu_relatorios_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: UTILITÁRIOS</li>
+                        <img src="../../../assets/img/telas-cadex/menu_utilitarios_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: UTILITÁRIOS | PORTARIA INMETRO COMENTADA</li>
+                        <img src="../../../assets/img/telas-cadex/menu_utilitarios_portaria_inmetro_comentada_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: ACESSO REMOTO</li>
+                        <img src="../../../assets/img/telas-cadex/menu_acesso_remoto_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: SOBRE</li>
+                        <img src="../../../assets/img/telas-cadex/menu_sobre.PNG" alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: BALSA</li>
+                        <img src="../../../assets/img/telas-cadex/menu_balsa_cadex.PNG" alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: BALSA | CADASTRO</li>
+                        <img src="../../../assets/img/telas-cadex/menu_balsa_cadastro_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: BALSA | CERTIFICADO</li>
+                        <img src="../../../assets/img/telas-cadex/menu_balsa_certificado.PNG" alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: BALSA | MOVIMENTAÇÃO</li>
+                        <img src="../../../assets/img/telas-cadex/menu_balsa_movimentacao_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: BALSA | RELATÓRIOS</li>
+                        <img src="../../../assets/img/telas-cadex/menu_balsa_relatorios.PNG" alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: INSPEÇÃO ONLINE</li>
+                        <img src="../../../assets/img/telas-cadex/menu_inspecao_online_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>MENU: INSPEÇÃO ONLINE | CADASTROS</li>
+                        <img src="../../../assets/img/telas-cadex/menu_inspecao_online_cadstros_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 800px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX004 - ENSAIO DE FUNCIONAMENTO | ACESSO VIA BOTÃO "ANEXO A"</li>
+                        <img src="../../../assets/img/telas-cadex/tela_ensaio_de_funcionamento_CADEX004_acesso_via bota_anexo_a_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX009A - REPOSIÇÃO / EMPRÉSTIMO DE EXTINTORES E MANGUEIRAS | ACESSO VIA BOTÃO
+                            "EMPRÉSTIMO / REPOSIÇÃO"</li>
+                        <img src="../../../assets/img/telas-cadex/tela_reposicao_emprestimo_de_extintores_mangueiras_CADEX009A_acesso_via_botao_emprestimo_reposicao.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX043D - VINCULAÇÃO DE CLIENTES X EXTINTORES / BASE DE TROCA | ACESSO VIA BOTÃO "B.
+                            TROCA"</li>
+                        <img src="../../../assets/img/telas-cadex/tela_vinculacao_de_clientes_x_extintores_base_de_troca_CADEX043D_acesso_via_botao_b_troca.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX044 - CÓDIGO DE BARRAS | ACESSO VIA BOTÃO "BARRAS"</li>
+                        <img src="../../../assets/img/telas-cadex/tela_codigo_de_barras_CADEX044_acesso_via_botap_barras_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX068 - ANEXO O | ACESSO VIA BOTÃO "ANEXO O"</li>
+                        <img src="../../../assets/img/telas-cadex/tela_anexo_O_CADEX068_acesso_via_botao_anexo_O.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX080 - PESAGEM CO2 | ACESSO VIA BOTÃO "PESAGEM"</li>
+                        <img src="../../../assets/img/telas-cadex/tela_pesagem_co2_CADEX080_acesso_via_botao_pesagem_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX082 - AUTORIZAÇÃO OS | ACESSO VIA BOTÃO "STATUS OS"</li>
+                        <img src="../../../assets/img/telas-cadex/tela_autorizacao_OS_CADEX082_acesso_via_botao_status_OS.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX091 - SELO | ACESSO VIA BOTÃO "SELO"</li>
+                        <img src="../../../assets/img/telas-cadex/tela_selo_CADEX091_acesso_via_botao_selo_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX096F - ORDEM DE SERVIÇO | ACESSO VIA BOTÕES "TRIAGEM" E "OS"</li>
+                        <img src="../../../assets/img/telas-cadex/tela_ordem_de_servico_CADEX096F_cadex_acesso_via_botoes_triagem_e_botao_OS.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX104 - TRATAMENTO DE RECLAMAÇÃO | ACESSO VIA BOTÃO "RECLAMAÇÃO/SUGESTÃO"</li>
+                        <img src="../../../assets/img/telas-cadex/tela_tratamento_de_reclamacao_CADEX104_acesso_via_botao_reclamacao_sugestao_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX114 - TEMPERATURA E UMIDADE SALA DE PÓ | ACESSO VIA BOTÃO "TEMP. SALA DO PÓ"</li>
+                        <img src="../../../assets/img/telas-cadex/tela_temperatura_e_umidade_sala_de_po_CADEX114_acesso_via_botao_temp_sala_do_po.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX119 - CADASTRO DE LEMBRETES | ACESSO VIA BOTÃO "LEMBRETES"</li>
+                        <img src="../../../assets/img/telas-cadex/tela_cadastro_de_lembretes_CADEX119_acesso_via_botao_lembretes.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+
+                        <li>CADEX124 - CONTROLE DE PRODUÇÃO | ACESSO VIA BOTÃO "CONTROLE DE PRODUÇÃO"</li>
+                        <img src="../../../assets/img/telas-cadex/tela_controle_de_producao_CADEX124_acesso_via_botao_controle_de_producao_cadex.PNG"
+                            alt="Tela do sistema CADEX"
+                            style="max-width: 1000px; vertical-align: middle; margin-left: 5px;">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-left"><span id="footer-year"></span> &copy; ConnectOps | V.1.0</div>
+
+        <div class="footer-center">
+            <a href="https://www.connectops.com.br" target="_blank" rel="noopener noreferrer"
+                aria-label="Acessar site da ConnectOps">
+                <img src="../../../assets/img/connectops-logo.png" alt="Logomarca ConnectOps">
+            </a>
+        </div>
+
+        <div class="footer-right">
+            Dúvidas e suporte:
+            <a href="mailto:nofire@connectops.com.br">nofire@connectops.com.br</a>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+        const listItems = Array.from(document.querySelectorAll(".quick-card ul li"));
+        const cadexSearchInput = document.getElementById("cadexSearchInput");
+        const cadexSelect = document.getElementById("cadexSelect");
+
+        listItems.forEach((li, index) => {
+            const text = li.textContent.trim();
+
+            li.id = `cadex-item-${index}`;
+
+            const option = document.createElement("option");
+            option.value = li.id;
+            option.textContent = text.length > 90 ? text.substring(0, 90) + "..." : text;
+            cadexSelect.appendChild(option);
+        });
+
+        function goToItem(li) {
+            if (!li) return;
+
+            listItems.forEach(item => item.classList.remove("cadex-highlight"));
+
+            li.classList.add("cadex-highlight");
+
+            li.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }
+
+        cadexSelect.addEventListener("change", function () {
+            const selectedItem = document.getElementById(this.value);
+            goToItem(selectedItem);
+        });
+
+        cadexSearchInput.addEventListener("keydown", function (event) {
+            if (event.key !== "Enter") return;
+
+            const searchTerm = this.value.trim().toLowerCase();
+
+            if (!searchTerm) return;
+
+            const foundItem = listItems.find(li =>
+                li.textContent.toLowerCase().includes(searchTerm)
+            );
+
+            goToItem(foundItem);
+        });
+    </script>
+</body>
+
+</html>
