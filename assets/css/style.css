@@ -188,7 +188,7 @@ a{
 }
 
 .hero h1{
-  font-size:40px;
+  font-size:2rem;
   line-height:1.2;
   text-align:left;
   margin-bottom:10px;
@@ -196,11 +196,21 @@ a{
 }
 
 .hero h2{
-  font-size:64px;
+  font-size:3.5rem;
   line-height:1.1;
   text-align:left;
-  margin-bottom:20px;
+  margin-bottom:40px;
   color:var(--ion-brand-red);
+}
+
+.hero h3{
+  font-size:1.8rem;
+  line-height:1.1;
+  font-weight:400;
+  text-align:left;
+  text-decoration: underline var(--ion-color-neutral) 2px;
+  margin-bottom:20px;
+  color:var(--ion-color-neutral);
 }
 
 .hero p{
